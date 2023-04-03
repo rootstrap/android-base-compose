@@ -28,6 +28,14 @@ object Dependencies {
 
     }
 
+    object Compose {
+        const val ACTIVITY = "androidx.activity:activity-compose:${Versions.COMPOSE_ACTIVITY}"
+        const val UI = "androidx.compose.ui:ui:${Versions.COMPOSE}"
+        const val UI_TOOLING = "androidx.compose.ui:ui-tooling:${Versions.COMPOSE}"
+        const val UI_TOOLING_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE}"
+        const val MATERIAL3 = "androidx.compose.material3:material3:${Versions.COMPOSE_MATERIAL3}"
+    }
+
     object Common {
         // Image
         const val GLIDE = "com.github.bumptech.glide:glide:${Versions.GLIDE}"
@@ -85,6 +93,7 @@ object Dependencies {
 
     object Test {
         const val JUNIT = "junit:junit:${Versions.JUNIT}"
+
         const val MOCKITO_CORE = "org.mockito:mockito-core:${Versions.MOCKITO_CORE}"
         const val MOCKK = "io.mockk:mockk:${Versions.MOCKK}"
         const val COROUTINES_TEST =
@@ -98,6 +107,8 @@ object Dependencies {
         const val ESPRESSO_CORE = "androidx.test.espresso:espresso-core:${Versions.ESPRESSO}"
         const val ESPRESSO_INTENTS = "androidx.test.espresso:espresso-intents:${Versions.ESPRESSO}"
         const val EXT_JUNIT = "androidx.test.ext:junit:${Versions.EXT_JUNIT}"
+        const val COMPOSE_JUNIT = "androidx.compose.ui:ui-test-junit4:${Versions.COMPOSE}"
+        const val COMPOSE_MANIFEST = "androidx.compose.ui:ui-test-manifest:${Versions.COMPOSE}"
         const val KOIN_TEST = "io.insert-koin:koin-test:${Versions.KOIN}"
         const val UI_AUTOMATOR = "androidx.test.uiautomator:uiautomator:${Versions.UI_AUTOMATOR}"
         const val RULES = "androidx.test:rules:${Versions.RULES}"
@@ -113,6 +124,9 @@ object Dependencies {
     object Versions {
         const val APP_COMPAT = "1.3.1"
         const val CONSTRAINT_LAYOUT = "2.1.1"
+        const val COMPOSE = "1.4.0"
+        const val COMPOSE_ACTIVITY = "1.7.0"
+        const val COMPOSE_MATERIAL3 = "1.1.0-beta01"
         const val CONVERTER_GSON = "2.9.0"
         const val CONVERTER_MOSHI = "2.5.0"
         const val CORE = "1.6.0"
@@ -127,10 +141,10 @@ object Dependencies {
         const val GSON = "2.8.7"
         const val JUNIT = "4.13.2"
         const val KOIN = "3.1.3"
-        const val KOTLIN = "1.6.10"
+        const val KOTLIN = "1.8.0"
         const val KT_LINT = "0.44.0"
         const val LEGACY_SUPPORT_V4 = "1.0.0"
-        const val LIFECYCLE = "2.4.0"
+        const val LIFECYCLE = "2.6.1"
         const val LIFECYCLE_COMMON = "1.1.1"
         const val LIFECYCLE_EXTENSION = "2.2.0"
         const val MATERIAL_DESIGN = "1.4.0"

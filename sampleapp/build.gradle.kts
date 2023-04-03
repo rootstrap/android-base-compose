@@ -1,26 +1,27 @@
 plugins {
-    with(Dependencies.Plugins) {
-        id("com.android.library")
-        kotlin(ANDROID)
-    }
+    id("com.android.application")
+    id("org.jetbrains.kotlin.android")
 }
 
 android {
-    namespace = "com.rootstrap.androidcomposebase"
+    namespace = "com.rootstrap.sampleapp"
+    compileSdk = 33
 
-    with(Dependencies.ConfigData) {
-        compileSdk = COMPILE_SDK_VERSION
-        buildToolsVersion = BUILD_TOOLS_VERSION
+    defaultConfig {
+        applicationId = "com.rootstrap.sampleapp"
+        minSdk = 24
+        targetSdk = 33
+        versionCode = 1
+        versionName = "1.0"
 
-        defaultConfig {
-            minSdk = MIN_SDK_VERSION
-            targetSdk = TARGET_SDK_VERSION
-            testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary = true
         }
     }
 
     buildTypes {
-        getByName("release") {
+        release {
             isMinifyEnabled = false
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
@@ -28,28 +29,28 @@ android {
             )
         }
     }
-
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
-
     kotlinOptions {
         jvmTarget = "1.8"
     }
     buildFeatures {
         compose = true
     }
-
     composeOptions {
         kotlinCompilerExtensionVersion = "1.4.0"
+    }
+    packagingOptions {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
     }
 }
 
 dependencies {
-    implementation(project(":data"))
-    implementation(project(":domain"))
-    implementation(project(":usecases"))
+    implementation(project(":app"))
 
     with(Dependencies.Android) {
         implementation(CORE)
