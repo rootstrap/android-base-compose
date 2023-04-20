@@ -1,4 +1,4 @@
-package com.rootstrap.sampleapp
+package com.rootstrap.androidcomposebase.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -6,11 +6,10 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
-import com.rootstrap.sampleapp.ui.theme.AndroidComposeBaseTheme
+import com.rootstrap.androidcomposebase.ui.login.LogInScreen
+import com.rootstrap.androidcomposebase.ui.login.LogInViewModel
+import com.rootstrap.androidcomposebase.ui.theme.AndroidComposeBaseTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,18 +25,5 @@ class MainActivity : ComponentActivity() {
                 }
             }
         }
-    }
-}
-
-@Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
-
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    AndroidComposeBaseTheme {
-        Greeting("Android")
     }
 }

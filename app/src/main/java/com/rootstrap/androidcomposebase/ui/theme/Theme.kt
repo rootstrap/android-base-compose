@@ -1,4 +1,5 @@
-package com.rootstrap. sampleapp.ui.theme
+package com.rootstrap.androidcomposebase.ui.theme
+
 
 import android.app.Activity
 import android.os.Build
