@@ -1,12 +1,12 @@
 plugins {
+    id("com.android.application")
     with(Dependencies.Plugins) {
-        id("com.android.library")
         kotlin(ANDROID)
     }
 }
 
 android {
-    namespace = "com.rootstrap.androidcomposebase"
+    namespace = "com.rootstrap.app"
 
     with(Dependencies.ConfigData) {
         compileSdk = COMPILE_SDK_VERSION
@@ -50,6 +50,7 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":usecases"))
+    implementation("androidx.navigation:navigation-runtime-ktx:2.5.3")
 
     with(Dependencies.Android) {
         implementation(CORE)
@@ -61,6 +62,7 @@ dependencies {
         implementation(UI)
         implementation(UI_TOOLING_PREVIEW)
         implementation(MATERIAL3)
+        implementation(NAVIGATION_COMPOSE)
         debugImplementation(UI_TOOLING)
     }
 
