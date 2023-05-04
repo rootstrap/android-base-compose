@@ -1,6 +1,6 @@
 plugins {
     with(Dependencies.Plugins) {
-        id("com.android.library")
+        id("com.android.application")
         kotlin(ANDROID)
     }
 }
@@ -54,13 +54,15 @@ dependencies {
     with(Dependencies.Android) {
         implementation(CORE)
         implementation(APP_COMPAT)
-        implementation(LIFECYCLE_RUNTIME)
+        implementation(LIFECYCLE_KTX)
+        implementation(LIFECYCLE_COMPOSE)
     }
     with(Dependencies.Compose) {
         implementation(ACTIVITY)
         implementation(UI)
         implementation(UI_TOOLING_PREVIEW)
         implementation(MATERIAL3)
+        implementation(ICONS_EXTENDED)
         debugImplementation(UI_TOOLING)
     }
 

@@ -1,9 +1,8 @@
 package com.rootstrap.androidcomposebase.ui.login
 
-
 import android.util.Patterns
 import androidx.lifecycle.ViewModel
-import com.rootstrap.data.util.PatternsUtil
+import com.rootstrap.androidcomposebase.util.PatternsUtil
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update

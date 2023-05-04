@@ -11,7 +11,8 @@ object Dependencies {
 
         // Lifecycle
         const val LIFECYCLE_COMMON = "android.arch.lifecycle:common-java8:${Versions.LIFECYCLE_COMMON}"
-        const val LIFECYCLE_RUNTIME = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYCLE}"
+        const val LIFECYCLE_KTX = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYCLE}"
+        const val LIFECYCLE_COMPOSE = "androidx.lifecycle:lifecycle-runtime-compose:${Versions.LIFECYCLE}"
         const val LIFECYCLE_LIVEDATA = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFECYCLE}"
         const val LIFECYCLE_EXTENSIONS =
             "androidx.lifecycle:lifecycle-extensions:${Versions.LIFECYCLE_EXTENSION}"
@@ -34,6 +35,7 @@ object Dependencies {
         const val UI_TOOLING = "androidx.compose.ui:ui-tooling:${Versions.COMPOSE}"
         const val UI_TOOLING_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE}"
         const val MATERIAL3 = "androidx.compose.material3:material3:${Versions.COMPOSE_MATERIAL3}"
+        const val ICONS_EXTENDED = "androidx.compose.material:material-icons-extended:${Versions.COMPOSE}"
     }
 
     object Common {
