@@ -12,8 +12,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AndroidComposeBase"
-        tools:targetApi="31">
+        android:theme="@style/Theme.AndroidComposeBase">
 
         <activity
             android:name="com.rootstrap.presenter.AppActivity"
