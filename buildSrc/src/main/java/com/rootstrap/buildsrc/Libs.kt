@@ -4,15 +4,19 @@ object Dependencies {
         const val CORE = "androidx.core:core-ktx:${Versions.CORE}"
         const val CONSTRAINT_LAYOUT =
             "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAINT_LAYOUT}"
-        const val LEGACY_SUPPORT_V4 = "androidx.legacy:legacy-support-v4:${Versions.LEGACY_SUPPORT_V4}"
+        const val LEGACY_SUPPORT_V4 =
+            "androidx.legacy:legacy-support-v4:${Versions.LEGACY_SUPPORT_V4}"
         const val PREFERENCE = "androidx.preference:preference-ktx:${Versions.PREFERENCE}"
         const val RECYCLERVIEW = "androidx.recyclerview:recyclerview:${Versions.RECYCLERVIEW}"
         const val WORK_RUNTIME = "androidx.work:work-runtime-ktx:${Versions.WORK_RUNTIME}"
 
         // Lifecycle
-        const val LIFECYCLE_COMMON = "android.arch.lifecycle:common-java8:${Versions.LIFECYCLE_COMMON}"
-        const val LIFECYCLE_RUNTIME = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYCLE}"
-        const val LIFECYCLE_LIVEDATA = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFECYCLE}"
+        const val LIFECYCLE_COMMON =
+            "android.arch.lifecycle:common-java8:${Versions.LIFECYCLE_COMMON}"
+        const val LIFECYCLE_RUNTIME =
+            "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYCLE}"
+        const val LIFECYCLE_LIVEDATA =
+            "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFECYCLE}"
         const val LIFECYCLE_EXTENSIONS =
             "androidx.lifecycle:lifecycle-extensions:${Versions.LIFECYCLE_EXTENSION}"
         const val LIFECYCLE_VIEW_MODEL =
@@ -22,6 +26,8 @@ object Dependencies {
         const val NAVIGATION_FRAGMENT =
             "androidx.navigation:navigation-fragment-ktx:${Versions.NAVIGATION}"
         const val NAVIGATION_UI = "androidx.navigation:navigation-ui-ktx:${Versions.NAVIGATION}"
+        const val NAVIGATION_UI_RUNTIME =
+            "androidx.navigation:navigation-runtime-ktx:${Versions.NAVIGATION_RUN_TIME}"
 
         // Room
         const val ROOM_RUNTIME = "androidx.room:room-runtime:${Versions.ROOM}"
@@ -34,15 +40,20 @@ object Dependencies {
         const val UI_TOOLING = "androidx.compose.ui:ui-tooling:${Versions.COMPOSE}"
         const val UI_TOOLING_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE}"
         const val MATERIAL3 = "androidx.compose.material3:material3:${Versions.COMPOSE_MATERIAL3}"
+        const val NAVIGATION_COMPOSE =
+            "androidx.navigation:navigation-compose:${Versions.COMPOSE_NAVIGATION}"
     }
 
     object Common {
         // Image
         const val GLIDE = "com.github.bumptech.glide:glide:${Versions.GLIDE}"
+
         // MixPanel
         const val MIX_PANEL = "com.mixpanel.android:mixpanel-android:${Versions.MIX_PANEL}"
+
         // Events
         const val OTTO = "com.squareup:otto:${Versions.OTTO}"
+
         // Security crypto
         const val SECURITY_CRYPTO = "androidx.security:security-crypto:${Versions.SECURITY_CRYPTO}"
     }
@@ -83,8 +94,10 @@ object Dependencies {
         const val RETROFIT_GSON_CONVERTER =
             "com.squareup.retrofit2:converter-gson:${Versions.CONVERTER_GSON}"
         const val MOSHI = "com.squareup.moshi:moshi-kotlin:${Versions.MOSHI}"
-        const val CONVERTER_MOSHI = "com.squareup.retrofit2:converter-moshi:${Versions.CONVERTER_MOSHI}"
-        const val LOGGING_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP}"
+        const val CONVERTER_MOSHI =
+            "com.squareup.retrofit2:converter-moshi:${Versions.CONVERTER_MOSHI}"
+        const val LOGGING_INTERCEPTOR =
+            "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP}"
         const val OKHTTP = "com.squareup.okhttp3:okhttp:${Versions.OKHTTP}"
     }
 
@@ -116,9 +129,11 @@ object Dependencies {
     }
 
     object ClassPaths {
-        const val KOTLIN_GRADLE_PLUGIN = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN}"
+        const val KOTLIN_GRADLE_PLUGIN =
+            "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN}"
         const val GMS = "com.google.gms:google-services:${Versions.GOOGLE_SERVICES}"
-        const val FIREBASE_CRASHLYTICS_GRADLE = "com.google.firebase:firebase-crashlytics-gradle:${Versions.FIREBASE_CRASHLYTICS_GRADLE}"
+        const val FIREBASE_CRASHLYTICS_GRADLE =
+            "com.google.firebase:firebase-crashlytics-gradle:${Versions.FIREBASE_CRASHLYTICS_GRADLE}"
     }
 
     object Versions {
@@ -127,6 +142,7 @@ object Dependencies {
         const val COMPOSE = "1.4.0"
         const val COMPOSE_ACTIVITY = "1.7.0"
         const val COMPOSE_MATERIAL3 = "1.1.0-beta01"
+        const val COMPOSE_NAVIGATION = "2.5.3"
         const val CONVERTER_GSON = "2.9.0"
         const val CONVERTER_MOSHI = "2.5.0"
         const val CORE = "1.6.0"
@@ -154,6 +170,7 @@ object Dependencies {
         const val MOCKITO_CORE = "2.28.2"
         const val MOSHI = "1.12.0"
         const val NAVIGATION = "2.3.5"
+        const val NAVIGATION_RUN_TIME = "2.5.3"
         const val OKHTTP = "4.9.0"
         const val OTTO = "1.3.8"
         const val PREFERENCE = "1.1.1"
@@ -164,7 +181,7 @@ object Dependencies {
         const val SECURITY_CRYPTO = "1.1.0-alpha03"
         const val TEST_RUNNER = "1.4.0"
         const val UI_AUTOMATOR = "2.2.0"
-        const val WORK_RUNTIME  = "2.7.0"
+        const val WORK_RUNTIME = "2.7.0"
     }
 
     object ConfigData {
