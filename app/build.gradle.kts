@@ -50,12 +50,12 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":usecases"))
-    implementation("androidx.navigation:navigation-runtime-ktx:2.5.3")
 
     with(Dependencies.Android) {
         implementation(CORE)
         implementation(APP_COMPAT)
         implementation(LIFECYCLE_RUNTIME)
+        implementation(NAVIGATION_UI_RUNTIME)
     }
     with(Dependencies.Compose) {
         implementation(ACTIVITY)
