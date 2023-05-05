@@ -1,12 +1,10 @@
 plugins {
-    with(Dependencies.Plugins) {
-        id("com.android.application")
-        kotlin(ANDROID)
-    }
+    id("com.android.application")
+    kotlin(Dependencies.Plugins.ANDROID)
 }
 
 android {
-    namespace = "com.rootstrap.androidcomposebase"
+    namespace = "com.rootstrap.app"
 
     with(Dependencies.ConfigData) {
         compileSdk = COMPILE_SDK_VERSION
@@ -56,6 +54,7 @@ dependencies {
         implementation(APP_COMPAT)
         implementation(LIFECYCLE_KTX)
         implementation(LIFECYCLE_COMPOSE)
+        implementation(NAVIGATION_UI_RUNTIME)
     }
     with(Dependencies.Compose) {
         implementation(ACTIVITY)
@@ -63,6 +62,7 @@ dependencies {
         implementation(UI_TOOLING_PREVIEW)
         implementation(MATERIAL3)
         implementation(ICONS_EXTENDED)
+        implementation(NAVIGATION_COMPOSE)
         debugImplementation(UI_TOOLING)
     }
 

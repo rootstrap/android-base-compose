@@ -14,7 +14,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun RSButton(
+fun AppButton(
     @StringRes label: Int,
     enabled: Boolean,
     onClick: () -> Unit

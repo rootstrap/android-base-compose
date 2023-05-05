@@ -7,4 +7,5 @@
     <string name="log_in_password_label">Password</string>
     <string name="log_in_password_error">Password must contain a lower case, upper case, a number and a special character</string>
     <string name="log_in_button">LOG IN</string>
+
 </resources>

@@ -9,13 +9,13 @@ import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
 import com.rootstrap.androidcomposebase.ui.login.LogInScreen
 import com.rootstrap.androidcomposebase.ui.login.LogInViewModel
-import com.rootstrap.androidcomposebase.ui.theme.AndroidComposeBaseTheme
+import com.rootstrap.androidcomposebase.ui.theme.AppTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            AndroidComposeBaseTheme {
+            AppTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),

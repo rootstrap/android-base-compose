@@ -6,7 +6,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
-import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -14,9 +13,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.rootstrap.androidcomposebase.R
-import com.rootstrap.androidcomposebase.ui.common.RSButton
-import com.rootstrap.androidcomposebase.ui.common.RSTextField
+import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.rootstrap.androidcomposebase.ui.common.AppButton
+import com.rootstrap.androidcomposebase.ui.common.AppTextField
+import com.rootstrap.app.R
 
 @Composable
 fun LogInScreen(
@@ -38,7 +38,7 @@ fun LogInScreen(
         Column(
             verticalArrangement = Arrangement.Center
         ) {
-            RSTextField(
+            AppTextField(
                 value = uiState.email,
                 onValueChange = { viewModel.onEmailChanged(it) },
                 label = stringResource(id = R.string.log_in_email_label),
@@ -46,7 +46,7 @@ fun LogInScreen(
                 errorMessage = stringResource(id = R.string.log_in_email_error)
             )
 
-            RSTextField(
+            AppTextField(
                 value = uiState.password,
                 onValueChange = { viewModel.onPasswordChanged(it) },
                 label = stringResource(id = R.string.log_in_password_label),
@@ -56,7 +56,7 @@ fun LogInScreen(
             )
         }
 
-        RSButton(
+        AppButton(
             label = R.string.log_in_button,
             enabled = uiState.isButtonEnabled
         ) {
