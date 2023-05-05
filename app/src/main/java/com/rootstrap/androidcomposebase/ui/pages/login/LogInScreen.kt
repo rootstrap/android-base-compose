@@ -1,4 +1,4 @@
-package com.rootstrap.androidcomposebase.ui.login
+package com.rootstrap.androidcomposebase.ui.pages.login
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -16,6 +16,7 @@ import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rootstrap.androidcomposebase.ui.common.AppButton
 import com.rootstrap.androidcomposebase.ui.common.AppTextField
+import com.rootstrap.androidcomposebase.ui.theme.Padding.huge
 import com.rootstrap.app.R
 
 @Composable
@@ -28,7 +29,7 @@ fun LogInScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .background(Color.Black)
-            .padding(horizontal = 20.dp)
+            .padding(horizontal = huge)
     ) {
         Icon(
             painter = painterResource(id = R.drawable.rootstrap_logo),

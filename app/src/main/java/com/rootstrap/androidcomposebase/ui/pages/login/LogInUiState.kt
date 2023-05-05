@@ -1,4 +1,4 @@
-package com.rootstrap.androidcomposebase.ui.login
+package com.rootstrap.androidcomposebase.ui.pages.login
 
 data class LoginUiState(
     val email: String = "",

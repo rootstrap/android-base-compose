@@ -12,6 +12,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Green
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.rootstrap.androidcomposebase.ui.theme.cornerRadius
 
 @Composable
 fun AppButton(
@@ -23,7 +24,7 @@ fun AppButton(
         onClick = onClick,
         modifier = Modifier.fillMaxWidth(),
         enabled = enabled,
-        shape = RoundedCornerShape(8.dp),
+        shape = RoundedCornerShape(cornerRadius),
         colors = ButtonDefaults.buttonColors(
             containerColor = Green,
             contentColor = Color.Black,

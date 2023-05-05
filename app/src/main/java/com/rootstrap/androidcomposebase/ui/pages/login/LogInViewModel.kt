@@ -1,6 +1,5 @@
-package com.rootstrap.androidcomposebase.ui.login
+package com.rootstrap.androidcomposebase.ui.pages.login
 
-import android.util.Log
 import android.util.Patterns
 import androidx.lifecycle.ViewModel
 import com.rootstrap.androidcomposebase.util.PatternsUtil
@@ -22,7 +21,6 @@ class LogInViewModel : ViewModel() {
 
     fun onPasswordChanged(password: String) {
         val isPasswordValid = Pattern.compile(PatternsUtil.PASSWORD_REGEX).matcher(password).matches() || password.isEmpty()
-        Log.e("ASD", "$isPasswordValid")
         _uiState.update { it.copy(password = password, showPasswordError = !isPasswordValid) }
     }
 
