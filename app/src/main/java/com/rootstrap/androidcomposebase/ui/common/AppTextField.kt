@@ -59,7 +59,7 @@ fun AppTextField(
             focusedIndicatorColor = Color.Transparent,
             unfocusedIndicatorColor = Color.Transparent
         ),
-        visualTransformation = if (isPasswordVisible || !isPasswordField) VisualTransformation.None else PasswordVisualTransformation(),
+        visualTransformation = if (!isPasswordField || isPasswordVisible) VisualTransformation.None else PasswordVisualTransformation(),
         trailingIcon = {
             if (isPasswordField) TogglePasswordEye(isPasswordVisible) { isPasswordVisible = it }
         }
