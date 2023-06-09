@@ -12,6 +12,9 @@ jobs:
   ci:
     runs-on: ubuntu-latest
     timeout-minutes: 45
+    variables:
+      EXCLUDE: node_modules/**, reports/**
+      GIT_DEPTH: 0 # Tells git to fetch all the branches of the project, required by the analysis task
     steps:
       - uses: actions/checkout@v2
       - name: Setup sonar scanner
@@ -23,10 +26,5 @@ jobs:
             -Dsonar.host.url=$SONAR_URL \
             -Dsonar.login=$SONAR_TOKEN \
             -Dsonar.projectKey=$SONAR_PROJECT \
-            -Dsonar.scm.provider=git \
-            -Dsonar.java.binaries=/tmp \
-            -Dsonar.nodejs.executable=$(which node) \
-            -Dsonar.projectVersion=$(echo $GITHUB_SHA | cut -c1-8) \
             -Dsonar.sources=. \
-            -Dsonar.projectBaseDir=. \
-            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+            -Dsonar.exclusions="${EXCLUDE}"
