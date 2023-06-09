@@ -30,3 +30,4 @@ jobs:
             -Dsonar.sources=. \
             -Dsonar.projectBaseDir=. \
             -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
+          
