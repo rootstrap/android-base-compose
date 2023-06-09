@@ -13,6 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 45
     steps:
+      - uses: actions/checkout@v2
       - name: Setup sonar scanner
         uses: warchant/setup-sonar-scanner@v3
       - name: Run Sonarqube analysis
