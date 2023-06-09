@@ -24,3 +24,4 @@ jobs:
             -Dsonar.login=$SONAR_TOKEN \
             -Dsonar.projectKey=$SONAR_PROJECT \
             -Dsonar.sources=. \
+            -Dsonar.scm.disabled=true \
