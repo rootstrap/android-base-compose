@@ -29,4 +29,4 @@ jobs:
             -Dsonar.projectVersion=$(echo $GITHUB_SHA | cut -c1-8) \
             -Dsonar.sources=. \
             -Dsonar.projectBaseDir=. \
-            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info  
+            -Dsonar.javascript.lcov.reportPaths=coverage/lcov.info
