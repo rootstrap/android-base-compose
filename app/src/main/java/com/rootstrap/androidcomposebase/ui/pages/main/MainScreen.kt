@@ -13,7 +13,7 @@ import androidx.compose.ui.unit.LayoutDirection
 import com.rootstrap.app.R
 
 @Composable
-fun MainScreen(someId: String? = null) {
+fun HomeScreen(someId: String? = null) {
     Scaffold {
         Box(
             modifier = Modifier
