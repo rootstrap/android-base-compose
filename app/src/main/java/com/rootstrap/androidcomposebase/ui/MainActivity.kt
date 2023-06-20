@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
+import com.rootstrap.androidcomposebase.ui.nav.AppNav
 import com.rootstrap.androidcomposebase.ui.pages.login.LogInScreen
 import com.rootstrap.androidcomposebase.ui.pages.login.LogInViewModel
 import com.rootstrap.androidcomposebase.ui.theme.AppTheme
@@ -21,7 +22,10 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    LogInScreen(viewModel = LogInViewModel())
+                    /**
+                     * TODO: add a GlobalAppState with a auth state and listen the auth state
+                    **/
+                    AppNav(false)
                 }
             }
         }

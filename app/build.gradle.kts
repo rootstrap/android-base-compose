@@ -61,8 +61,8 @@ dependencies {
         implementation(UI)
         implementation(UI_TOOLING_PREVIEW)
         implementation(MATERIAL3)
-        implementation(ICONS_EXTENDED)
         implementation(NAVIGATION_COMPOSE)
+        implementation(ICONS_EXTENDED)
         debugImplementation(UI_TOOLING)
     }
 

@@ -3,6 +3,7 @@ package com.rootstrap.androidcomposebase.ui.pages.login
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
@@ -30,6 +31,7 @@ fun LogInScreen(
         modifier = Modifier
             .background(Color.Black)
             .padding(horizontal = huge)
+            .fillMaxSize()
     ) {
         Icon(
             painter = painterResource(id = R.drawable.rootstrap_logo),

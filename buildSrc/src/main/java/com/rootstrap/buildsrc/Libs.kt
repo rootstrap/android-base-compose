@@ -39,8 +39,7 @@ object Dependencies {
         const val UI_TOOLING_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE}"
         const val MATERIAL3 = "androidx.compose.material3:material3:${Versions.COMPOSE_MATERIAL3}"
         const val ICONS_EXTENDED = "androidx.compose.material:material-icons-extended:${Versions.COMPOSE}"
-        const val NAVIGATION_COMPOSE =
-            "androidx.navigation:navigation-compose:${Versions.COMPOSE_NAVIGATION}"
+        const val NAVIGATION_COMPOSE = "androidx.navigation:navigation-compose:${Versions.NAV_COMPOSE}"
     }
 
     object Common {
@@ -139,6 +138,7 @@ object Dependencies {
         const val APP_COMPAT = "1.3.1"
         const val CONSTRAINT_LAYOUT = "2.1.1"
         const val COMPOSE = "1.4.0"
+        const val NAV_COMPOSE = "2.5.3"
         const val COMPOSE_ACTIVITY = "1.7.0"
         const val COMPOSE_MATERIAL3 = "1.1.0-beta01"
         const val COMPOSE_NAVIGATION = "2.5.3"
