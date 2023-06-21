@@ -9,4 +9,10 @@ object Padding {
     val huge = 20.dp
 }
 
-val cornerRadius = 8.dp
+object ShapeRadius {
+    val extraSmall = 4.dp
+    val small = 8.dp
+    val medium = 12.dp
+    val large = 16.dp
+    val extraLarge = 24.dp
+}
