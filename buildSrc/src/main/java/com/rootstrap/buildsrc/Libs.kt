@@ -32,6 +32,9 @@ object Dependencies {
         // Room
         const val ROOM_RUNTIME = "androidx.room:room-runtime:${Versions.ROOM}"
 
+        // DataStore
+        const val DATA_STORE_PREFERENCES = "androidx.datastore:datastore-preferences:${Versions.DATA_STORE_PREFERENCES}"
+
     }
 
     object Compose {
@@ -179,6 +182,7 @@ object Dependencies {
         const val RETROFIT = "2.9.0"
         const val RETROFIT_KTX_CONVERTER = "1.0.0"
         const val ROOM = "2.4.1"
+        const val DATA_STORE_PREFERENCES = "1.0.0"
         const val RULES = "1.4.0"
         const val SECURITY_CRYPTO = "1.1.0-alpha03"
         const val TEST_RUNNER = "1.4.0"

@@ -1,3 +1,5 @@
+import Dependencies.Android.DATA_STORE_PREFERENCES
+import Dependencies.Kotlin.COROUTINES_ANDROID
 import Dependencies.Network.OKHTTP
 import Dependencies.Network.OKHTTP_BOM
 import Dependencies.Network.OKHTTP_LOGGING_INTERCEPTOR
@@ -49,6 +51,8 @@ android {
 dependencies {
     implementation(project(":domain"))
 
+    implementation(COROUTINES_ANDROID)
+    implementation(DATA_STORE_PREFERENCES)
     implementation(Dependencies.Kotlin.SERIALIZATION)
     implementation(RETROFIT)
     implementation(RETROFIT_KTX_CONVERTER)

@@ -1,4 +1,4 @@
-package com.rootstrap.data
+package com.rootstrap.data.network
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
 import kotlinx.serialization.SerialName
@@ -9,7 +9,7 @@ import retrofit2.Retrofit
 import retrofit2.http.GET
 
 interface ApiProvider {
-    // we can have more than 1 api declared here, so this is very useful for Testing.
+    // we can have more than 1 api declared here, this is also very useful for Testing.
     val myApi: MyApi
 }
 
@@ -34,13 +34,13 @@ class ApiProviderImpl( // TODO this should be provided as singleton by Koin
 
 
 // TODO remove following classes
-
 interface MyApi {
+
     @GET("user")
-    suspend fun getUser(): User // use @Serializable data classes directly
+    suspend fun getUser(): UserResponse // use @Serializable data classes directly, no need to manage Calls nor complex stuff
 }
 
 @Serializable
-data class User(
+data class UserResponse(
     @SerialName("id") val id: String,
 )
