@@ -67,7 +67,7 @@ object Dependencies {
         const val FIREBASE_CRASHLYTICS = "com.google.firebase:firebase-crashlytics-ktx"
     }
 
-    object Kapt {
+    object Kapt { // TODO migrate to KSP https://developer.android.com/build/migrate-to-ksp
         const val GLIDE_KAPT = "com.github.bumptech.glide:compiler:${Versions.GLIDE}"
         const val LIFECYCLE_KAPT = "android.arch.lifecycle:compiler:${Versions.LIFECYCLE_COMMON}"
         const val ROOM_KAPT = "androidx.room:room-compiler:${Versions.ROOM}"
@@ -87,18 +87,16 @@ object Dependencies {
         const val COROUTINES_ANDROID =
             "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES}"
         const val REFLECT = "org.jetbrains.kotlin:kotlin-reflect:${Versions.KOTLIN}"
+        const val SERIALIZATION = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.SERIALIZATION_JSON}"
     }
 
     object Network {
         const val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT}"
-        const val RETROFIT_GSON_CONVERTER =
-            "com.squareup.retrofit2:converter-gson:${Versions.CONVERTER_GSON}"
-        const val MOSHI = "com.squareup.moshi:moshi-kotlin:${Versions.MOSHI}"
-        const val CONVERTER_MOSHI =
-            "com.squareup.retrofit2:converter-moshi:${Versions.CONVERTER_MOSHI}"
-        const val LOGGING_INTERCEPTOR =
-            "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP}"
-        const val OKHTTP = "com.squareup.okhttp3:okhttp:${Versions.OKHTTP}"
+        const val RETROFIT_KTX_CONVERTER = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${Versions.RETROFIT_KTX_CONVERTER}"
+        const val LOGGING_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP_BOM}"
+        const val OKHTTP_BOM = "com.squareup.okhttp3:okhttp-bom:${Versions.OKHTTP_BOM}"
+        const val OKHTTP = "com.squareup.okhttp3:okhttp"
+        const val OKHTTP_LOGGING_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor"
     }
 
     // Linters
@@ -109,6 +107,7 @@ object Dependencies {
 
         const val MOCKITO_CORE = "org.mockito:mockito-core:${Versions.MOCKITO_CORE}"
         const val MOCKK = "io.mockk:mockk:${Versions.MOCKK}"
+        const val OKHTTP_MOCK_WEBSERVER = "com.squareup.okhttp3:mockwebserver:${Versions.OKHTTP_BOM}"
         const val COROUTINES_TEST =
             "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINES}"
         const val CORE_TESTING = "android.arch.core:core-testing:${Versions.CORE_TESTING}"
@@ -129,6 +128,7 @@ object Dependencies {
     }
 
     object ClassPaths {
+        const val GRADLE = "com.android.tools.build:gradle:7.4.2" // TODO check gradle version
         const val KOTLIN_GRADLE_PLUGIN =
             "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN}"
         const val GMS = "com.google.gms:google-services:${Versions.GOOGLE_SERVICES}"
@@ -147,6 +147,7 @@ object Dependencies {
         const val CONVERTER_MOSHI = "2.5.0"
         const val CORE = "1.6.0"
         const val COROUTINES = "1.5.1"
+        const val SERIALIZATION_JSON = "1.5.1"
         const val CORE_TESTING = "1.1.1"
         const val ESPRESSO = "3.4.0"
         const val EXT_JUNIT = "1.1.3"
@@ -157,7 +158,7 @@ object Dependencies {
         const val GSON = "2.8.7"
         const val JUNIT = "4.13.2"
         const val KOIN = "3.1.3"
-        const val KOTLIN = "1.8.0"
+        const val KOTLIN = "1.8.22"
         const val KT_LINT = "0.44.0"
         const val LEGACY_SUPPORT_V4 = "1.0.0"
         const val LIFECYCLE = "2.6.1"
@@ -171,11 +172,12 @@ object Dependencies {
         const val MOSHI = "1.12.0"
         const val NAVIGATION = "2.3.5"
         const val NAVIGATION_RUN_TIME = "2.5.3"
-        const val OKHTTP = "4.9.0"
+        const val OKHTTP_BOM = "4.10.0"
         const val OTTO = "1.3.8"
         const val PREFERENCE = "1.1.1"
         const val RECYCLERVIEW = "1.1.0"
         const val RETROFIT = "2.9.0"
+        const val RETROFIT_KTX_CONVERTER = "1.0.0"
         const val ROOM = "2.4.1"
         const val RULES = "1.4.0"
         const val SECURITY_CRYPTO = "1.1.0-alpha03"
@@ -196,6 +198,7 @@ object Dependencies {
     object Plugins {
         const val ANDROID = "android"
         const val ANDROID_LIB = "com.android.library"
+        const val SERIALIZATION = "plugin.serialization"
         const val CRASHLYTICS = "com.google.firebase.crashlytics"
         const val GOOGLE_SERVICES = "com.google.gms.google-services"
         const val KAPT = "kapt"
