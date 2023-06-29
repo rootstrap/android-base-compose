@@ -16,7 +16,7 @@ fun MainPage() {
         Box(
             modifier = Modifier
                 .padding(innerPadding)
-                .fillMaxSize()
+                .fillMaxSize(),
         ) {
             HelloUser("Rootstrap")
         }

@@ -1,3 +1,7 @@
+import org.gradle.api.tasks.JavaExec
+import org.gradle.kotlin.dsl.creating
+import org.gradle.kotlin.dsl.getValue
+
 object Dependencies {
     object Android {
         const val APP_COMPAT = "androidx.appcompat:appcompat:${Versions.APP_COMPAT}"
@@ -158,7 +162,7 @@ object Dependencies {
         const val JUNIT = "4.13.2"
         const val KOIN = "3.1.3"
         const val KOTLIN = "1.8.0"
-        const val KT_LINT = "0.44.0"
+        const val KT_LINT = "0.49.1"
         const val LEGACY_SUPPORT_V4 = "1.0.0"
         const val LIFECYCLE = "2.6.1"
         const val LIFECYCLE_COMMON = "1.1.1"
@@ -182,6 +186,7 @@ object Dependencies {
         const val TEST_RUNNER = "1.4.0"
         const val UI_AUTOMATOR = "2.2.0"
         const val WORK_RUNTIME = "2.7.0"
+        const val KLINT_COMPOSE = "0.48.2"
     }
 
     object ConfigData {
@@ -201,3 +206,5 @@ object Dependencies {
         const val KAPT = "kapt"
     }
 }
+
+
