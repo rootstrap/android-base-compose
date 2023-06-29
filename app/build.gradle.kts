@@ -50,6 +50,7 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":usecases"))
+    implementation(project(":di"))
 
     with(Dependencies.Android) {
         implementation(CORE)
@@ -64,6 +65,9 @@ dependencies {
         implementation(MATERIAL3)
         implementation(NAVIGATION_COMPOSE)
         debugImplementation(UI_TOOLING)
+    }
+    with(Dependencies.Koin){
+        implementation(Dependencies.Koin.CORE)
     }
 
     testImplementation(Dependencies.Test.JUNIT)
