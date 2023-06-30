@@ -35,7 +35,7 @@ tasks.register("clean", Delete::class) {
 }
 
 subprojects {
-    apply(plugin = "org.jlleitschuh.gradle.ktlint")
+    apply(plugin = Dependencies.Linters.KT_LINT_PLUGIN)
 }
 
 ktlint {
