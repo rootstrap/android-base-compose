@@ -66,9 +66,7 @@ dependencies {
         implementation(NAVIGATION_COMPOSE)
         debugImplementation(UI_TOOLING)
     }
-    with(Dependencies.Koin) {
-        implementation(Dependencies.Koin.CORE)
-    }
+    implementation(Dependencies.Koin.CORE)
     testImplementation(Dependencies.Test.JUNIT)
     with(Dependencies.AndroidTest) {
         androidTestImplementation(EXT_JUNIT)
