@@ -22,7 +22,7 @@ private val DarkColorScheme = darkColorScheme(
     onSecondary = TextColor,
     onTertiary = TextColor,
     onBackground = TextColor,
-    onSurface = TextColor,
+    onSurface = TextColor
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -35,7 +35,7 @@ private val LightColorScheme = lightColorScheme(
     onSecondary = TextColor,
     onTertiary = TextColor,
     onBackground = TextColor,
-    onSurface = TextColor,
+    onSurface = TextColor
 )
 
 var AppColorScheme: ColorScheme = LightColorScheme
@@ -43,7 +43,7 @@ var AppColorScheme: ColorScheme = LightColorScheme
 @Composable
 fun AppTheme(
     darkTheme: Boolean = isSystemInDarkTheme(),
-    content: @Composable () -> Unit,
+    content: @Composable () -> Unit
 ) {
     val colorScheme = if (darkTheme) DarkColorScheme else LightColorScheme
     AppColorScheme = colorScheme
@@ -58,6 +58,6 @@ fun AppTheme(
     MaterialTheme(
         colorScheme = colorScheme,
         typography = Typography,
-        content = content,
+        content = content
     )
 }
