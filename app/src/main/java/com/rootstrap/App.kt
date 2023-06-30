@@ -4,7 +4,7 @@ import android.app.Application
 import com.example.di.initDI
 import com.rootstrap.di.appModule
 
-class App : Application(){
+class App : Application() {
 
     override fun onCreate() {
         super.onCreate()

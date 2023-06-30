@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.di"
+    namespace = "com.rootstrap.di"
     compileSdk = COMPILE_SDK_VERSION
 
     defaultConfig {

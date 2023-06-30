@@ -21,10 +21,8 @@ fun Application.initDI(appModule: Module, scopesModule: Module = module { }) {
     }
 }
 
-val dataModule = module{
-
+val dataModule = module {
 }
 
 val useCasesModule = module {
-
 }
