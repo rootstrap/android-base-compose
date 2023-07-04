@@ -22,7 +22,7 @@ private val DarkColorScheme = darkColorScheme(
     onSecondary = TextColor,
     onTertiary = TextColor,
     onBackground = TextColor,
-    onSurface = TextColor,
+    onSurface = TextColor
 )
 
 private val LightColorScheme = lightColorScheme(
@@ -35,7 +35,7 @@ private val LightColorScheme = lightColorScheme(
     onSecondary = TextColor,
     onTertiary = TextColor,
     onBackground = TextColor,
-    onSurface = TextColor,
+    onSurface = TextColor
 )
 
 var AppColorScheme: ColorScheme = LightColorScheme

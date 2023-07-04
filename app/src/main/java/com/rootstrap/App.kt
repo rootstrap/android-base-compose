@@ -11,4 +11,3 @@ class App : Application() {
         initDI(appModule = appModule)
     }
 }
-
