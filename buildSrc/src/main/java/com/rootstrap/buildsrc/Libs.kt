@@ -43,8 +43,8 @@ object Dependencies {
         const val UI_TOOLING = "androidx.compose.ui:ui-tooling:${Versions.COMPOSE}"
         const val UI_TOOLING_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE}"
         const val MATERIAL3 = "androidx.compose.material3:material3:${Versions.COMPOSE_MATERIAL3}"
-        const val NAVIGATION_COMPOSE =
-            "androidx.navigation:navigation-compose:${Versions.COMPOSE_NAVIGATION}"
+        const val NAVIGATION_COMPOSE = "androidx.navigation:navigation-compose:${Versions.COMPOSE_NAVIGATION}"
+        const val LIFECYCLE_RUNTIME = "androidx.lifecycle:lifecycle-runtime-compose:${Versions.LIFECYCLE}"
     }
 
     object Common {

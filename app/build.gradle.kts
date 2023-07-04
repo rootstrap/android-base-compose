@@ -63,6 +63,7 @@ dependencies {
         implementation(UI_TOOLING_PREVIEW)
         implementation(MATERIAL3)
         implementation(NAVIGATION_COMPOSE)
+        implementation(LIFECYCLE_RUNTIME)
         debugImplementation(UI_TOOLING)
     }
 
