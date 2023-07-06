@@ -50,6 +50,7 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":usecases"))
+    implementation(project(":di"))
 
     with(Dependencies.Android) {
         implementation(CORE)
@@ -66,7 +67,7 @@ dependencies {
         implementation(LIFECYCLE_RUNTIME)
         debugImplementation(UI_TOOLING)
     }
-
+    implementation(Dependencies.Koin.CORE)
     testImplementation(Dependencies.Test.JUNIT)
     with(Dependencies.AndroidTest) {
         androidTestImplementation(EXT_JUNIT)

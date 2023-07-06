@@ -103,7 +103,10 @@ object Dependencies {
     }
 
     // Linters
-    const val KT_LINT = "com.pinterest:ktlint:${Versions.KT_LINT}"
+    object Linters {
+        const val KT_LINT = "org.jlleitschuh.gradle:ktlint-gradle:${Versions.KLINT_GRADLE}"
+        const val KT_LINT_PLUGIN = "org.jlleitschuh.gradle.ktlint"
+    }
 
     object Test {
         const val JUNIT = "junit:junit:${Versions.JUNIT}"
@@ -188,6 +191,7 @@ object Dependencies {
         const val TEST_RUNNER = "1.4.0"
         const val UI_AUTOMATOR = "2.2.0"
         const val WORK_RUNTIME = "2.7.0"
+        const val KLINT_GRADLE = "11.4.2"
     }
 
     object ConfigData {
