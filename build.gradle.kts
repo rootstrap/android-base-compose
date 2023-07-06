@@ -8,8 +8,8 @@ buildscript {
     }
 
     dependencies {
-        classpath("com.android.tools.build:gradle:7.4.2")
-        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.0")
+        classpath(Dependencies.ClassPaths.GRADLE)
+        classpath(Dependencies.ClassPaths.KOTLIN_GRADLE_PLUGIN)
         classpath(Dependencies.Linters.KT_LINT)
     }
 }

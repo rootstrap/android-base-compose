@@ -134,7 +134,7 @@ object Dependencies {
     }
 
     object ClassPaths {
-        const val GRADLE = "com.android.tools.build:gradle:7.4.2" // TODO check gradle version
+        const val GRADLE = "com.android.tools.build:gradle:8.0.2"
         const val KOTLIN_GRADLE_PLUGIN =
             "org.jetbrains.kotlin:kotlin-gradle-plugin:${Versions.KOTLIN}"
         const val GMS = "com.google.gms:google-services:${Versions.GOOGLE_SERVICES}"
@@ -146,6 +146,7 @@ object Dependencies {
         const val APP_COMPAT = "1.3.1"
         const val CONSTRAINT_LAYOUT = "2.1.1"
         const val COMPOSE = "1.4.0"
+        const val COMPOSE_COMPILER = "1.4.8"
         const val COMPOSE_ACTIVITY = "1.7.0"
         const val COMPOSE_MATERIAL3 = "1.1.0-beta01"
         const val COMPOSE_NAVIGATION = "2.5.3"
