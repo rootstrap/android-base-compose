@@ -16,10 +16,11 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rootstrap.presenter.pages.main.MainPage
 import com.rootstrap.presenter.theme.AppTheme
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AppActivity : ComponentActivity() {
 
-    private lateinit var viewModel: AppActivityViewModel // TODO inject using Koin
+    private val viewModel: AppActivityViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

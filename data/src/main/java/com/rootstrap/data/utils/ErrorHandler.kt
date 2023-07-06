@@ -17,8 +17,8 @@ import kotlin.coroutines.CoroutineContext
  * It will add a default error handling for any uncaught exception in the coroutine.
  */
 class ErrorHandler(
-    private val resources: Resources, // TODO : Inject androidResources using Koin
-    private val errorNotifier: ErrorNotifier // TODO : Inject using Koin
+    private val resources: Resources,
+    private val errorNotifier: ErrorNotifier
 ) : AbstractCoroutineContextElement(CoroutineExceptionHandler), CoroutineExceptionHandler {
 
     private val unknownErrorTitle = resources.getString(R.string.unknown_error_title)

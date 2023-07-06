@@ -13,13 +13,14 @@ import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
 
-class PreferencesDataStore( // TODO set as singleton in Koin
-    coroutineDispatcher: CoroutineDispatcher, // TODO inject Dispatcher.IO using Koin
-    context: Context, // TODO inject using Koin
+class PreferencesDataStore(
+    coroutineDispatcher: CoroutineDispatcher,
+    context: Context,
+    preferencesFileName: String,
 ) {
 
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(
-        name = "rootstrap_prefs", // TODO use you app's name,
+        name = preferencesFileName,
         scope = CoroutineScope(coroutineDispatcher + SupervisorJob())
     )
 

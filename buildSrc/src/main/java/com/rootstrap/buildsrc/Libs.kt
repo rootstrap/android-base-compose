@@ -111,12 +111,14 @@ object Dependencies {
     object Test {
         const val JUNIT = "junit:junit:${Versions.JUNIT}"
 
-        const val MOCKITO_CORE = "org.mockito:mockito-core:${Versions.MOCKITO_CORE}"
         const val MOCKK = "io.mockk:mockk:${Versions.MOCKK}"
         const val OKHTTP_MOCK_WEBSERVER = "com.squareup.okhttp3:mockwebserver:${Versions.OKHTTP_BOM}"
         const val COROUTINES_TEST =
             "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINES}"
-        const val CORE_TESTING = "android.arch.core:core-testing:${Versions.CORE_TESTING}"
+        const val ANDROID_CORE_TESTING = "android.arch.core:core-testing:${Versions.CORE_TESTING}"
+
+        const val KOIN_TEST = "io.insert-koin:koin-test:${Versions.KOIN}"
+        const val KOIN_TEST_JUNIT = "io.insert-koin:koin-test-junit4:${Versions.KOIN}"
     }
 
     object AndroidTest {
@@ -127,7 +129,6 @@ object Dependencies {
         const val EXT_JUNIT = "androidx.test.ext:junit:${Versions.EXT_JUNIT}"
         const val COMPOSE_JUNIT = "androidx.compose.ui:ui-test-junit4:${Versions.COMPOSE}"
         const val COMPOSE_MANIFEST = "androidx.compose.ui:ui-test-manifest:${Versions.COMPOSE}"
-        const val KOIN_TEST = "io.insert-koin:koin-test:${Versions.KOIN}"
         const val UI_AUTOMATOR = "androidx.test.uiautomator:uiautomator:${Versions.UI_AUTOMATOR}"
         const val RULES = "androidx.test:rules:${Versions.RULES}"
         const val MOCK_WEBSERVER = "com.squareup.okhttp3:mockwebserver:${Versions.MOCK_WEBSERVER}"
@@ -175,7 +176,6 @@ object Dependencies {
         const val MIX_PANEL = "5.6.1"
         const val MOCKK = "1.12.0"
         const val MOCK_WEBSERVER = "4.9.0"
-        const val MOCKITO_CORE = "2.28.2"
         const val MOSHI = "1.12.0"
         const val NAVIGATION = "2.3.5"
         const val NAVIGATION_RUN_TIME = "2.5.3"

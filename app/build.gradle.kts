@@ -70,7 +70,15 @@ dependencies {
         debugImplementation(UI_TOOLING)
     }
     implementation(Dependencies.Koin.CORE)
-    testImplementation(Dependencies.Test.JUNIT)
+    implementation(Dependencies.Koin.ANDROID)
+
+    with(Dependencies.Test) {
+        testImplementation(MOCKK)
+        testImplementation(JUNIT)
+        testImplementation(KOIN_TEST)
+        testImplementation(KOIN_TEST_JUNIT)
+        testImplementation(COROUTINES_TEST)
+    }
     with(Dependencies.AndroidTest) {
         androidTestImplementation(EXT_JUNIT)
         androidTestImplementation(ESPRESSO_CORE)

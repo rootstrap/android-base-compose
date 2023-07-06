@@ -45,5 +45,4 @@ dependencies {
     implementation(Dependencies.Network.RETROFIT)
     implementation(Dependencies.Koin.CORE)
     implementation(Dependencies.Koin.ANDROID)
-    testImplementation("junit:junit:4.13.2")
 }
