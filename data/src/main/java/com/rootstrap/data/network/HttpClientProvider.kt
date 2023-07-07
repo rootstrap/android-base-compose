@@ -1,6 +1,6 @@
 package com.rootstrap.data.network
 
-import android.app.Application
+import com.rootstrap.data.BuildConfig
 import okhttp3.Cache
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -12,13 +12,11 @@ interface HttpClientProvider {
     val cachedOkHttpClient: OkHttpClient
 }
 
-class HttpClientProviderImpl( // TODO set as singleton using Koin
-    application: Application, // TODO inject using Koin
-    private val isDebugMode: Boolean, // TODO find where to obtain this.
-    private val authInterceptor: AuthInterceptor, // TODO inject using Koin
+class HttpClientProviderImpl(
+    private val cache: Cache,
+    private val authInterceptor: AuthInterceptor,
+    private val isDebugMode: Boolean = BuildConfig.DEBUG,
 ) : HttpClientProvider {
-
-    private val cache = Cache(application.cacheDir, 50L * 1024 * 1024)
 
     override val cachedOkHttpClient: OkHttpClient get() {
         val httpLoggingInterceptor = HttpLoggingInterceptor().apply {

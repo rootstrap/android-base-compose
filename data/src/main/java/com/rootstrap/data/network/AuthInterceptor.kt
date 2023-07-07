@@ -6,7 +6,7 @@ import kotlinx.coroutines.runBlocking
 import okhttp3.Interceptor
 import okhttp3.Response
 
-class AuthInterceptor( // TODO set as singleton in Koin
+class AuthInterceptor(
     private val PreferencesDataStore: PreferencesDataStore
 ) : Interceptor {
 

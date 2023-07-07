@@ -46,7 +46,7 @@ class ErrorHandler(
             // add your custom exceptions here
         }
 
-        // TODO : use logger of preference to log the error here. We can discuss on sync / RoundTable
+        // TODO : use logger of preference to log the error here. We can discuss on sync / RoundTable / PR
         Log.e("ErrorHandler", "Error happened: ${errorNotification.title} - ${errorNotification.description}")
 
         errorNotifier.notify(errorNotification)

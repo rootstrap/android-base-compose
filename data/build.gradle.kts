@@ -32,8 +32,13 @@ android {
     }
 
     buildTypes {
-        getByName("release") {
+        getByName("debug") {
             isMinifyEnabled = false
+            buildConfigField("String", "API_BASE_URL", "\"https://some-api-url.com/\"")
+        }
+        getByName("release") {
+            isMinifyEnabled = true
+            buildConfigField("String", "API_BASE_URL", "\"https://some-api-url.com/\"")
             proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
         }
     }
@@ -57,8 +62,9 @@ dependencies {
     implementation(RETROFIT)
     implementation(RETROFIT_KTX_CONVERTER)
     implementation(OKHTTP_BOM)
-    implementation(OKHTTP)
     implementation(OKHTTP_LOGGING_INTERCEPTOR)
+
+    api(OKHTTP)
 
     testImplementation(OKHTTP_MOCK_WEBSERVER)
     testImplementation(JUNIT)

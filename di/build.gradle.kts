@@ -41,8 +41,15 @@ dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
     implementation(project(":usecases"))
-    implementation(Dependencies.Network.OKHTTP)
-    implementation(Dependencies.Network.RETROFIT)
-    implementation(Dependencies.Koin.CORE)
-    implementation(Dependencies.Koin.ANDROID)
+    with(Dependencies.Kotlin) {
+        implementation(SERIALIZATION)
+    }
+    with(Dependencies.Network) {
+        implementation(OKHTTP)
+        implementation(RETROFIT)
+    }
+    with(Dependencies.Koin) {
+        implementation(CORE)
+        implementation(ANDROID)
+    }
 }

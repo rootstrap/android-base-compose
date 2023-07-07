@@ -1,6 +1,7 @@
 package com.rootstrap.data.network
 
 import com.jakewharton.retrofit2.converter.kotlinx.serialization.asConverterFactory
+import com.rootstrap.data.BuildConfig
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.json.Json
@@ -8,19 +9,13 @@ import okhttp3.MediaType.Companion.toMediaType
 import retrofit2.Retrofit
 import retrofit2.http.GET
 
-interface ApiProvider {
-    // we can have more than 1 api declared here, this is also very useful for Testing.
-    val myApi: MyApi
-}
+class ApiProvider(
+    val json: Json,
+    val httpClientProvider: HttpClientProvider
+) {
 
-class ApiProviderImpl( // TODO this should be provided as singleton by Koin
-    val json: Json, // TODO provide using Koin
-    val httpClientProvider: HttpClientProvider // TODO provide using Koin
-) : ApiProvider {
-
-
-    override val myApi: MyApi by lazy {
-        createRetrofitConfig("https://some-api-url.com/v1") // TODO get from build config
+    val myApi: MyApi by lazy {
+        createRetrofitConfig(baseUrl = BuildConfig.API_BASE_URL)
             .create(MyApi::class.java)
     }
 
@@ -33,7 +28,7 @@ class ApiProviderImpl( // TODO this should be provided as singleton by Koin
 }
 
 
-// TODO remove following classes
+// TODO Replace following classes with yours and use in repositories.
 interface MyApi {
 
     @GET("user")

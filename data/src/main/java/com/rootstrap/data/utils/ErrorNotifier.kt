@@ -5,7 +5,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.flow.update
 
-class ErrorNotifier { // TODO set as singleton in Koin
+class ErrorNotifier {
     private val _errorFlow = MutableStateFlow<ErrorNotification?>(null)
     val errorFlow: StateFlow<ErrorNotification?> = _errorFlow.asStateFlow()
 
