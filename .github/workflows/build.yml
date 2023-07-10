@@ -1,0 +1,27 @@
+name: Code Quality Test
+
+# Run for any commits to any branch
+on: [push, pull_request, workflow_dispatch]
+
+env:
+  SONAR_PROJECT: ${{ secrets.SONAR_PROJECT }}
+  SONAR_URL: ${{ secrets.SONAR_URL }}
+  SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup sonar scanner
+        uses: warchant/setup-sonar-scanner@v3
+      - name: Run Sonarqube analysis
+        run: |
+          sonar-scanner \
+            -Dsonar.qualitygate.wait=true \
+            -Dsonar.host.url=$SONAR_URL \
+            -Dsonar.login=$SONAR_TOKEN \
+            -Dsonar.projectKey=$SONAR_PROJECT \
+            -Dsonar.sources=. \
+            -Dsonar.scm.disabled=true \
