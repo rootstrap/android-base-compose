@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <style name="Theme.App" parent="android:Theme.Material.Light.NoActionBar" />
+
+    <!-- Start Splash screen theme -->
+    <style name="Theme.SplashScreenApp" parent="android:Theme.Material.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/design_default_color_secondary</item>
+
+    </style>
+
+    <style name="SplashScreenTheme" parent="Theme.SplashScreenApp">
+        <item name="android:windowBackground">@drawable/bg_splash</item>
+    </style>
+    <!-- End Splash screen theme -->
+
 </resources>

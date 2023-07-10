@@ -2,6 +2,7 @@ object Dependencies {
     object Android {
         const val APP_COMPAT = "androidx.appcompat:appcompat:${Versions.APP_COMPAT}"
         const val CORE = "androidx.core:core-ktx:${Versions.CORE}"
+        const val SPLASH_SCREEN = "androidx.core:core-splashscreen:${Versions.SPLASH_SCREEN}"
         const val CONSTRAINT_LAYOUT =
             "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAINT_LAYOUT}"
         const val LEGACY_SUPPORT_V4 =
@@ -185,6 +186,7 @@ object Dependencies {
         const val UI_AUTOMATOR = "2.2.0"
         const val WORK_RUNTIME = "2.7.0"
         const val KLINT_GRADLE = "11.4.2"
+        const val SPLASH_SCREEN = "1.0.0"
     }
 
     object ConfigData {
