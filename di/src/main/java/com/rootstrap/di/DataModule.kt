@@ -5,6 +5,7 @@ import com.rootstrap.data.network.AuthInterceptor
 import com.rootstrap.data.network.HttpClientProvider
 import com.rootstrap.data.network.HttpClientProviderImpl
 import com.rootstrap.data.store.PreferencesDataStore
+import com.rootstrap.data.utils.Constants.MegaBytes50
 import com.rootstrap.data.utils.ErrorHandler
 import com.rootstrap.data.utils.ErrorNotifier
 import kotlinx.coroutines.Dispatchers
@@ -26,7 +27,7 @@ val dataModule = module {
     single { createApiProvider() }
     single { get<ApiProvider>().myApi }
 
-    factory { Cache(androidApplication().cacheDir, 50L * 1024 * 1024) }
+    factory { Cache(androidApplication().cacheDir, MegaBytes50) }
     factory {
         ErrorHandler(
             resources = get(),
