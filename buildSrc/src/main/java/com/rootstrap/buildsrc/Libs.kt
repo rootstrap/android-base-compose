@@ -186,7 +186,7 @@ object Dependencies {
         const val UI_AUTOMATOR = "2.2.0"
         const val WORK_RUNTIME = "2.7.0"
         const val KLINT_GRADLE = "11.4.2"
-        const val SPLASH_SCREEN = "1.0.0"
+        const val SPLASH_SCREEN = "1.0.0-beta02"
     }
 
     object ConfigData {
