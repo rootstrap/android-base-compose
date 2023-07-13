@@ -7,7 +7,7 @@ plugins {
 
 android {
     namespace = "com.rootstrap.usecases"
-    with (Dependencies.ConfigData) {
+    with(Dependencies.ConfigData) {
         compileSdk = COMPILE_SDK_VERSION
 
         defaultConfig {
@@ -20,7 +20,10 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
     compileOptions {
@@ -35,7 +38,6 @@ android {
 dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
-    
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
     implementation("com.google.android.material:material:1.8.0")
