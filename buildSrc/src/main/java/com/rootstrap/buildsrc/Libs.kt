@@ -60,6 +60,12 @@ object Dependencies {
         const val SECURITY_CRYPTO = "androidx.security:security-crypto:${Versions.SECURITY_CRYPTO}"
     }
 
+    object Tv{
+        const val TV_FOUNDATION = "androidx.tv:tv-foundation:${Versions.COMPOSE_TV}"
+        const val TV_MATERIAL = "androidx.tv:tv-material:${Versions.COMPOSE_TV}"
+        const val LEANBACK = "androidx.leanback:leanback:${Versions.LEANBACK}"
+    }
+
     object Google {
         const val MATERIAL = "com.google.android.material:material:${Versions.MATERIAL_DESIGN}"
         const val GSON = "com.google.code.gson:gson:${Versions.GSON}"
@@ -192,6 +198,8 @@ object Dependencies {
         const val UI_AUTOMATOR = "2.2.0"
         const val WORK_RUNTIME = "2.7.0"
         const val KLINT_GRADLE = "11.4.2"
+        const val COMPOSE_TV = "1.0.0-alpha07"
+        const val LEANBACK = "1.0.0"
     }
 
     object ConfigData {

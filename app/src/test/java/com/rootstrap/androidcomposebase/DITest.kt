@@ -72,5 +72,4 @@ class DITest : KoinTest {
         Dispatchers.resetMain()
         stopKoin()
     }
-
 }
