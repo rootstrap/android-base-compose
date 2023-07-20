@@ -9,5 +9,4 @@ fun DetailScreen(
     onBackPressed: () -> Unit,
     onPlayNowClick: (Any) -> Unit
 ) {
-
 }
