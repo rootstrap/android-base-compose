@@ -1,16 +1,28 @@
 package com.rootstrap.tv.pages.home
 
+import androidx.compose.foundation.layout.Row
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController
-import androidx.tv.material3.Text
+import androidx.navigation.compose.rememberNavController
+import com.rootstrap.tv.pages.home.navigationdrawer.HomeNavigationDrawer
+import com.rootstrap.tv.pages.home.navigationdrawer.navigation.NestedHomeNavigation
 
-// TODO: finish Home screen and implement navDrawer
 @Composable
 fun HomeScreen(appNavController: NavHostController) {
-    HelloWorld()
+    val nestedNavController = rememberNavController()
+    Row {
+        HomeNavigationDrawer(
+            content = {
+                NestedHomeNavigation(
+                    appNavHostController = appNavController,
+                    nestedNavController = nestedNavController
+                )
+            },
+            onMenuSelected = {
+                nestedNavController.popBackStack()
+                nestedNavController.navigate(it.id)
+            }
+        )
+    }
 }
 
-@Composable
-fun HelloWorld() {
-    Text("Hello world")
-}
