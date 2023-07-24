@@ -12,6 +12,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.unit.dp
 import androidx.tv.material3.DrawerValue
 import androidx.tv.material3.ExperimentalTvMaterial3Api
@@ -24,10 +25,12 @@ import com.rootstrap.tv.utils.Constants.NAV_DRAWER_ANIM_MILLIS
 
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
-fun HomeDrawerRow (
+fun HomeDrawerRow(
     drawerValue: DrawerValue,
     menu: MenuItem,
     modifier: Modifier,
+    position: Int,
+    onFocusChanged: (Int) -> Unit,
     onMenuSelected: ((menuItem: MenuItem) -> Unit)?
 ) {
     val padding = animateDpAsState(
@@ -40,7 +43,8 @@ fun HomeDrawerRow (
     Surface(
         onClick = { onMenuSelected?.invoke(menu) },
         modifier = modifier
-            .padding(vertical = Dimens.paddingQuarter )
+            .onFocusChanged { onFocusChanged(position) }
+            .padding(vertical = Dimens.paddingQuarter)
             .then(if (drawerValue == DrawerValue.Open) modifier.width(Dimens.navDrawerItemWidth) else modifier)
     ) {
         Row(

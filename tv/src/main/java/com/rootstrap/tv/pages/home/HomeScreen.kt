@@ -21,6 +21,10 @@ fun HomeScreen(appNavController: NavHostController) {
             onMenuSelected = {
                 nestedNavController.popBackStack()
                 nestedNavController.navigate(it.id)
+            },
+            onBackPressed = {
+                appNavController.popBackStack()
+                nestedNavController.popBackStack()
             }
         )
     }

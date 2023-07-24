@@ -12,5 +12,4 @@ class AppActivityViewModel(
     fun clearErrorNotification() {
         errorNotifier.notify(null)
     }
-
 }

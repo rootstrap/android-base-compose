@@ -68,9 +68,11 @@ fun AppTextField(
 
 @Composable
 fun TogglePasswordEye(showPassword: Boolean, newState: (Boolean) -> Unit) {
-    val image = if (showPassword)
+    val image = if (showPassword) {
         Icons.Filled.Visibility
-    else Icons.Filled.VisibilityOff
+    } else {
+        Icons.Filled.VisibilityOff
+    }
 
     IconButton(onClick = { newState(!showPassword) }) {
         Icon(imageVector = image, contentDescription = null)
