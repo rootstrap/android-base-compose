@@ -17,7 +17,10 @@ fun NestedHomeNavigation(
     appNavHostController: NavHostController,
     nestedNavController: NavHostController
 ) {
-    NavHost(navController = nestedNavController, startDestination = NestedScreens.Home.title) {
+    NavHost(
+        navController = nestedNavController,
+        startDestination = NestedScreens.Home.title
+    ) {
         composable(NestedScreens.Home.title) {
             NestedHomeScreen(appNavHostController)
         }
