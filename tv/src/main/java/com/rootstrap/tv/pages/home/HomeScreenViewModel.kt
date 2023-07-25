@@ -4,6 +4,7 @@ import androidx.compose.runtime.snapshots.SnapshotStateList
 import androidx.compose.runtime.toMutableStateList
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.rootstrap.domain.Movie
 import com.rootstrap.tv.data.MoviesRepository
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -31,5 +32,5 @@ class HomeScreenViewModel(private val videoRepository: MoviesRepository) : ViewM
 }
 
 data class MovieUiState(
-    val featuredMovies: SnapshotStateList<com.rootstrap.domain.Movie>
+    val featuredMovies: SnapshotStateList<Movie>
 )

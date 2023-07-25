@@ -126,7 +126,8 @@ fun CarouselItemText(
     onPlayNowClicked: (Movie) -> Unit
 ) {
     Box(
-        modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.BottomStart
+        modifier = Modifier.fillMaxSize(),
+        contentAlignment = Alignment.BottomStart
     ) {
         Column(
             modifier = Modifier
@@ -145,13 +146,18 @@ fun CarouselItemText(
                 maxLines = 1
             )
             Text(
-                text = movie.description, style = MaterialTheme.typography.titleMedium.copy(
+                text = movie.description,
+                style = MaterialTheme.typography.titleMedium.copy(
                     color = MaterialTheme.colorScheme.onSurface.copy(
                         alpha = 0.65f
-                    ), shadow = Shadow(
-                        color = Color.Black.copy(alpha = 0.5f), blurRadius = 2f
+                    ),
+                    shadow = Shadow(
+                        color = Color.Black.copy(alpha = 0.5f),
+                        blurRadius = 2f
                     )
-                ), maxLines = 1, modifier = Modifier.padding(top = Dimens.paddingHalf)
+                ),
+                maxLines = 1,
+                modifier = Modifier.padding(top = Dimens.paddingHalf)
             )
             AnimatedVisibility(visible = isCarouselFocused, content = {
                 WatchNowButton(item = movie) {
@@ -166,9 +172,12 @@ fun CarouselItemText(
 @Preview
 fun CarouselPreview() {
     TvComposablePreview {
-        CarouselExample(featuredContentList = listOf(
-            getMoviePreview()
-        ), onPlayNowClicked = { })
+        CarouselExample(
+            featuredContentList = listOf(
+                getMoviePreview()
+            ),
+            onPlayNowClicked = { }
+        )
     }
 }
 
