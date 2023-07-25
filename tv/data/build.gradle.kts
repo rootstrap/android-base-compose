@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "com.rootstrap.tv.domain"
+    namespace = "com.rootstrap.tv.data"
     compileSdk = COMPILE_SDK_VERSION
 
     defaultConfig {
@@ -35,4 +35,8 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+}
+
+dependencies {
+    implementation(project(":tv:domain"))
 }

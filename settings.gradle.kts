@@ -8,3 +8,4 @@ pluginManagement { // https://kotlinlang.org/docs/whatsnew1820.html#configure-gr
     }
 }
 include(":tv:domain")
+include(":tv:data")
