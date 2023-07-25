@@ -36,9 +36,9 @@ import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.ShapeDefaults
 import androidx.tv.material3.Text
 import coil.compose.AsyncImage
+import com.rootstrap.domain.Movie
 import com.rootstrap.tv.common.TvComposablePreview
 import com.rootstrap.tv.common.WatchNowButton
-import com.rootstrap.tv.data.Movie
 import com.rootstrap.tv.theme.Dimens
 import com.rootstrap.tv.utils.Constants.CAROUSEL_ANIM_DURATION
 

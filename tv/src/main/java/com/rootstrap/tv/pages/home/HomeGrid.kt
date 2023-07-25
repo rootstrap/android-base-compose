@@ -7,7 +7,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.tv.foundation.lazy.list.TvLazyColumn
-import com.rootstrap.tv.data.Movie
+import com.rootstrap.domain.Movie
 import com.rootstrap.tv.theme.Dimens
 
 @Composable

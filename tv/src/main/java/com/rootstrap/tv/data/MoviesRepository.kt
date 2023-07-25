@@ -1,5 +1,7 @@
 package com.rootstrap.tv.data
 
+import com.rootstrap.domain.Movie
+
 class MoviesRepository {
     suspend fun getFeaturedMovies(): List<Movie> {
         return listOf(

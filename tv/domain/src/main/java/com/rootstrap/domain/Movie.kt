@@ -1,4 +1,4 @@
-package com.rootstrap.tv.data
+package com.rootstrap.domain
 
 data class Movie(
     val id: String,

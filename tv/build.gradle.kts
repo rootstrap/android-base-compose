@@ -47,6 +47,7 @@ android {
 dependencies {
     implementation(project(":data"))
     implementation(project(":domain"))
+    implementation(project(":tv:domain"))
     implementation(project(":usecases"))
     implementation(project(":di"))
 

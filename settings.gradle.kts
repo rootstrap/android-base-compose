@@ -7,3 +7,4 @@ pluginManagement { // https://kotlinlang.org/docs/whatsnew1820.html#configure-gr
         gradlePluginPortal()
     }
 }
+include(":tv:domain")
