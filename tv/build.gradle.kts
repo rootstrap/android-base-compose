@@ -61,6 +61,8 @@ dependencies {
         implementation(UI_TOOLING)
         implementation(UI_TOOLING_PREVIEW)
         implementation(NAVIGATION_COMPOSE)
+        implementation(COIL)
+        implementation(LIFECYCLE_RUNTIME)
     }
 
     implementation(Dependencies.Android.CORE)
