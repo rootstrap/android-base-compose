@@ -45,8 +45,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":data"))
-    implementation(project(":domain"))
+    implementation(project(":tv:domain"))
+    implementation(project(":tv:data"))
     implementation(project(":usecases"))
     implementation(project(":di"))
 
@@ -61,6 +61,8 @@ dependencies {
         implementation(UI_TOOLING)
         implementation(UI_TOOLING_PREVIEW)
         implementation(NAVIGATION_COMPOSE)
+        implementation(COIL)
+        implementation(LIFECYCLE_RUNTIME)
     }
 
     implementation(Dependencies.Android.CORE)

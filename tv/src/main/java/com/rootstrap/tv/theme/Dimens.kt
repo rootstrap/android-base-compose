@@ -24,4 +24,7 @@ object Dimens {
     // Nav drawer
     val navDrawerItemWidth = 170.dp
     val navDrawerItemHeight = 20.dp
+
+    // Carousel
+    val carouselBorderWidth = 3.dp
 }
