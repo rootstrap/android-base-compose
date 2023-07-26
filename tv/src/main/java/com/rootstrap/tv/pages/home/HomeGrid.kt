@@ -3,6 +3,7 @@ package com.rootstrap.tv.pages.home
 import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.snapshots.SnapshotStateList
+import androidx.compose.runtime.toMutableStateList
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
@@ -26,14 +27,27 @@ fun HomeGrid(
                 onPlayNowClicked = onItemClick,
             )
         }
+        items(uiState.homeRows.size) {
+            val row = uiState.homeRows[it]
+            HorizontalRowWithTitle(
+                rowName = row.name,
+                rowItems = row.rowItems,
+                onItemClick = onItemClick
+            )
+        }
     }
 }
 
 @Composable
 @Preview(showBackground = true, device = Devices.TV_1080p)
 fun HomeGridPreview() {
+    val nowPlayingMovies = HomeRow(
+        name = HomeScreenViewModel.NOW_PLAYING,
+        rowItems = getMoviesPreview()
+    )
     val uiState = MovieUiState(
-        featuredMovies = getMoviesPreview()
+        featuredMovies = getMoviesPreview(),
+        homeRows = listOf(nowPlayingMovies).toMutableStateList()
     )
     HomeGrid(uiState = uiState, modifier = Modifier, onItemClick = {})
 }

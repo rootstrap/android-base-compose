@@ -27,4 +27,8 @@ object Dimens {
 
     // Carousel
     val carouselBorderWidth = 3.dp
+
+    // Home Grid
+    val homeRowHeight = 160.dp
+    val homeItemBorder = 2.dp
 }

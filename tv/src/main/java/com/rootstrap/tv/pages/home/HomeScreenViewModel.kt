@@ -12,8 +12,15 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class HomeScreenViewModel(private val videoRepository: MoviesRepository) : ViewModel() {
+
+    companion object {
+        const val TOP_TEN = "Top 10 Movies"
+        const val NOW_PLAYING = "Now playing"
+        const val SCIENCE_FICTION = "Science fiction"
+    }
+
     private val uiState: MovieUiState =
-        MovieUiState(SnapshotStateList())
+        MovieUiState(SnapshotStateList(), SnapshotStateList())
     private var _uiStateFlow: MutableStateFlow<MovieUiState> =
         MutableStateFlow(
             uiState
@@ -22,9 +29,26 @@ class HomeScreenViewModel(private val videoRepository: MoviesRepository) : ViewM
 
     fun onHomeScreenLoaded() {
         viewModelScope.launch {
+            val topTenRow = HomeRow(
+                name = TOP_TEN,
+                rowItems = videoRepository.getTop10Movies().toMutableStateList()
+            )
+            val nowPlayingMovies = HomeRow(
+                name = NOW_PLAYING,
+                rowItems = videoRepository.getNowPlayingMovies().toMutableStateList()
+            )
+            val scienceFictionMovies = HomeRow(
+                name = SCIENCE_FICTION,
+                rowItems = videoRepository.getScienceFictionMovies().toMutableStateList()
+            )
             _uiStateFlow.update {
                 uiState.copy(
-                    featuredMovies = videoRepository.getFeaturedMovies().toMutableStateList(),
+                    homeRows = listOf(
+                        topTenRow,
+                        nowPlayingMovies,
+                        scienceFictionMovies
+                    ).toMutableStateList(),
+                    featuredMovies = videoRepository.getFeaturedMovies().toMutableStateList()
                 )
             }
         }
@@ -32,5 +56,6 @@ class HomeScreenViewModel(private val videoRepository: MoviesRepository) : ViewM
 }
 
 data class MovieUiState(
+    val homeRows: SnapshotStateList<HomeRow>,
     val featuredMovies: SnapshotStateList<Movie>
 )
