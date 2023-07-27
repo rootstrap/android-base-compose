@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rootstrap.presenter.pages.main.MainPage
 import com.rootstrap.presenter.theme.AppTheme
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AppActivity : ComponentActivity() {
@@ -23,7 +24,9 @@ class AppActivity : ComponentActivity() {
     private val viewModel: AppActivityViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        val splashScreen = installSplashScreen()
         super.onCreate(savedInstanceState)
+        splashScreen.setKeepOnScreenCondition { viewModel.loading.value }
         setContent {
             val errorNotification by viewModel.errorNotification.collectAsStateWithLifecycle()
 

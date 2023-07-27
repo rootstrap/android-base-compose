@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.rootstrap.app"
+    namespace = "com.rootstrap"
 
     with(Dependencies.ConfigData) {
         compileSdk = COMPILE_SDK_VERSION
@@ -59,6 +59,7 @@ dependencies {
         implementation(APP_COMPAT)
         implementation(LIFECYCLE_RUNTIME)
         implementation(NAVIGATION_UI_RUNTIME)
+        implementation(SPLASH_SCREEN)
     }
     with(Dependencies.Compose) {
         implementation(ACTIVITY)
