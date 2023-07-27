@@ -9,6 +9,8 @@ import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.tv.foundation.lazy.list.TvLazyColumn
 import com.rootstrap.domain.Movie
+import com.rootstrap.tv.data.MoviesRepository.Companion.NOW_PLAYING
+import com.rootstrap.tv.models.HomeRowModel
 import com.rootstrap.tv.theme.Dimens
 
 @Composable
@@ -41,8 +43,8 @@ fun HomeGrid(
 @Composable
 @Preview(showBackground = true, device = Devices.TV_1080p)
 fun HomeGridPreview() {
-    val nowPlayingMovies = HomeRow(
-        name = HomeScreenViewModel.NOW_PLAYING,
+    val nowPlayingMovies = HomeRowModel(
+        name = NOW_PLAYING,
         rowItems = getMoviesPreview()
     )
     val uiState = MovieUiState(

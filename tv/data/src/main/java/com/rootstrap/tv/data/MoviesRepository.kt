@@ -1,8 +1,16 @@
 package com.rootstrap.tv.data
 
+import com.rootstrap.domain.HomeRow
 import com.rootstrap.domain.Movie
 
 class MoviesRepository {
+
+    companion object {
+        const val TOP_TEN = "Top 10 Movies"
+        const val NOW_PLAYING = "Now playing"
+        const val SCIENCE_FICTION = "Science fiction"
+    }
+
     suspend fun getFeaturedMovies(): List<Movie> {
         return listOf(
             Movie(
@@ -79,5 +87,25 @@ class MoviesRepository {
             )
         }
         return list
+    }
+
+    suspend fun getHomeRows(): List<HomeRow> {
+        val topTenRow = HomeRow(
+            name = TOP_TEN,
+            rowItems = getTop10Movies()
+        )
+        val nowPlayingMovies = HomeRow(
+            name = NOW_PLAYING,
+            rowItems = getNowPlayingMovies()
+        )
+        val scienceFictionMovies = HomeRow(
+            name = SCIENCE_FICTION,
+            rowItems = getScienceFictionMovies()
+        )
+        return listOf(
+            topTenRow,
+            nowPlayingMovies,
+            scienceFictionMovies
+        )
     }
 }
