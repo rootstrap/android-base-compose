@@ -10,6 +10,7 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavHostController
 import com.rootstrap.tv.data.MoviesRepository
 import com.rootstrap.tv.navigation.MainScreens
+import com.rootstrap.tv.utils.Constants
 
 @Composable
 fun NestedHomeScreen(appNavHostController: NavHostController) {
@@ -21,6 +22,6 @@ fun NestedHomeScreen(appNavHostController: NavHostController) {
     HomeGrid(
         modifier = Modifier.fillMaxSize(),
         uiState = uiState,
-        onItemClick = { appNavHostController.navigate(MainScreens.Player.title) },
+        onItemClick = { appNavHostController.navigate(MainScreens.Player.playerScreenRoute(it?.id?:"")) },
     )
 }

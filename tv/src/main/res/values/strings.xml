@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Tv</string>
     <string name="watch_now">Watch now</string>
+    <string name="playlist">Playlist</string>
+    <string name="subtitles">Subtitles</string>
+    <string name="settings">Settings</string>
+    <string name="play_pause_content_description">Play/Pause</string>
 </resources>

@@ -65,5 +65,10 @@ dependencies {
         implementation(LIFECYCLE_RUNTIME)
     }
 
+    // Media3
+    implementation("androidx.media3:media3-exoplayer:1.1.0")
+    implementation("androidx.media3:media3-ui:1.1.0")
+    implementation("androidx.media3:media3-session:1.1.0")
+
     implementation(Dependencies.Android.CORE)
 }
