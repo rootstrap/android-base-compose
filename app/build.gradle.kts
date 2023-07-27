@@ -37,12 +37,14 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
     buildFeatures {
         compose = true
+        buildConfig = true
     }
 
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.4.0"
+        kotlinCompilerExtensionVersion = Dependencies.Versions.COMPOSE_COMPILER
     }
 }
 
@@ -65,10 +67,19 @@ dependencies {
         implementation(UI_TOOLING_PREVIEW)
         implementation(MATERIAL3)
         implementation(NAVIGATION_COMPOSE)
+        implementation(LIFECYCLE_RUNTIME)
         debugImplementation(UI_TOOLING)
     }
     implementation(Dependencies.Koin.CORE)
-    testImplementation(Dependencies.Test.JUNIT)
+    implementation(Dependencies.Koin.ANDROID)
+
+    with(Dependencies.Test) {
+        testImplementation(MOCKK)
+        testImplementation(JUNIT)
+        testImplementation(KOIN_TEST)
+        testImplementation(KOIN_TEST_JUNIT)
+        testImplementation(COROUTINES_TEST)
+    }
     with(Dependencies.AndroidTest) {
         androidTestImplementation(EXT_JUNIT)
         androidTestImplementation(ESPRESSO_CORE)

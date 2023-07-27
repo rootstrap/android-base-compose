@@ -1,17 +1,22 @@
-package com.rootstrap.presenter.viewmodels
+package com.rootstrap.presenter
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.rootstrap.data.utils.ErrorNotifier
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
-class AppViewModel : ViewModel() {
+class AppActivityViewModel(
+    private val errorNotifier: ErrorNotifier
+) : ViewModel() {
 
     private val _loading = MutableStateFlow(true)
     val loading: StateFlow<Boolean> = _loading.asStateFlow()
+
+    val errorNotification = errorNotifier.errorFlow
 
     init {
         viewModelScope.launch {
@@ -20,4 +25,9 @@ class AppViewModel : ViewModel() {
             _loading.emit(false)
         }
     }
+
+    fun clearErrorNotification() {
+        errorNotifier.notify(null)
+    }
+
 }

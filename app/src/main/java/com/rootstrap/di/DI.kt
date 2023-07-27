@@ -1,5 +1,7 @@
 package com.rootstrap.di
 
+import com.rootstrap.presenter.AppActivityViewModel
+import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
 
 /**
@@ -7,4 +9,5 @@ import org.koin.dsl.module
  *  For example: viewModel{}, single{}, factory{}
  * */
 val appModule = module {
+    viewModel { AppActivityViewModel(get()) }
 }
