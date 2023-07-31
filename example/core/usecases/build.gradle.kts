@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.rootstrap.usecases"
+    namespace = "com.rootstrap.example.usecases"
     with(Dependencies.ConfigData) {
         compileSdk = COMPILE_SDK_VERSION
 

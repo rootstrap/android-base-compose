@@ -6,7 +6,7 @@ plugins {
 }
 
 android {
-    namespace = "com.rootstrap.domain"
+    namespace = "com.rootstrap.example.domain"
 
     with(Dependencies.ConfigData) {
         compileSdk = COMPILE_SDK_VERSION

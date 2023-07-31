@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.rootstrap"
+    namespace = "com.rootstrap.example.app"
 
     with(Dependencies.ConfigData) {
         compileSdk = COMPILE_SDK_VERSION
@@ -47,6 +47,7 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:di"))
     implementation(project(":example:core:data"))
     implementation(project(":example:core:domain"))
     implementation(project(":example:core:usecases"))

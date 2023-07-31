@@ -8,7 +8,7 @@ plugins {
 }
 
 android {
-    namespace = "com.rootstrap.data"
+    namespace = "com.rootstrap.example.data"
     compileSdk = COMPILE_SDK_VERSION
 
     defaultConfig {
@@ -38,5 +38,6 @@ android {
 dependencies {
 
     implementation(project(":example:core:domain"))
+    api(project(":core:data"))
 
 }

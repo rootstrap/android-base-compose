@@ -43,6 +43,7 @@ dependencies {
     implementation(project(":core:usecases"))
     with(Dependencies.Kotlin) {
         implementation(SERIALIZATION)
+        implementation(COROUTINES_CORE)
     }
     with(Dependencies.Network) {
         implementation(OKHTTP)
