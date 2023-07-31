@@ -32,6 +32,8 @@ import com.rootstrap.tv.utils.extensions.handleDPadKeyEvents
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+const val HIDE_CONTROLS_TIME = 4
+
 @Composable
 @androidx.annotation.OptIn(androidx.media3.common.util.UnstableApi::class)
 fun VideoPlayerScreen(
@@ -87,7 +89,7 @@ fun Player(
     modifier: Modifier
 ) {
     val coroutineScope = rememberCoroutineScope()
-    val videoPlayerState = rememberVideoPlayerState(hideSeconds = 4)
+    val videoPlayerState = rememberVideoPlayerState(hideSeconds = HIDE_CONTROLS_TIME)
     var contentCurrentPosition: Long by remember { mutableLongStateOf(0L) }
 
     LaunchedEffect(Unit) {

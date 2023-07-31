@@ -25,6 +25,7 @@ import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.unit.dp
 import androidx.tv.material3.ExperimentalTvMaterial3Api
 import androidx.tv.material3.MaterialTheme
+import com.rootstrap.tv.theme.Dimens
 import com.rootstrap.tv.utils.extensions.handleDPadKeyEvents
 
 @OptIn(ExperimentalComposeUiApi::class, ExperimentalTvMaterial3Api::class)
@@ -51,15 +52,15 @@ fun RowScope.VideoPlayerControllerIndicator(
         if (isSelected) {
             state.showControls(seconds = Int.MAX_VALUE)
         } else {
-           state.showControls()
+            state.showControls()
         }
     }
 
-   Canvas(
+    Canvas(
         modifier = Modifier
             .weight(1f)
             .height(animatedIndicatorHeight)
-            .padding(horizontal = 4.dp)
+            .padding(horizontal = Dimens.paddingQuarter)
             .handleDPadKeyEvents(
                 onEnter = {
                     if (isSelected) {

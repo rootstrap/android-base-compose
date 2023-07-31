@@ -17,9 +17,10 @@ class VideoPlayerViewModel : ViewModel() {
         )
     val uiStateFlow: StateFlow<PlayerUiState> = _uiStateFlow
 
+    // TODO: Fetch video url from API and pass it to the player
     fun onPlayerLoaded(player: Player, movieId: String) {
         _uiStateFlow.update {
-            uiState.copy(player = player,movieUrl = Constants.SampleVideoUrl)
+            uiState.copy(player = player, movieUrl = Constants.SampleVideoUrl)
         }
     }
 }
