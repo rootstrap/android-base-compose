@@ -79,7 +79,7 @@ fun RowScope.VideoPlayerControllerIndicator(
                     isSelected = !isSelected
                 },
                 onLeft = {
-                    if (isSelected) {
+                    if (isSelected && seekProgress > 0.1f) {
                         seekProgress -= 0.1f
                     } else {
                         focusManager.moveFocus(FocusDirection.Left)
