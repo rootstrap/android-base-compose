@@ -47,8 +47,8 @@ android {
 dependencies {
     implementation(project(":tv:domain"))
     implementation(project(":tv:data"))
-    implementation(project(":usecases"))
-    implementation(project(":di"))
+    implementation(project(":core:usecases"))
+    implementation(project(":core:di"))
 
     with(Dependencies.Tv) {
         implementation(LEANBACK)

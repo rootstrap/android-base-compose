@@ -47,10 +47,9 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:data"))
-    implementation(project(":core:domain"))
-    implementation(project(":core:usecases"))
-    implementation(project(":core:di"))
+    implementation(project(":example:core:data"))
+    implementation(project(":example:core:domain"))
+    implementation(project(":example:core:usecases"))
 
     with(Dependencies.Android) {
         implementation(CORE)

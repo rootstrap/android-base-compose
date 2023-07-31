@@ -11,7 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AndroidComposeBase">
         <activity
-            android:name="com.rootstrap.yourAppName.ui.AppActivity"
+            android:name="com.rootstrap.androidcomposebase.ui.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.App.Starting">
             <intent-filter>
