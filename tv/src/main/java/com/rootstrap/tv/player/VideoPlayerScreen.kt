@@ -41,6 +41,7 @@ fun VideoPlayerScreen(
     onBackPressed: () -> Unit
 ) {
     val context = LocalContext.current
+    // Use DI to inject VM
     val viewModel = remember {
         VideoPlayerViewModel()
     }

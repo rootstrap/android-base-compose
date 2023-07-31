@@ -1,5 +1,7 @@
 package com.rootstrap.tv.utils
 
+import com.rootstrap.tv.utils.extensions.padStartWith0
+
 object VideoControls {
     fun getContentDurationString(contentDurationInMillis: Long): String {
         val contentDurationMinutes =
@@ -38,6 +40,4 @@ object VideoControls {
             }
         return "$contentProgressMinutesStr:$contentProgressSecondsStr"
     }
-
-    private fun Long.padStartWith0() = this.toString().padStart(2, '0')
 }

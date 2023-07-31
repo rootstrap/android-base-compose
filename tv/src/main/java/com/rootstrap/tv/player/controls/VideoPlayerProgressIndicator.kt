@@ -22,11 +22,14 @@ import androidx.compose.ui.focus.FocusDirection
 import androidx.compose.ui.geometry.Offset
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.platform.LocalFocusManager
-import androidx.compose.ui.unit.dp
 import androidx.tv.material3.ExperimentalTvMaterial3Api
 import androidx.tv.material3.MaterialTheme
 import com.rootstrap.tv.theme.Dimens
+import com.rootstrap.tv.theme.Dimens.progressIndicatorSize
 import com.rootstrap.tv.utils.extensions.handleDPadKeyEvents
+
+private const val INDICATOR_FOCUSED_MULTIPLIER = 2.5f
+private const val INDICATOR_NOT_FOCUSED_MULTIPLIER = 1f
 
 @OptIn(ExperimentalComposeUiApi::class, ExperimentalTvMaterial3Api::class)
 @Composable
@@ -43,7 +46,11 @@ fun RowScope.VideoPlayerControllerIndicator(
         else MaterialTheme.colorScheme.onSurface
     )
     val animatedIndicatorHeight by animateDpAsState(
-        targetValue = 4.dp.times((if (isFocused) 2.5f else 1f))
+        targetValue = progressIndicatorSize.times(
+            (if (isFocused)
+                INDICATOR_FOCUSED_MULTIPLIER
+            else INDICATOR_NOT_FOCUSED_MULTIPLIER)
+        )
     )
     var seekProgress by remember { mutableFloatStateOf(0f) }
     val focusManager = LocalFocusManager.current

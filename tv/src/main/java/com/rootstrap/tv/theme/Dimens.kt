@@ -34,4 +34,5 @@ object Dimens {
 
     // Player
     val iconSize = 40.dp
+    val progressIndicatorSize = 4.dp
 }
