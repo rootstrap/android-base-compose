@@ -6,6 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.rootstrap.domain.Movie
 import com.rootstrap.tv.data.MoviesRepository
+import com.rootstrap.tv.models.HomeRowModel
+import com.rootstrap.tv.utils.HomeRowMapper
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.update
@@ -13,7 +15,7 @@ import kotlinx.coroutines.launch
 
 class HomeScreenViewModel(private val videoRepository: MoviesRepository) : ViewModel() {
     private val uiState: MovieUiState =
-        MovieUiState(SnapshotStateList())
+        MovieUiState(SnapshotStateList(), SnapshotStateList())
     private var _uiStateFlow: MutableStateFlow<MovieUiState> =
         MutableStateFlow(
             uiState
@@ -22,9 +24,11 @@ class HomeScreenViewModel(private val videoRepository: MoviesRepository) : ViewM
 
     fun onHomeScreenLoaded() {
         viewModelScope.launch {
+            val rows = HomeRowMapper.getHomeRows(videoRepository.getHomeRows())
             _uiStateFlow.update {
                 uiState.copy(
-                    featuredMovies = videoRepository.getFeaturedMovies().toMutableStateList(),
+                    homeRows = rows,
+                    featuredMovies = videoRepository.getFeaturedMovies().toMutableStateList()
                 )
             }
         }
@@ -32,5 +36,6 @@ class HomeScreenViewModel(private val videoRepository: MoviesRepository) : ViewM
 }
 
 data class MovieUiState(
+    val homeRows: SnapshotStateList<HomeRowModel>,
     val featuredMovies: SnapshotStateList<Movie>
 )
