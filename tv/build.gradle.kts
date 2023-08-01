@@ -65,5 +65,12 @@ dependencies {
         implementation(LIFECYCLE_RUNTIME)
     }
 
+    // Media3
+    with(Dependencies.MEDIA) {
+        implementation(MEDIA_3)
+        implementation(MEDIA_3_SESSION)
+        implementation(MEDIA_3_UI)
+    }
+
     implementation(Dependencies.Android.CORE)
 }

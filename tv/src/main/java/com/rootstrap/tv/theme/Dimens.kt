@@ -31,4 +31,8 @@ object Dimens {
     // Home Grid
     val homeRowHeight = 160.dp
     val homeItemBorder = 2.dp
+
+    // Player
+    val iconSize = 40.dp
+    val progressIndicatorSize = 4.dp
 }

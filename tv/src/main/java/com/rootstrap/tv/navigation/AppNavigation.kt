@@ -8,7 +8,8 @@ import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
 import com.rootstrap.tv.pages.detail.DetailScreen
 import com.rootstrap.tv.pages.home.HomeScreen
-import com.rootstrap.tv.pages.player.VideoPlayerScreen
+import com.rootstrap.tv.player.VideoPlayerScreen
+import com.rootstrap.tv.player.VideoPlayerViewModel
 
 @Composable
 fun AppNavigation(navController: NavHostController) {
@@ -22,10 +23,10 @@ fun AppNavigation(navController: NavHostController) {
 
         composable(
             route = MainScreens.Player.title,
-            arguments = listOf(navArgument(ARG_MOVIE_URL) { type = NavType.StringType })
+            arguments = listOf(navArgument(ARG_MOVIE_ID) { type = NavType.StringType })
         ) { entry ->
             VideoPlayerScreen(
-                mediaUrl = entry.arguments?.getString(ARG_MOVIE_URL) ?: "",
+                movieId = entry.arguments?.getString(ARG_MOVIE_ID) ?: "",
                 onBackPressed = { navController.navigateUp() }
             )
         }
@@ -34,10 +35,17 @@ fun AppNavigation(navController: NavHostController) {
             route = MainScreens.DetailScreen.title,
             arguments = listOf(navArgument(ARG_MOVIE_ID) { type = NavType.StringType })
         ) { entry ->
+            val movieId = entry.arguments?.getString(ARG_MOVIE_ID) ?: ""
             DetailScreen(
-                movieId = entry.arguments?.getString(ARG_MOVIE_ID) ?: "",
+                movieId = movieId,
                 onBackPressed = { navController.navigateUp() },
-                onPlayNowClick = { navController.navigate(MainScreens.Player.title) }
+                onPlayNowClick = {
+                    navController.navigate(
+                        MainScreens.Player.playerScreenRoute(
+                            movieId
+                        )
+                    )
+                }
             )
         }
     }
