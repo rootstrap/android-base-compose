@@ -17,7 +17,6 @@ android {
         targetSdk = TARGET_SDK_VERSION
         versionCode = 1
         versionName = "1.0"
-
     }
 
     buildTypes {

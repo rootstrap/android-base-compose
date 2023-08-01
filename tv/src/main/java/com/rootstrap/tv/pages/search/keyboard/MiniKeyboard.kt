@@ -127,9 +127,6 @@ fun MiniKeyboard(
     }
 }
 
-
-
-
 @Preview
 @Composable
 fun MiniKeyboardPrev() {
