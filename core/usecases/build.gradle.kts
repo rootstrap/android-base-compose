@@ -1,3 +1,5 @@
+import Dependencies.Test.JUNIT
+
 plugins {
     with(Dependencies.Plugins) {
         id(ANDROID_LIB)
@@ -38,4 +40,6 @@ android {
 dependencies {
     implementation(project(":core:data"))
     implementation(project(":core:domain"))
+
+    testImplementation(JUNIT)
 }

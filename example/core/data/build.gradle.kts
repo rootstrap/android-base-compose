@@ -1,6 +1,7 @@
 import Dependencies.ConfigData.COMPILE_SDK_VERSION
 import Dependencies.ConfigData.MIN_SDK_VERSION
 import Dependencies.ConfigData.TARGET_SDK_VERSION
+import Dependencies.Test.JUNIT
 
 plugins {
     id("com.android.library")
@@ -40,4 +41,5 @@ dependencies {
     implementation(project(":example:core:domain"))
     api(project(":core:data"))
 
+    testImplementation(JUNIT)
 }
