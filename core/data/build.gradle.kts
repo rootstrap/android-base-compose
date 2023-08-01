@@ -63,7 +63,7 @@ dependencies {
     implementation(OKHTTP_BOM)
     implementation(OKHTTP_LOGGING_INTERCEPTOR)
 
-    api(OKHTTP)
+    implementation(OKHTTP)
 
     testImplementation(OKHTTP_MOCK_WEBSERVER)
     testImplementation(JUNIT)
