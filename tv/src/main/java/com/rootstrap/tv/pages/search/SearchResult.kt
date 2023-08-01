@@ -33,7 +33,7 @@ fun SearchResultGrid(modifier: Modifier = Modifier) {
             SearchResultHeader()
         }
         items(30) {
-            VerticalListItem(parent = 0, child = 0) { a, b -> }
+            VerticalListItem(itemText = "Item $it") { }
         }
     }
 }

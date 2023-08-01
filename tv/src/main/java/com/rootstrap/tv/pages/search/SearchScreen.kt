@@ -37,7 +37,7 @@ fun SearchScreen() {
                 vertical = Dimens.paddingSixQuarters
             )
         ) {
-            SearchKeyBoardHeader(uiState)
+            SearchKeyBoardHeader(uiState.query)
             MiniKeyboard(
                 modifier = Modifier.width(Dimens.miniKeyboardWidth),
                 isNumeric = uiState.keyBoardIsNumeric,
@@ -50,10 +50,10 @@ fun SearchScreen() {
 
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
-fun SearchKeyBoardHeader(uiState: SearchUiState) {
+fun SearchKeyBoardHeader(query: String) {
     Column {
         Text(
-            text = uiState.query.ifEmpty { stringResource(id = R.string.search_title) },
+            text = query.ifEmpty { stringResource(id = R.string.search_title) },
             style = MaterialTheme.typography.titleLarge,
             color = Color.White,
             modifier = Modifier.padding(all = Dimens.paddingThreeQuarters)

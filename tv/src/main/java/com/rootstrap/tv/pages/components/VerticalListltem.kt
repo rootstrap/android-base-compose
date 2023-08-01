@@ -13,17 +13,17 @@ import com.rootstrap.tv.common.BorderedFocusableItem
 import com.rootstrap.tv.theme.Dimens
 
 @Composable
-fun VerticalListItem(parent: Int, child: Int, onItemFocus: (parent: Int, child: Int) -> Unit) {
+fun VerticalListItem(itemText:String, onItemFocus: () -> Unit) {
     BorderedFocusableItem(
         onClick = {
-            onItemFocus(parent, child)
+            onItemFocus()
         },
         modifier = Modifier
             .padding(Dimens.paddingHalf)
             .aspectRatio(0.6f)
     ) {
         Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
-            Text(text = "Item $parent x $child", textAlign = TextAlign.Center)
+            Text(text = itemText, textAlign = TextAlign.Center)
         }
     }
 }

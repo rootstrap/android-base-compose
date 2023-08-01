@@ -9,6 +9,6 @@
     <string name="search_results">Search Results</string>
     <string name="keyboard_number"><![CDATA[&123]]></string>
     <string name="backspace">Backspace</string>
-    <string name="clear">clear</string>
+    <string name="clear">Clear</string>
     <string name="space">Space</string>
 </resources>
