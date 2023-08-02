@@ -32,11 +32,13 @@ import androidx.tv.foundation.lazy.list.TvLazyColumn
 import androidx.tv.material3.ExperimentalTvMaterial3Api
 import androidx.tv.material3.Icon
 import androidx.tv.material3.Text
-import com.rootstrap.tv.utils.KeysGenerator
 import com.rootstrap.tv.R
 import com.rootstrap.tv.common.TvComposablePreview
 import com.rootstrap.tv.pages.search.KeyboardLetterType
 import com.rootstrap.tv.theme.Dimens
+import com.rootstrap.tv.utils.KeysGenerator
+
+private const val KEYS_IN_ROW = 7
 
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
@@ -50,7 +52,7 @@ fun MiniKeyboard(
 
     val extraKeyHeight by remember {
         derivedStateOf {
-            sizeInDp.width / 7
+            sizeInDp.width / KEYS_IN_ROW
         }
     }
 
@@ -64,13 +66,13 @@ fun MiniKeyboard(
                             it.height.toDp()
                         )
                     }
-                }, columns = TvGridCells.Fixed(7)
+                },
+            columns = TvGridCells.Fixed(KEYS_IN_ROW)
         ) {
-            val keys:List<Any> = if(isNumeric){
+            val keys: List<Any> = if (isNumeric) {
                 KeysGenerator.numbers
-            }
-            else {
-                val list:MutableList<Any> = mutableListOf()
+            } else {
+                val list: MutableList<Any> = mutableListOf()
                 list.addAll(KeysGenerator.alphabet)
                 list.addAll(KeysGenerator.specialCharV1)
                 list

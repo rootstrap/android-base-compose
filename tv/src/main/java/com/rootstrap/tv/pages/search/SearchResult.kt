@@ -15,11 +15,13 @@ import com.rootstrap.tv.R
 import com.rootstrap.tv.pages.components.VerticalListItem
 import com.rootstrap.tv.theme.Dimens
 
+private const val ITEMS_IN_ROW = 3
+
 @Composable
 fun SearchResultGrid(modifier: Modifier = Modifier) {
     TvLazyVerticalGrid(
         modifier = modifier,
-        columns = TvGridCells.Fixed(3),
+        columns = TvGridCells.Fixed(ITEMS_IN_ROW),
         contentPadding = PaddingValues(
             start = Dimens.paddingThreeQuarters,
             top = Dimens.paddingSixQuarters,
@@ -28,7 +30,7 @@ fun SearchResultGrid(modifier: Modifier = Modifier) {
         )
     ) {
         item(span = {
-            TvGridItemSpan(3)
+            TvGridItemSpan(ITEMS_IN_ROW)
         }) {
             SearchResultHeader()
         }
