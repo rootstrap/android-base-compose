@@ -1,5 +1,6 @@
 rootProject.name = "Android Compose Base"
-include("app", "domain", "data", "usecases", "di")
+include("app")
+include(":core:data", ":core:domain", ":core:usecases", ":core:di")
 
 pluginManagement { // https://kotlinlang.org/docs/whatsnew1820.html#configure-gradle-settings
     repositories {
@@ -7,3 +8,7 @@ pluginManagement { // https://kotlinlang.org/docs/whatsnew1820.html#configure-gr
         gradlePluginPortal()
     }
 }
+
+// Example modules:
+include(":example:app", ":example:core:data", ":example:core:domain", ":example:core:usecases")
+include(":tv", ":tv:domain", ":tv:data")

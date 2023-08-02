@@ -1,8 +1,6 @@
 plugins {
     id("com.android.application")
-    with(Dependencies.Plugins) {
-        kotlin(ANDROID)
-    }
+    kotlin(Dependencies.Plugins.ANDROID)
 }
 
 android {
@@ -49,15 +47,16 @@ android {
 }
 
 dependencies {
-    implementation(project(":data"))
-    implementation(project(":domain"))
-    implementation(project(":usecases"))
-    implementation(project(":di"))
+    implementation(project(":core:data"))
+    implementation(project(":core:domain"))
+    implementation(project(":core:usecases"))
+    implementation(project(":core:di"))
 
     with(Dependencies.Android) {
         implementation(CORE)
         implementation(APP_COMPAT)
-        implementation(LIFECYCLE_RUNTIME)
+        implementation(LIFECYCLE_KTX)
+        implementation(LIFECYCLE_COMPOSE)
         implementation(NAVIGATION_UI_RUNTIME)
         implementation(SPLASH_SCREEN)
     }
@@ -66,6 +65,7 @@ dependencies {
         implementation(UI)
         implementation(UI_TOOLING_PREVIEW)
         implementation(MATERIAL3)
+        implementation(ICONS_EXTENDED)
         implementation(NAVIGATION_COMPOSE)
         implementation(LIFECYCLE_RUNTIME)
         debugImplementation(UI_TOOLING)

@@ -14,8 +14,9 @@ object Dependencies {
         // Lifecycle
         const val LIFECYCLE_COMMON =
             "android.arch.lifecycle:common-java8:${Versions.LIFECYCLE_COMMON}"
-        const val LIFECYCLE_RUNTIME =
-            "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYCLE}"
+        const val LIFECYCLE_KTX = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYCLE}"
+        const val LIFECYCLE_COMPOSE =
+            "androidx.lifecycle:lifecycle-runtime-compose:${Versions.LIFECYCLE}"
         const val LIFECYCLE_LIVEDATA =
             "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.LIFECYCLE}"
         const val LIFECYCLE_EXTENSIONS =
@@ -34,7 +35,8 @@ object Dependencies {
         const val ROOM_RUNTIME = "androidx.room:room-runtime:${Versions.ROOM}"
 
         // DataStore
-        const val DATA_STORE_PREFERENCES = "androidx.datastore:datastore-preferences:${Versions.DATA_STORE_PREFERENCES}"
+        const val DATA_STORE_PREFERENCES =
+            "androidx.datastore:datastore-preferences:${Versions.DATA_STORE_PREFERENCES}"
 
     }
 
@@ -44,8 +46,13 @@ object Dependencies {
         const val UI_TOOLING = "androidx.compose.ui:ui-tooling:${Versions.COMPOSE}"
         const val UI_TOOLING_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE}"
         const val MATERIAL3 = "androidx.compose.material3:material3:${Versions.COMPOSE_MATERIAL3}"
-        const val NAVIGATION_COMPOSE = "androidx.navigation:navigation-compose:${Versions.COMPOSE_NAVIGATION}"
-        const val LIFECYCLE_RUNTIME = "androidx.lifecycle:lifecycle-runtime-compose:${Versions.LIFECYCLE}"
+        const val ICONS_EXTENDED =
+            "androidx.compose.material:material-icons-extended:${Versions.COMPOSE}"
+        const val NAVIGATION_COMPOSE =
+            "androidx.navigation:navigation-compose:${Versions.COMPOSE_NAVIGATION}"
+        const val LIFECYCLE_RUNTIME =
+            "androidx.lifecycle:lifecycle-runtime-compose:${Versions.LIFECYCLE}"
+        const val COIL = "io.coil-kt:coil-compose:${Versions.COIL}"
     }
 
     object Common {
@@ -60,6 +67,12 @@ object Dependencies {
 
         // Security crypto
         const val SECURITY_CRYPTO = "androidx.security:security-crypto:${Versions.SECURITY_CRYPTO}"
+    }
+
+    object Tv {
+        const val TV_FOUNDATION = "androidx.tv:tv-foundation:${Versions.COMPOSE_TV}"
+        const val TV_MATERIAL = "androidx.tv:tv-material:${Versions.COMPOSE_TV}"
+        const val LEANBACK = "androidx.leanback:leanback:${Versions.LEANBACK}"
     }
 
     object Google {
@@ -88,16 +101,21 @@ object Dependencies {
 
     object Kotlin {
         const val KOTLIN_STDLIB = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.KOTLIN}"
+        const val COROUTINES_CORE =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINES_CORE}"
         const val COROUTINES_ANDROID =
             "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES}"
         const val REFLECT = "org.jetbrains.kotlin:kotlin-reflect:${Versions.KOTLIN}"
-        const val SERIALIZATION = "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.SERIALIZATION_JSON}"
+        const val SERIALIZATION =
+            "org.jetbrains.kotlinx:kotlinx-serialization-json:${Versions.SERIALIZATION_JSON}"
     }
 
     object Network {
         const val RETROFIT = "com.squareup.retrofit2:retrofit:${Versions.RETROFIT}"
-        const val RETROFIT_KTX_CONVERTER = "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${Versions.RETROFIT_KTX_CONVERTER}"
-        const val LOGGING_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP_BOM}"
+        const val RETROFIT_KTX_CONVERTER =
+            "com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:${Versions.RETROFIT_KTX_CONVERTER}"
+        const val LOGGING_INTERCEPTOR =
+            "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP_BOM}"
         const val OKHTTP_BOM = "com.squareup.okhttp3:okhttp-bom:${Versions.OKHTTP_BOM}"
         const val OKHTTP = "com.squareup.okhttp3:okhttp"
         const val OKHTTP_LOGGING_INTERCEPTOR = "com.squareup.okhttp3:logging-interceptor"
@@ -113,7 +131,8 @@ object Dependencies {
         const val JUNIT = "junit:junit:${Versions.JUNIT}"
 
         const val MOCKK = "io.mockk:mockk:${Versions.MOCKK}"
-        const val OKHTTP_MOCK_WEBSERVER = "com.squareup.okhttp3:mockwebserver:${Versions.OKHTTP_BOM}"
+        const val OKHTTP_MOCK_WEBSERVER =
+            "com.squareup.okhttp3:mockwebserver:${Versions.OKHTTP_BOM}"
         const val COROUTINES_TEST =
             "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.COROUTINES}"
         const val ANDROID_CORE_TESTING = "android.arch.core:core-testing:${Versions.CORE_TESTING}"
@@ -145,17 +164,18 @@ object Dependencies {
     }
 
     object Versions {
-        const val APP_COMPAT = "1.3.1"
+        const val APP_COMPAT = "1.6.1"
         const val CONSTRAINT_LAYOUT = "2.1.1"
         const val COMPOSE = "1.4.0"
         const val COMPOSE_COMPILER = "1.4.8"
         const val COMPOSE_ACTIVITY = "1.7.0"
-        const val COMPOSE_MATERIAL3 = "1.1.0-beta01"
+        const val COMPOSE_MATERIAL3 = "1.1.1"
         const val COMPOSE_NAVIGATION = "2.5.3"
         const val CONVERTER_GSON = "2.9.0"
         const val CONVERTER_MOSHI = "2.5.0"
         const val CORE = "1.6.0"
         const val COROUTINES = "1.5.1"
+        const val COROUTINES_CORE = "1.7.3"
         const val SERIALIZATION_JSON = "1.5.1"
         const val CORE_TESTING = "1.1.1"
         const val ESPRESSO = "3.4.0"
@@ -194,7 +214,10 @@ object Dependencies {
         const val UI_AUTOMATOR = "2.2.0"
         const val WORK_RUNTIME = "2.7.0"
         const val KLINT_GRADLE = "11.4.2"
-        const val SPLASH_SCREEN = "1.0.0-beta02"
+        const val SPLASH_SCREEN = "1.0.0"
+        const val COMPOSE_TV = "1.0.0-alpha07"
+        const val LEANBACK = "1.0.0"
+        const val COIL = "2.2.2"
     }
 
     object ConfigData {

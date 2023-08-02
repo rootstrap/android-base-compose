@@ -1,8 +1,8 @@
 package com.rootstrap
 
 import android.app.Application
+import com.rootstrap.yourAppName.di.appModule
 import com.rootstrap.di.initDI
-import com.rootstrap.di.appModule
 
 class App : Application() {
 
