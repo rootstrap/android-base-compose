@@ -12,6 +12,8 @@ import androidx.tv.material3.Text
 import com.rootstrap.tv.common.BorderedFocusableItem
 import com.rootstrap.tv.theme.Dimens
 
+private const val VERTICAL_ITEM_ASPECT_RATIO = 0.6f
+
 @Composable
 fun VerticalListItem(itemText:String, onItemFocus: () -> Unit) {
     BorderedFocusableItem(
@@ -20,7 +22,7 @@ fun VerticalListItem(itemText:String, onItemFocus: () -> Unit) {
         },
         modifier = Modifier
             .padding(Dimens.paddingHalf)
-            .aspectRatio(0.6f)
+            .aspectRatio(VERTICAL_ITEM_ASPECT_RATIO)
     ) {
         Box(contentAlignment = Alignment.Center, modifier = Modifier.fillMaxSize()) {
             Text(text = itemText, textAlign = TextAlign.Center)

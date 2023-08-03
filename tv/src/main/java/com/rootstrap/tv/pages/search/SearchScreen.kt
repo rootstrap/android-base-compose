@@ -27,6 +27,7 @@ import com.rootstrap.tv.theme.Dimens
 
 @Composable
 fun SearchScreen() {
+    // TODO: use a dependency injection framework to inject the view model
     val viewModel = remember { SearchViewModel() }
     val uiState by viewModel.uiStateFlow.collectAsState()
 
