@@ -2,6 +2,7 @@
 
 package com.rootstrap.tv.pages.movies
 
+import androidx.compose.animation.core.tween
 import androidx.compose.animation.fadeIn
 import androidx.compose.animation.fadeOut
 import androidx.compose.foundation.ExperimentalFoundationApi
@@ -45,8 +46,9 @@ import com.rootstrap.tv.theme.ComposeTVTheme
 import com.rootstrap.tv.theme.Dimens
 import com.rootstrap.tv.theme.Dimens.immersiveListHeight
 
-private const val IMMERSIVE_LIST_PROPORTION = 0.8f
+private const val IMMERSIVE_LIST_PROPORTION = 0.6f
 private const val POSTER_DESCRIPTION_PROPORTION = 0.5f
+private const val ANIMATION_DURATION = 1000
 
 /**
  * Shows a background image behind the list
@@ -67,8 +69,8 @@ fun ImmersiveListExample(modifier: Modifier, featuredMovies: List<Movie>) {
             AnimatedContent(targetState = index) {
                 AnimatedVisibility(
                     visible = hasFocus,
-                    enter = fadeIn(),
-                    exit = fadeOut(),
+                    enter = fadeIn(animationSpec = tween(ANIMATION_DURATION)),
+                    exit = fadeOut(animationSpec = tween(ANIMATION_DURATION)),
                     modifier = Modifier.height(immersiveListHeight)
                 ) {
                     ImmersiveListPoster(featuredMovies, index, immersiveListHeight)
