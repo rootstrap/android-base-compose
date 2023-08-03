@@ -21,6 +21,7 @@ import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
@@ -39,6 +40,9 @@ import com.rootstrap.tv.theme.Dimens
 import com.rootstrap.tv.utils.KeysGenerator
 
 private const val KEYS_IN_ROW = 7
+private const val EXTRA_KEY_ASPECT_RATIO = 2f
+private const val EXTRA_KEY_WIDTH = 1.5f
+private const val EXTRA_KEY_SPAN = 2
 
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
@@ -85,9 +89,10 @@ fun MiniKeyboard(
                     keyboardLetterType = KeyboardLetterType.AlphaNumeric
                 )
             }
-            item(span = { TvGridItemSpan(2) }) {
+
+            item(span = { TvGridItemSpan(EXTRA_KEY_SPAN) }) {
                 KeyboardItem(
-                    modifier = Modifier.aspectRatio(2f),
+                    modifier = Modifier.aspectRatio(EXTRA_KEY_ASPECT_RATIO),
                     onKeyPressed = onKeyPressed,
                     keyboardLetterType = KeyboardLetterType.AlphaNumeric,
                     key = " "
@@ -98,9 +103,10 @@ fun MiniKeyboard(
                     )
                 }
             }
-            item(span = { TvGridItemSpan(2) }) {
+
+            item(span = { TvGridItemSpan(EXTRA_KEY_SPAN) }) {
                 KeyboardItem(
-                    modifier = Modifier.aspectRatio(2f),
+                    modifier = Modifier.aspectRatio(EXTRA_KEY_ASPECT_RATIO),
                     onKeyPressed = onKeyPressed,
                     keyboardLetterType = KeyboardLetterType.Clear,
                     key = stringResource(R.string.clear)
@@ -116,7 +122,7 @@ fun MiniKeyboard(
             item {
                 KeyboardItem(
                     modifier = Modifier
-                        .width(extraKeyHeight * 1.5f)
+                        .width(extraKeyHeight * EXTRA_KEY_WIDTH)
                         .height(extraKeyHeight),
                     onKeyPressed = onKeyPressed,
                     keyboardLetterType = KeyboardLetterType.ChangeInputType,
@@ -129,7 +135,7 @@ fun MiniKeyboard(
     }
 }
 
-@Preview
+@Preview(showBackground = true, device = Devices.TV_1080p)
 @Composable
 fun MiniKeyboardPrev() {
     TvComposablePreview {
