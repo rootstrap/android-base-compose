@@ -76,10 +76,7 @@ fun MiniKeyboard(
             val keys: List<Any> = if (isNumeric) {
                 KeysGenerator.numbers
             } else {
-                val list: MutableList<Any> = mutableListOf()
-                list.addAll(KeysGenerator.alphabet)
-                list.addAll(KeysGenerator.specialCharV1)
-                list
+                KeysGenerator.alphabet + KeysGenerator.specialCharV1
             }
 
             items(keys) {
