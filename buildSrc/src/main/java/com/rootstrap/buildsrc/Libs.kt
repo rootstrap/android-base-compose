@@ -75,6 +75,12 @@ object Dependencies {
         const val LEANBACK = "androidx.leanback:leanback:${Versions.LEANBACK}"
     }
 
+    object MEDIA {
+        const val MEDIA_3 = "androidx.media3:media3-exoplayer:${Versions.MEDIA_3}"
+        const val MEDIA_3_UI = "androidx.media3:media3-ui:${Versions.MEDIA_3}"
+        const val MEDIA_3_SESSION = "androidx.media3:media3-session:${Versions.MEDIA_3}"
+    }
+
     object Google {
         const val MATERIAL = "com.google.android.material:material:${Versions.MATERIAL_DESIGN}"
         const val GSON = "com.google.code.gson:gson:${Versions.GSON}"
@@ -218,6 +224,7 @@ object Dependencies {
         const val COMPOSE_TV = "1.0.0-alpha07"
         const val LEANBACK = "1.0.0"
         const val COIL = "2.2.2"
+        const val MEDIA_3 = "1.1.0"
     }
 
     object ConfigData {

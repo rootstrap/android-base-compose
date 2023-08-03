@@ -17,7 +17,6 @@ android {
         targetSdk = TARGET_SDK_VERSION
         versionCode = 1
         versionName = "1.0"
-
     }
 
     buildTypes {
@@ -63,6 +62,13 @@ dependencies {
         implementation(NAVIGATION_COMPOSE)
         implementation(COIL)
         implementation(LIFECYCLE_RUNTIME)
+    }
+
+    // Media3
+    with(Dependencies.MEDIA) {
+        implementation(MEDIA_3)
+        implementation(MEDIA_3_SESSION)
+        implementation(MEDIA_3_UI)
     }
 
     implementation(Dependencies.Android.CORE)
