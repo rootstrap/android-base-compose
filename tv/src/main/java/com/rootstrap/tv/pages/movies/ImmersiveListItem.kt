@@ -18,6 +18,7 @@ import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.tv.material3.Border
 import androidx.tv.material3.CardDefaults
 import androidx.tv.material3.CardLayoutDefaults
@@ -28,6 +29,7 @@ import androidx.tv.material3.Text
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
 import com.rootstrap.domain.Movie
+import com.rootstrap.tv.theme.ComposeTVTheme
 import com.rootstrap.tv.theme.Dimens
 import com.rootstrap.tv.theme.Dimens.immersiveListItemWidth
 import com.rootstrap.tv.theme.Shapes
@@ -115,6 +117,24 @@ private fun ImmersiveItemImage(
                 .build(),
             contentDescription = "movie poster of ${movie.name}",
             contentScale = ContentScale.Crop
+        )
+    }
+}
+
+@Composable
+@Preview(showBackground = true)
+fun ImmersiveListItemPreview() {
+    ComposeTVTheme {
+        ImmersiveListItem(
+            index = 0,
+            onMovieClick = {},
+            focusedItemIndex = {},
+            movie = Movie(
+                id = "1",
+                posterUri = "https://storage.googleapis.com/androiddevelopers/samples/media/posters/2_3-300/the-good-laywer.jpg",
+                name = "Teminator II",
+                description = "Terminator is an American media franchise created by James Cameron and Gale Anne Hurd. The franchise encompasses a series of science fiction action films"
+            )
         )
     }
 }
