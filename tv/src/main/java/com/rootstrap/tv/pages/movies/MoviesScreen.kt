@@ -19,7 +19,7 @@ fun MoviesScreen(navHostController: NavHostController) {
     val viewModel = remember { HomeScreenViewModel(videoRepository = MoviesRepository()) }
     val uiState by viewModel.uiStateFlow.collectAsState()
 
-    // This shouldn't be here
+    // Remove this after DI is implemented
     LaunchedEffect(key1 = true) {
         viewModel.onHomeScreenLoaded()
     }
