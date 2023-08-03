@@ -2,6 +2,7 @@ object Dependencies {
     object Android {
         const val APP_COMPAT = "androidx.appcompat:appcompat:${Versions.APP_COMPAT}"
         const val CORE = "androidx.core:core-ktx:${Versions.CORE}"
+        const val SPLASH_SCREEN = "androidx.core:core-splashscreen:${Versions.SPLASH_SCREEN}"
         const val CONSTRAINT_LAYOUT =
             "androidx.constraintlayout:constraintlayout:${Versions.CONSTRAINT_LAYOUT}"
         const val LEGACY_SUPPORT_V4 =
@@ -106,6 +107,8 @@ object Dependencies {
 
     object Kotlin {
         const val KOTLIN_STDLIB = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${Versions.KOTLIN}"
+        const val COROUTINES_CORE =
+            "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.COROUTINES_CORE}"
         const val COROUTINES_ANDROID =
             "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.COROUTINES}"
         const val REFLECT = "org.jetbrains.kotlin:kotlin-reflect:${Versions.KOTLIN}"
@@ -167,17 +170,18 @@ object Dependencies {
     }
 
     object Versions {
-        const val APP_COMPAT = "1.3.1"
+        const val APP_COMPAT = "1.6.1"
         const val CONSTRAINT_LAYOUT = "2.1.1"
         const val COMPOSE = "1.4.0"
         const val COMPOSE_COMPILER = "1.4.8"
         const val COMPOSE_ACTIVITY = "1.7.0"
-        const val COMPOSE_MATERIAL3 = "1.1.0-beta01"
+        const val COMPOSE_MATERIAL3 = "1.1.1"
         const val COMPOSE_NAVIGATION = "2.5.3"
         const val CONVERTER_GSON = "2.9.0"
         const val CONVERTER_MOSHI = "2.5.0"
         const val CORE = "1.6.0"
         const val COROUTINES = "1.5.1"
+        const val COROUTINES_CORE = "1.7.3"
         const val SERIALIZATION_JSON = "1.5.1"
         const val CORE_TESTING = "1.1.1"
         const val ESPRESSO = "3.4.0"
@@ -216,6 +220,7 @@ object Dependencies {
         const val UI_AUTOMATOR = "2.2.0"
         const val WORK_RUNTIME = "2.7.0"
         const val KLINT_GRADLE = "11.4.2"
+        const val SPLASH_SCREEN = "1.0.0"
         const val COMPOSE_TV = "1.0.0-alpha07"
         const val LEANBACK = "1.0.0"
         const val COIL = "2.2.2"

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.rootstrap.app"
+    namespace = "com.rootstrap"
 
     with(Dependencies.ConfigData) {
         compileSdk = COMPILE_SDK_VERSION
@@ -47,10 +47,10 @@ android {
 }
 
 dependencies {
-    implementation(project(":data"))
-    implementation(project(":domain"))
-    implementation(project(":usecases"))
-    implementation(project(":di"))
+    implementation(project(":core:data"))
+    implementation(project(":core:domain"))
+    implementation(project(":core:usecases"))
+    implementation(project(":core:di"))
 
     with(Dependencies.Android) {
         implementation(CORE)
@@ -58,6 +58,7 @@ dependencies {
         implementation(LIFECYCLE_KTX)
         implementation(LIFECYCLE_COMPOSE)
         implementation(NAVIGATION_UI_RUNTIME)
+        implementation(SPLASH_SCREEN)
     }
     with(Dependencies.Compose) {
         implementation(ACTIVITY)
