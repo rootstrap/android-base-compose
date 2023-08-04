@@ -15,6 +15,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.tv.material3.ExperimentalTvMaterial3Api
 import androidx.tv.material3.MaterialTheme
@@ -75,7 +76,9 @@ fun ImmersiveListPosterDescription(movie: Movie) {
             text = movie.description,
             style = MaterialTheme.typography.bodyLarge,
             color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.75f),
-            fontWeight = FontWeight.Light
+            fontWeight = FontWeight.Light,
+            maxLines = 4,
+            overflow = TextOverflow.Ellipsis
         )
     }
 }

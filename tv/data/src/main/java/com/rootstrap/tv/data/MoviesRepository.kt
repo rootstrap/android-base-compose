@@ -15,15 +15,15 @@ class MoviesRepository {
         return listOf(
             Movie(
                 id = "5",
-                posterUri = "https://storage.googleapis.com/androiddevelopers/samples/media/posters/16_9-400/acts-of-love.jpg",
-                name = "Gentleman",
-                description = "The film is the sequel to Rocky III (1982) and the fourth installment in the Rocky film series. It also stars Talia Shire, Burt Young, Carl Weathers, Ton"
+                posterUri = "https://asalallena.com.ar/wp-content/uploads/2020/07/MAW72rq-1.png",
+                name = "The imitation game",
+                description = "The Imitation Game is a 2014 historical drama film directed by Morten Tyldum and written by Graham Moore, based on the 1983 biography Alan Turing: The Enigma by Andrew Hodges. It stars Benedict Cumberbatch as British cryptanalyst Alan Turing, who decrypted German intelligence codes for the British government during the Second World War. Keira Knightley, Matthew Goode, Rory Kinnear, Charles Dance, and Mark Strong also star."
             ),
             Movie(
                 id = "6",
-                posterUri = "https://storage.googleapis.com/androiddevelopers/samples/media/posters/16_9-400/night-in-tokyo.jpg",
-                name = "Night in Tokio",
-                description = "Night in Tokio"
+                posterUri = "https://images.thedirect.com/media/article_full/new-star-wars-movie.jpg",
+                name = "Star wars Episode VII",
+                description = "Star wars Episode VII"
             )
         )
     }

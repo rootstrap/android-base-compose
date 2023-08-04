@@ -31,7 +31,7 @@ import com.rootstrap.tv.theme.ComposeTVTheme
 import com.rootstrap.tv.theme.Dimens
 import com.rootstrap.tv.theme.Dimens.immersiveListHeight
 
-private const val IMMERSIVE_LIST_PROPORTION = 0.6f
+private const val IMMERSIVE_LIST_PROPORTION = 0.7f
 private const val ANIMATION_DURATION = 1000
 
 /**
