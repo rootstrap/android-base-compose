@@ -20,6 +20,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.tooling.preview.Devices
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.tv.material3.ExperimentalTvMaterial3Api
 import androidx.tv.material3.Glow
@@ -29,6 +31,7 @@ import androidx.tv.material3.WideButton
 import androidx.tv.material3.WideButtonDefaults
 import com.rootstrap.domain.Movie
 import com.rootstrap.tv.R
+import com.rootstrap.tv.common.TvComposablePreview
 import com.rootstrap.tv.common.WatchNowButton
 import com.rootstrap.tv.data.MoviesRepository
 import com.rootstrap.tv.theme.Dimens
@@ -121,5 +124,23 @@ fun WideButtonExample() {
         modifier = Modifier.padding(start = Dimens.paddingNormal)
     ) {
         Text(stringResource(R.string.add_to_favourites))
+    }
+}
+
+@Preview(showBackground = true, device = Devices.TV_1080p)
+@Composable
+fun DetailScreenPreview() {
+    TvComposablePreview {
+        DetailScreen(
+            detailUiState = DetailUiState(
+                movie = Movie(
+                    id = "1",
+                    name = "Movie Name",
+                    description = "Movie Description",
+                    posterUri = "https://picsum.photos/200/300"
+                )
+            ),
+            onPlayNowClick = {}
+        )
     }
 }
