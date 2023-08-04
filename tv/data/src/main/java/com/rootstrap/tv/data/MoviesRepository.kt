@@ -11,6 +11,15 @@ class MoviesRepository {
         const val SCIENCE_FICTION = "Science fiction"
     }
 
+    suspend fun getMovie(id:String):Movie{
+        return Movie(
+            id = "10",
+            posterUri = "https://wallpaperaccess.com/full/4012394.png",
+            name = "Batman Returns",
+            description = "Batman Returns (titulada Batman regresa en Hispanoamérica y Batman vuelve en España y Argentina) es una película estadounidense de 1992 dirigida por Tim ."
+        )
+    }
+
     suspend fun getFeaturedMovies(): List<Movie> {
         return listOf(
             Movie(
