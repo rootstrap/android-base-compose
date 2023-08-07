@@ -27,7 +27,7 @@ fun BannerImage(modifier: Modifier, movie: Movie) {
         AsyncImage(
             model = movie.posterUri,
             contentDescription = movie.description,
-            contentScale = ContentScale.FillBounds,
+            contentScale = ContentScale.Crop,
             modifier = Modifier
                 .fillMaxSize()
         )
