@@ -11,7 +11,7 @@ class MoviesRepository {
         const val SCIENCE_FICTION = "Science fiction"
     }
 
-    suspend fun getMovie(id:String):Movie{
+    suspend fun getMovie(id: String): Movie {
         return Movie(
             id = "10",
             posterUri = "https://wallpaperaccess.com/full/4012394.png",
@@ -118,7 +118,7 @@ class MoviesRepository {
         )
     }
 
-    suspend fun myFavourites():List<Movie>{
+    suspend fun myFavourites(): List<Movie> {
         val list: MutableList<Movie> = mutableListOf()
         for (i in 0..20) {
             list.add(
