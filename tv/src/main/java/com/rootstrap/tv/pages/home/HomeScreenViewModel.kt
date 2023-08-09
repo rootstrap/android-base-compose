@@ -15,7 +15,7 @@ import kotlinx.coroutines.launch
 
 class HomeScreenViewModel(private val videoRepository: MoviesRepository) : ViewModel() {
     private val uiState: MovieUiState =
-        MovieUiState(SnapshotStateList(), SnapshotStateList())
+        MovieUiState(SnapshotStateList(), SnapshotStateList(), SnapshotStateList())
     private var _uiStateFlow: MutableStateFlow<MovieUiState> =
         MutableStateFlow(
             uiState
@@ -28,7 +28,8 @@ class HomeScreenViewModel(private val videoRepository: MoviesRepository) : ViewM
             _uiStateFlow.update {
                 uiState.copy(
                     homeRows = rows,
-                    featuredMovies = videoRepository.getFeaturedMovies().toMutableStateList()
+                    featuredMovies = videoRepository.getFeaturedMovies().toMutableStateList(),
+                    favouriteRows = videoRepository.myFavourites().toMutableStateList()
                 )
             }
         }
@@ -37,5 +38,6 @@ class HomeScreenViewModel(private val videoRepository: MoviesRepository) : ViewM
 
 data class MovieUiState(
     val homeRows: SnapshotStateList<HomeRowModel>,
+    val favouriteRows: SnapshotStateList<Movie>,
     val featuredMovies: SnapshotStateList<Movie>
 )
