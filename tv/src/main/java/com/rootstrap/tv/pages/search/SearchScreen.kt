@@ -1,5 +1,6 @@
 package com.rootstrap.tv.pages.search
 
+import androidx.activity.ComponentActivity
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -11,7 +12,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
@@ -24,11 +25,12 @@ import com.rootstrap.tv.R
 import com.rootstrap.tv.common.TvComposablePreview
 import com.rootstrap.tv.pages.search.keyboard.MiniKeyboard
 import com.rootstrap.tv.theme.Dimens
+import org.koin.androidx.viewmodel.ext.android.getViewModel
 
 @Composable
 fun SearchScreen() {
-    // TODO: use a dependency injection framework to inject the view model
-    val viewModel = remember { SearchViewModel() }
+    val context = LocalContext.current as ComponentActivity
+    val viewModel = context.getViewModel<SearchViewModel> ()
     val uiState by viewModel.uiStateFlow.collectAsState()
 
     Row(modifier = Modifier.fillMaxSize()) {
