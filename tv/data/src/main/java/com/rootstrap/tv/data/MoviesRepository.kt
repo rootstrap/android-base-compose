@@ -11,6 +11,15 @@ class MoviesRepository {
         const val SCIENCE_FICTION = "Science fiction"
     }
 
+    suspend fun getMovie(id: String): Movie {
+        return Movie(
+            id = "10",
+            posterUri = "https://wallpaperaccess.com/full/4012394.png",
+            name = "Batman Returns",
+            description = "Batman Returns (titulada Batman regresa en Hispanoamérica y Batman vuelve en España y Argentina) es una película estadounidense de 1992 dirigida por Tim ."
+        )
+    }
+
     suspend fun getFeaturedMovies(): List<Movie> {
         return listOf(
             Movie(
@@ -107,5 +116,20 @@ class MoviesRepository {
             nowPlayingMovies,
             scienceFictionMovies
         )
+    }
+
+    suspend fun myFavourites(): List<Movie> {
+        val list: MutableList<Movie> = mutableListOf()
+        for (i in 0..20) {
+            list.add(
+                Movie(
+                    id = i.toString(),
+                    posterUri = "https://storage.googleapis.com/androiddevelopers/samples/media/posters/2_3-300/the-good-laywer.jpg",
+                    name = "Teminator II",
+                    description = "Terminator is an American media franchise created by James Cameron and Gale Anne Hurd. The franchise encompasses a series of science fiction action films"
+                )
+            )
+        }
+        return list
     }
 }

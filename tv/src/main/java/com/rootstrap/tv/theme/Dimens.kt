@@ -38,8 +38,14 @@ object Dimens {
 
     // Search
     val miniKeyboardWidth = 300.dp
+
     // Immersive list
     val cardBorder = 3.dp
     val immersiveListItemWidth = 300.dp
     val immersiveListHeight = 180.dp
+
+    // Detail
+    val glowElevationNormal = 4.dp
+    val glowElevationFocused = 12.dp
+    val detailButtonsRowHeight = 150.dp
 }

@@ -49,7 +49,8 @@ fun HomeGridPreview() {
     )
     val uiState = MovieUiState(
         featuredMovies = getMoviesPreview(),
-        homeRows = listOf(nowPlayingMovies).toMutableStateList()
+        homeRows = listOf(nowPlayingMovies).toMutableStateList(),
+        favouriteRows = getMoviesPreview()
     )
     HomeGrid(uiState = uiState, modifier = Modifier, onItemClick = {})
 }

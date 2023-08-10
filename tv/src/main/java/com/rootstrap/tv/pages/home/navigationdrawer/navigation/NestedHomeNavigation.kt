@@ -25,7 +25,7 @@ fun NestedHomeNavigation(
             NestedHomeScreen(appNavHostController)
         }
         composable(NestedScreens.Favorites.title) {
-            FavouritesScreen()
+            FavouritesScreen(appNavHostController)
         }
         composable(NestedScreens.Search.title) {
             SearchScreen()
