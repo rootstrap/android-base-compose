@@ -21,7 +21,7 @@ fun NestedHomeScreen(
         onItemClick = {
             appNavHostController.navigate(
                 MainScreens.Player.playerScreenRoute(
-                    it?.id ?: ""
+                    it?.id.orEmpty()
                 )
             )
         },
