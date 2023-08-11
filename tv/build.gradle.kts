@@ -14,7 +14,7 @@ android {
     defaultConfig {
         applicationId = "com.rootstrap.tv"
         minSdk = MIN_SDK_VERSION
-        targetSdk = 34
+        targetSdk = TARGET_SDK_VERSION
         versionCode = 1
         versionName = "1.0"
     }
