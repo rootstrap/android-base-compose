@@ -9,7 +9,6 @@ import androidx.navigation.navArgument
 import com.rootstrap.tv.pages.detail.DetailScreen
 import com.rootstrap.tv.pages.home.HomeScreen
 import com.rootstrap.tv.player.VideoPlayerScreen
-import com.rootstrap.tv.player.VideoPlayerViewModel
 
 @Composable
 fun AppNavigation(navController: NavHostController) {
