@@ -14,7 +14,7 @@ android {
     defaultConfig {
         applicationId = "com.rootstrap.tv"
         minSdk = MIN_SDK_VERSION
-        targetSdk = TARGET_SDK_VERSION
+        targetSdk = 34
         versionCode = 1
         versionName = "1.0"
     }
@@ -73,4 +73,5 @@ dependencies {
 
     implementation(Dependencies.Koin.CORE)
     implementation(Dependencies.Koin.ANDROID)
+    implementation(Dependencies.Koin.COMPOSE)
 }

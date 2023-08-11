@@ -1,6 +1,5 @@
 package com.rootstrap.tv.pages.detail
 
-import androidx.activity.ComponentActivity
 import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
@@ -19,7 +18,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Devices
 import androidx.compose.ui.tooling.preview.Preview
@@ -35,18 +33,17 @@ import com.rootstrap.tv.R
 import com.rootstrap.tv.common.TvComposablePreview
 import com.rootstrap.tv.common.WatchNowButton
 import com.rootstrap.tv.theme.Dimens
-import org.koin.androidx.viewmodel.ext.android.getViewModel
+import org.koin.androidx.compose.koinViewModel
 
 private const val HEADER_SPACE_PROPORTION = 0.3f
 
 @Composable
 fun DetailScreen(
     movieId: String,
+    viewModel: MovieDetailViewModel = koinViewModel(),
     onBackPressed: () -> Unit,
     onPlayNowClick: (Movie) -> Unit
 ) {
-    val context = LocalContext.current as ComponentActivity
-    val viewModel = context.getViewModel<MovieDetailViewModel> ()
     val uiState by viewModel.uiStateFlow.collectAsState()
 
     BackHandler(onBack = onBackPressed)

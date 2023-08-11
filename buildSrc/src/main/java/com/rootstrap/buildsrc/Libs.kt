@@ -192,7 +192,7 @@ object Dependencies {
         const val GOOGLE_SERVICES = "4.3.10"
         const val GSON = "2.8.7"
         const val JUNIT = "4.13.2"
-        const val KOIN = "3.1.3"
+        const val KOIN = "3.4.3"
         const val KOTLIN = "1.8.22"
         const val KT_LINT = "0.44.0"
         const val LEGACY_SUPPORT_V4 = "1.0.0"
