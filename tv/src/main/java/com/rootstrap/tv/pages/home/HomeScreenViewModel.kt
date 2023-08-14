@@ -22,7 +22,10 @@ class HomeScreenViewModel(private val videoRepository: MoviesRepository) : ViewM
         )
     val uiStateFlow: StateFlow<MovieUiState> = _uiStateFlow
 
-    fun onHomeScreenLoaded() {
+    init {
+        loadData()
+    }
+    private fun loadData() {
         viewModelScope.launch {
             val rows = HomeRowMapper.getHomeRows(videoRepository.getHomeRows())
             _uiStateFlow.update {

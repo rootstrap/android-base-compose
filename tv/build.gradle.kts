@@ -71,5 +71,7 @@ dependencies {
         implementation(MEDIA_3_UI)
     }
 
-    implementation(Dependencies.Android.CORE)
+    implementation(Dependencies.Koin.CORE)
+    implementation(Dependencies.Koin.ANDROID)
+    implementation(Dependencies.Koin.COMPOSE)
 }

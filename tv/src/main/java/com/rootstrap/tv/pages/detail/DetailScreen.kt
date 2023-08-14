@@ -14,7 +14,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -33,20 +32,18 @@ import com.rootstrap.domain.Movie
 import com.rootstrap.tv.R
 import com.rootstrap.tv.common.TvComposablePreview
 import com.rootstrap.tv.common.WatchNowButton
-import com.rootstrap.tv.data.MoviesRepository
 import com.rootstrap.tv.theme.Dimens
+import org.koin.androidx.compose.koinViewModel
 
 private const val HEADER_SPACE_PROPORTION = 0.3f
 
 @Composable
 fun DetailScreen(
     movieId: String,
+    viewModel: MovieDetailViewModel = koinViewModel(),
     onBackPressed: () -> Unit,
     onPlayNowClick: (Movie) -> Unit
 ) {
-    val viewModel = remember {
-        MovieDetailViewModel(MoviesRepository())
-    }
     val uiState by viewModel.uiStateFlow.collectAsState()
 
     BackHandler(onBack = onBackPressed)

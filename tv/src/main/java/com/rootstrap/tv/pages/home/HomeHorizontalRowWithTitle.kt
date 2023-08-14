@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.tv.foundation.lazy.list.TvLazyRow
 import androidx.tv.foundation.lazy.list.itemsIndexed
+import androidx.tv.material3.ExperimentalTvMaterial3Api
 import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Text
 import com.rootstrap.domain.Movie
@@ -42,6 +43,7 @@ fun HorizontalRowWithTitle(
     }
 }
 
+@OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
 fun RowTitle(title: String) {
     Text(

@@ -31,6 +31,7 @@ import com.rootstrap.tv.utils.Constants
 import com.rootstrap.tv.utils.extensions.handleDPadKeyEvents
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
+import org.koin.androidx.compose.koinViewModel
 
 const val HIDE_CONTROLS_TIME = 4
 
@@ -38,13 +39,10 @@ const val HIDE_CONTROLS_TIME = 4
 @androidx.annotation.OptIn(androidx.media3.common.util.UnstableApi::class)
 fun VideoPlayerScreen(
     movieId: String,
+    viewModel:VideoPlayerViewModel = koinViewModel(),
     onBackPressed: () -> Unit
 ) {
     val context = LocalContext.current
-    // Use DI to inject VM
-    val viewModel = remember {
-        VideoPlayerViewModel()
-    }
     val uiState by viewModel.uiStateFlow.collectAsState()
 
     LaunchedEffect(key1 = Unit) {
