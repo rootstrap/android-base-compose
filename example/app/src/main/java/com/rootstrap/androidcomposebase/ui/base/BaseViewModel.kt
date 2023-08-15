@@ -23,7 +23,7 @@ open class BaseViewModel<UiStateType : UiState, NavigationEventT : Any>(
     protected val uiState: UiStateType
         get() = _uiStateFlow.value
 
-    protected fun setUiState(function: (state: UiStateType) -> UiStateType) {
+    protected fun updateUiState(function: (state: UiStateType) -> UiStateType) {
         _uiStateFlow.update(function)
     }
 

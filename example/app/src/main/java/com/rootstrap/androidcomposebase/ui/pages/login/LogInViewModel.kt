@@ -9,13 +9,13 @@ class LogInViewModel : BaseViewModel<LoginUiState, Any>(LoginUiState()) {
 
     fun onEmailChanged(email: String) {
         val isEmailValid = Patterns.EMAIL_ADDRESS.toRegex().matches(email) || email.isEmpty()
-        setUiState { it.copy(email = email, showEmailError = !isEmailValid) }
+        updateUiState { it.copy(email = email, showEmailError = !isEmailValid) }
     }
 
     fun onPasswordChanged(password: String) {
         val isPasswordValid = Pattern.compile(PatternsUtil.PASSWORD_REGEX).matcher(password)
             .matches() || password.isEmpty()
-        setUiState { it.copy(password = password, showPasswordError = !isPasswordValid) }
+        updateUiState { it.copy(password = password, showPasswordError = !isPasswordValid) }
     }
 
     fun onLogInButtonClicked() {
