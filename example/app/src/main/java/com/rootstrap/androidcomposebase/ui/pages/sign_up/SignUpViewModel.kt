@@ -43,6 +43,6 @@ class SignUpViewModel : ViewModel() {
     }
 
     fun onSignUpButtonClicked() {
-        // TODO: Do log in request
+        // TODO: Do Sign Up request
     }
 }
