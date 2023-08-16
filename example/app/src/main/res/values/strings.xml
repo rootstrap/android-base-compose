@@ -8,4 +8,11 @@
     <string name="log_in_password_error">Password must contain a lower case, upper case, a number and a special character</string>
     <string name="log_in_button">LOG IN</string>
 
+    <!-- Sign Up -->
+    <string name="sign_up_name_label">Name</string>
+    <string name="sign_up_name_error">Name not valid</string>
+    <string name="sign_up_confirm_password_label">Confirm Password</string>
+    <string name="sign_up_confirm_password_error">Passwords don\'t match</string>
+    <string name="sign_up_button">SIGN UP</string>
+
 </resources>
