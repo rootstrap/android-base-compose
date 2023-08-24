@@ -13,6 +13,7 @@ class LogInViewModel : BaseViewModel<LoginUiState, Any>(LoginUiState()) {
     }
 
     fun onPasswordChanged(password: String) {
+        // TODO:Check if validation logic running every time the user types is correct 
         val isPasswordValid = Pattern.compile(PatternsUtil.PASSWORD_REGEX).matcher(password)
             .matches() || password.isEmpty()
         updateUiState { it.copy(password = password, showPasswordError = !isPasswordValid) }
