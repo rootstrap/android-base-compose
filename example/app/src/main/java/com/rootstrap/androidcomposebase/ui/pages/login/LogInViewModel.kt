@@ -1,27 +1,22 @@
 package com.rootstrap.androidcomposebase.ui.pages.login
 
 import android.util.Patterns
-import androidx.lifecycle.ViewModel
 import com.rootstrap.example.data.PatternsUtil
-import kotlinx.coroutines.flow.MutableStateFlow
-import kotlinx.coroutines.flow.StateFlow
-import kotlinx.coroutines.flow.update
+import com.rootstrap.androidcomposebase.ui.base.BaseViewModel
 import java.util.regex.Pattern
 
-class LogInViewModel : ViewModel() {
-
-    private var _uiState: MutableStateFlow<LoginUiState> = MutableStateFlow(LoginUiState())
-    val uiState: StateFlow<LoginUiState>
-        get() = _uiState
+class LogInViewModel : BaseViewModel<LoginUiState, Any>(LoginUiState()) {
 
     fun onEmailChanged(email: String) {
         val isEmailValid = Patterns.EMAIL_ADDRESS.toRegex().matches(email) || email.isEmpty()
-        _uiState.update { it.copy(email = email, showEmailError = !isEmailValid) }
+        updateUiState { it.copy(email = email, showEmailError = !isEmailValid) }
     }
 
     fun onPasswordChanged(password: String) {
-        val isPasswordValid = Pattern.compile(PatternsUtil.PASSWORD_REGEX).matcher(password).matches() || password.isEmpty()
-        _uiState.update { it.copy(password = password, showPasswordError = !isPasswordValid) }
+        // TODO:Check if validation logic running every time the user types is correct 
+        val isPasswordValid = Pattern.compile(PatternsUtil.PASSWORD_REGEX).matcher(password)
+            .matches() || password.isEmpty()
+        updateUiState { it.copy(password = password, showPasswordError = !isPasswordValid) }
     }
 
     fun onLogInButtonClicked() {
