@@ -1,5 +1,7 @@
 package com.rootstrap.data.store
 
-class InvalidTokenException : Exception()
-class InvalidValueException : Exception()
-class WritingDataException : Exception()
+sealed class PreferenceException : Exception()
+
+class InvalidTokenException : PreferenceException()
+class InvalidValueException : PreferenceException()
+class WritingDataException : PreferenceException()
