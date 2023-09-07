@@ -15,20 +15,20 @@ import androidx.compose.ui.res.stringResource
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rootstrap.androidcomposebase.ui.common.AppButton
 import com.rootstrap.androidcomposebase.ui.common.AppTextField
-import com.rootstrap.androidcomposebase.ui.theme.Padding.huge
+import com.rootstrap.androidcomposebase.ui.theme.AppTheme
 import com.rootstrap.example.app.R
 
 @Composable
 fun LogInScreen(
     viewModel: LogInViewModel = LogInViewModel()
 ) {
-    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val uiState by viewModel.uiStateFlow.collectAsStateWithLifecycle()
     Column(
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally,
         modifier = Modifier
             .background(Color.Black)
-            .padding(horizontal = huge)
+            .padding(horizontal = AppTheme.dimens.paddingDouble)
     ) {
         Icon(
             painter = painterResource(id = R.drawable.rootstrap_logo),

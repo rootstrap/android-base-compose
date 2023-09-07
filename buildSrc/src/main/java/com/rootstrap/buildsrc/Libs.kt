@@ -10,6 +10,7 @@ object Dependencies {
         const val PREFERENCE = "androidx.preference:preference-ktx:${Versions.PREFERENCE}"
         const val RECYCLERVIEW = "androidx.recyclerview:recyclerview:${Versions.RECYCLERVIEW}"
         const val WORK_RUNTIME = "androidx.work:work-runtime-ktx:${Versions.WORK_RUNTIME}"
+        const val WINDOW = "androidx.window:window:${Versions.WINDOW}"
 
         // Lifecycle
         const val LIFECYCLE_COMMON =
@@ -225,6 +226,7 @@ object Dependencies {
         const val LEANBACK = "1.0.0"
         const val COIL = "2.2.2"
         const val MEDIA_3 = "1.1.0"
+        const val WINDOW = "1.1.0"
     }
 
     object ConfigData {

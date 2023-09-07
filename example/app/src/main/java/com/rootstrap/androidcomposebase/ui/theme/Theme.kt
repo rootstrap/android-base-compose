@@ -7,6 +7,10 @@ import androidx.compose.material3.Shapes
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.staticCompositionLocalOf
+import com.rootstrap.androidcomposebase.ui.model.Dimensions
 
 private val LightColors = lightColorScheme(
     primary = md_theme_light_primary,
@@ -76,6 +80,7 @@ private val DarkColors = darkColorScheme(
 @Composable
 fun AppTheme(
     useDarkTheme: Boolean = isSystemInDarkTheme(),
+    dimensions: Dimensions,
     content: @Composable () -> Unit
 ) {
     val colors = if (!useDarkTheme) {
@@ -92,10 +97,32 @@ fun AppTheme(
         extraLarge = RoundedCornerShape(ShapeRadius.extraLarge)
     )
 
-    MaterialTheme(
-        colorScheme = colors,
-        content = content,
-        typography = Typography,
-        shapes = shapes,
-    )
+    ProvideDimens(dimensions = dimensions) {
+        MaterialTheme(
+            colorScheme = colors,
+            content = content,
+            typography = Typography,
+            shapes = shapes,
+        )
+    }
+}
+
+@Composable
+fun ProvideDimens(
+    dimensions: Dimensions,
+    content: @Composable () -> Unit
+) {
+    val dimensionSet = remember { dimensions }
+    CompositionLocalProvider(LocalAppDimens provides dimensionSet, content = content)
+}
+
+private val LocalAppDimens = staticCompositionLocalOf {
+    defaultDimensions
+}
+
+
+object AppTheme {
+    val dimens: Dimensions
+        @Composable
+        get() = LocalAppDimens.current
 }
