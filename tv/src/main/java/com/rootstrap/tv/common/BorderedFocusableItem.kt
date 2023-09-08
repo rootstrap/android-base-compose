@@ -44,7 +44,7 @@ fun BorderedFocusableItem(
             containerColor = colorScheme.onSurface,
             focusedContainerColor = MaterialTheme.colorScheme.inverseSurface,
             contentColor = colorScheme.surface,
-            focusedContentColor = colorScheme.surface,
+            focusedContentColor = colorScheme.surface
         ),
         glow = ClickableSurfaceDefaults.glow(
             focusedGlow = Glow(

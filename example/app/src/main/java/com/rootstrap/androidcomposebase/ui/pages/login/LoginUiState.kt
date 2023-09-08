@@ -6,7 +6,7 @@ data class LoginUiState(
     val email: String = "",
     val showEmailError: Boolean = false,
     val password: String = "",
-    val showPasswordError: Boolean = false,
+    val showPasswordError: Boolean = false
 ) : UiState {
 
     val isButtonEnabled: Boolean

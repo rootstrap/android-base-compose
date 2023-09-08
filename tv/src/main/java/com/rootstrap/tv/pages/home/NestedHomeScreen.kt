@@ -24,6 +24,6 @@ fun NestedHomeScreen(
                     movieId = it?.id.orEmpty()
                 )
             )
-        },
+        }
     )
 }

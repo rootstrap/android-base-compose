@@ -8,6 +8,6 @@ java {
     targetCompatibility = JavaVersion.VERSION_17
 }
 
-dependencies{
+dependencies {
     implementation(project(":core:domain"))
 }

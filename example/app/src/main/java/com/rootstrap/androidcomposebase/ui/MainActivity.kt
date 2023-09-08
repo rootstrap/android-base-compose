@@ -44,7 +44,7 @@ class MainActivity : ComponentActivity() {
                     GenericErrorDialog(
                         onDismissRequest = viewModel::clearErrorNotification,
                         title = it.title,
-                        description = it.description,
+                        description = it.description
                     )
                 }
             }
@@ -56,7 +56,7 @@ class MainActivity : ComponentActivity() {
     private fun GenericErrorDialog(
         onDismissRequest: () -> Unit,
         title: String,
-        description: String,
+        description: String
     ) {
         AlertDialog(
             onDismissRequest = onDismissRequest
@@ -64,11 +64,11 @@ class MainActivity : ComponentActivity() {
             Column {
                 Text(
                     text = title,
-                    style = MaterialTheme.typography.titleMedium,
+                    style = MaterialTheme.typography.titleMedium
                 )
                 Text(
                     text = description,
-                    style = MaterialTheme.typography.bodyMedium,
+                    style = MaterialTheme.typography.bodyMedium
                 )
             }
         }

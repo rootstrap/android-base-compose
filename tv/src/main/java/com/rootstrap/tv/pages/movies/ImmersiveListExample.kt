@@ -64,7 +64,7 @@ fun ImmersiveListExample(
                     ImmersiveListPoster(featuredMovies, index, immersiveListHeight)
                 }
             }
-        },
+        }
     ) {
         Column {
             if (isListFocused) {
@@ -88,7 +88,7 @@ fun ImmersiveListScope.ImmersiveListRow(
     modifier: Modifier = Modifier,
     featuredMovies: List<Movie>,
     onItemClick: (Movie) -> Unit,
-    currentItemIndex: (index: Int) -> Unit,
+    currentItemIndex: (index: Int) -> Unit
 ) {
     Column(modifier = modifier.focusGroup()) {
         TvLazyRow(

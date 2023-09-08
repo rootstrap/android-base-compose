@@ -1,7 +1,6 @@
 package com.rootstrap.tv
 
 import android.app.Application
-
 import com.rootstrap.tv.di.appModule
 import com.rootstrap.tv.di.dataModule
 import org.koin.android.BuildConfig

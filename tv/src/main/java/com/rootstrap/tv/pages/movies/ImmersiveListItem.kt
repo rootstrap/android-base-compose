@@ -64,7 +64,7 @@ fun ImmersiveListItem(
                 onMovieClick = onMovieClick,
                 movie = movie
             )
-        },
+        }
     )
 }
 
@@ -92,7 +92,7 @@ private fun ImmersiveItemCardImage(
     ) {
         ImmersiveItemImage(
             modifier = Modifier.aspectRatio(ASPECT_RATIO_16_9),
-            movie = movie,
+            movie = movie
         )
     }
 }
@@ -100,7 +100,7 @@ private fun ImmersiveItemCardImage(
 @Composable
 private fun ImmersiveItemImage(
     modifier: Modifier = Modifier,
-    movie: Movie,
+    movie: Movie
 ) {
     Box(contentAlignment = Alignment.CenterStart) {
         AsyncImage(

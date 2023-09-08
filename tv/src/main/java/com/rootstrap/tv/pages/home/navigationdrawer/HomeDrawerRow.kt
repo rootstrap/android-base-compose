@@ -37,7 +37,7 @@ fun HomeDrawerRow(
         animationSpec = keyframes {
             this.delayMillis = NAV_DRAWER_ANIM_MILLIS
         },
-        targetValue = if (drawerValue == DrawerValue.Open) Dimens.paddingQuarter else 0.dp,
+        targetValue = if (drawerValue == DrawerValue.Open) Dimens.paddingQuarter else 0.dp
     )
 
     Surface(

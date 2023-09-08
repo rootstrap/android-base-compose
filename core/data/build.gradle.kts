@@ -54,6 +54,7 @@ android {
 
 dependencies {
     implementation(project(":core:domain"))
+    implementation(project(":core:usecases"))
 
     implementation(COROUTINES_ANDROID)
     implementation(DATA_STORE_PREFERENCES)

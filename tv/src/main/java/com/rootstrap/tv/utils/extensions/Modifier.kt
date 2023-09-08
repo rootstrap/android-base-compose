@@ -26,7 +26,6 @@ fun Modifier.handleDPadKeyEvents(
     if (!DPadEventsKeyCodes.contains(it.nativeKeyEvent.keyCode)) return@onPreviewKeyEvent false
 
     when (it.nativeKeyEvent.keyCode) {
-
         KeyEvent.KEYCODE_ENTER,
         KeyEvent.KEYCODE_DPAD_CENTER,
         KeyEvent.KEYCODE_NUMPAD_ENTER -> {

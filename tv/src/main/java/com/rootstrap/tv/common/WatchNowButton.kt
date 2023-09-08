@@ -27,7 +27,7 @@ fun <T> WatchNowButton(modifier: Modifier = Modifier, item: T, onClick: (T) -> U
         colors = ButtonDefaults.colors(
             containerColor = MaterialTheme.colorScheme.onSurface,
             contentColor = MaterialTheme.colorScheme.surface,
-            focusedContentColor = MaterialTheme.colorScheme.surface,
+            focusedContentColor = MaterialTheme.colorScheme.surface
         ),
         scale = ButtonDefaults.scale(scale = 1f)
     ) {

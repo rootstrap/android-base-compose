@@ -6,8 +6,10 @@ import com.rootstrap.data.network.HttpClientProvider
 import com.rootstrap.data.network.HttpClientProviderImpl
 import com.rootstrap.data.store.PreferencesDataStore
 import com.rootstrap.data.utils.Constants.MegaBytes50
-import com.rootstrap.data.utils.ErrorHandler
-import com.rootstrap.data.utils.ErrorNotifier
+import com.rootstrap.data.utils.CoroutineErrorHandler
+import com.rootstrap.data.utils.FlowErrorNotifier
+import com.rootstrap.domain.errors.ErrorHandler
+import com.rootstrap.domain.errors.ErrorNotifier
 import kotlinx.coroutines.Dispatchers
 import kotlinx.serialization.ExperimentalSerializationApi
 import kotlinx.serialization.json.Json
@@ -19,7 +21,7 @@ import org.koin.dsl.module
 
 val dataModule = module {
     single { androidApplication().resources }
-    single { ErrorNotifier() }
+    single<ErrorNotifier> { FlowErrorNotifier() }
     single { createJson() }
     single { createPreferencesDataStore() }
     single { AuthInterceptor(get()) }
@@ -28,9 +30,8 @@ val dataModule = module {
     single { get<ApiProvider>().myApi }
 
     factory { Cache(androidApplication().cacheDir, MegaBytes50) }
-    factory {
-        ErrorHandler(
-            resources = get(),
+    factory<ErrorHandler> {
+        CoroutineErrorHandler(
             errorNotifier = get()
         )
     }
@@ -46,17 +47,17 @@ private fun createJson() = Json {
 
 private fun Scope.createApiProvider() = ApiProvider(
     json = get(),
-    httpClientProvider = get(),
+    httpClientProvider = get()
 )
 
 private fun Scope.createPreferencesDataStore() = PreferencesDataStore(
     coroutineDispatcher = Dispatchers.IO,
     context = androidContext(),
-    preferencesFileName = "app_prefs",
+    preferencesFileName = "app_prefs"
 )
 
 private fun Scope.createHttpClientProvider() =
     HttpClientProviderImpl(
         cache = get(),
-        authInterceptor = get(),
+        authInterceptor = get()
     )

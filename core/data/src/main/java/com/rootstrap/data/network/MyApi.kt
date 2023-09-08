@@ -13,5 +13,5 @@ interface MyApi {
 
 @Serializable
 data class UserResponse(
-    @SerialName("id") val id: String,
+    @SerialName("id") val id: String
 )

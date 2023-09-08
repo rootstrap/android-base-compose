@@ -11,7 +11,7 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 open class BaseViewModel<UiStateType : UiState, NavigationEventT : Any>(
-    initialUiState: UiStateType,
+    initialUiState: UiStateType
 ) : ViewModel(), LifecycleObserver {
 
     private val _uiStateFlow = MutableStateFlow(initialUiState)

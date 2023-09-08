@@ -2,7 +2,7 @@ package com.rootstrap.androidcomposebase.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.rootstrap.data.utils.ErrorNotifier
+import com.rootstrap.domain.errors.ErrorNotifier
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class AppActivityViewModel(
-    private val errorNotifier: ErrorNotifier
+    private val errorNotifier: com.rootstrap.domain.errors.ErrorNotifier
 ) : ViewModel() {
 
     private val _loading = MutableStateFlow(true)

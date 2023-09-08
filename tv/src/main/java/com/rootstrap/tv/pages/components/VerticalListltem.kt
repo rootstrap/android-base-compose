@@ -15,7 +15,7 @@ import com.rootstrap.tv.theme.Dimens
 private const val VERTICAL_ITEM_ASPECT_RATIO = 0.6f
 
 @Composable
-fun VerticalListItem(itemText:String, onItemFocus: () -> Unit) {
+fun VerticalListItem(itemText: String, onItemFocus: () -> Unit) {
     BorderedFocusableItem(
         onClick = {
             onItemFocus()

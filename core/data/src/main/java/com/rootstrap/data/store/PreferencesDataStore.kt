@@ -16,7 +16,7 @@ import kotlinx.coroutines.flow.map
 class PreferencesDataStore(
     coroutineDispatcher: CoroutineDispatcher,
     context: Context,
-    preferencesFileName: String,
+    preferencesFileName: String
 ) {
 
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(
@@ -37,5 +37,4 @@ class PreferencesDataStore(
     private object Keys {
         val API_TOKEN = stringPreferencesKey("api_token")
     }
-
 }
