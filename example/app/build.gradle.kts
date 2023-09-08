@@ -48,8 +48,10 @@ android {
 
 dependencies {
     implementation(project(":core:di"))
-    implementation(project(":example:core:data"))
+    implementation(project(":core:domain"))
     implementation(project(":example:core:domain"))
+    // TODO: remove data dependency from app module
+    implementation(project(":example:core:data"))
     implementation(project(":example:core:usecases"))
 
     with(Dependencies.Android) {

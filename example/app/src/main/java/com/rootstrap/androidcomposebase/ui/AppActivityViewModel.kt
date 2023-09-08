@@ -10,7 +10,7 @@ import kotlinx.coroutines.flow.asStateFlow
 import kotlinx.coroutines.launch
 
 class AppActivityViewModel(
-    private val errorNotifier: com.rootstrap.domain.errors.ErrorNotifier
+    private val errorNotifier: ErrorNotifier
 ) : ViewModel() {
 
     private val _loading = MutableStateFlow(true)
