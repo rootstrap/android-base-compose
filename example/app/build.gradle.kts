@@ -34,6 +34,20 @@ android {
 
     kotlinOptions {
         jvmTarget = "1.8"
+        /**
+         * Compose-metrics
+         * How to execute:
+         * ./gradlew assembleRelease -PcomposeCompilerReports=true
+         * Review reports in: app/build/compose_metrics
+         * */
+        freeCompilerArgs += listOf(
+            "-P",
+            "plugin:androidx.compose.compiler.plugins.kotlin:metricsDestination=" + project.buildDir.absolutePath + "/compose_metrics"
+        )
+        freeCompilerArgs += listOf(
+            "-P",
+            "plugin:androidx.compose.compiler.plugins.kotlin:reportsDestination=" + project.buildDir.absolutePath + "/compose_metrics"
+        )
     }
 
     buildFeatures {
