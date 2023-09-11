@@ -1,8 +1,9 @@
-package com.rootstrap.yourAppName.ui.base
+package com.rootstrap.yourAppName.utils
 
 import android.content.res.Resources
 import com.rootstrap.R
 import com.rootstrap.domain.errors.ErrorType
+import com.rootstrap.yourAppName.models.ErrorEntity
 
 /**
  * Maps an [ErrorType] to an [ErrorEntity] to be displayed in the UI.
