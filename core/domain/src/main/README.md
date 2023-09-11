@@ -5,6 +5,8 @@ This module contains the Models used across the app.
 ## Contents
 
 - Models 
+- Repositories 
+- Errors 
 
 ## Models
 
@@ -16,4 +18,13 @@ Examples:
 - Post
 - Comment
 
+## Repositories
 
+Interface definitions for repositories. These are implemented in the data layer.
+
+## Errors
+
+Contains error handling related classes like:
+
+- ErrorNotifier - Used to notify errors to the UI
+- ErrorHandler - Handles exceptions in coroutines
