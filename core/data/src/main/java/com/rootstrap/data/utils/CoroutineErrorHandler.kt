@@ -12,8 +12,9 @@ import kotlin.coroutines.AbstractCoroutineContextElement
 import kotlin.coroutines.CoroutineContext
 
 /**
- * Use as part of the coroutine's context when launching a new coroutine using ViewModelScope or similar.
- * It will add a default error handling for any uncaught exception in the coroutine.
+ * CoroutineErrorHandler is a class that handles uncaught exceptions in coroutines.
+ * Implements [CoroutineExceptionHandler], [ErrorHandler], [AbstractCoroutineContextElement].
+ * For more information of how to use it go to [ErrorHandler].
  */
 class CoroutineErrorHandler(
     private val errorNotifier: ErrorNotifier
