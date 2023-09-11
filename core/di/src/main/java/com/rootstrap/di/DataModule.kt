@@ -7,7 +7,6 @@ import com.rootstrap.data.network.HttpClientProviderImpl
 import com.rootstrap.data.store.PreferencesDataStore
 import com.rootstrap.data.utils.Constants.MegaBytes50
 import com.rootstrap.data.utils.CoroutineErrorHandler
-import com.rootstrap.data.utils.FlowErrorNotifier
 import com.rootstrap.domain.errors.ErrorHandler
 import com.rootstrap.domain.errors.ErrorNotifier
 import kotlinx.coroutines.Dispatchers
@@ -21,7 +20,7 @@ import org.koin.dsl.module
 
 val dataModule = module {
     single { androidApplication().resources }
-    single<ErrorNotifier> { FlowErrorNotifier() }
+    single { ErrorNotifier() }
     single { createJson() }
     single { createPreferencesDataStore() }
     single { AuthInterceptor(get()) }

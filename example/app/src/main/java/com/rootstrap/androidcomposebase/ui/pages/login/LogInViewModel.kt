@@ -5,7 +5,7 @@ import com.rootstrap.androidcomposebase.ui.base.BaseViewModel
 import com.rootstrap.example.data.PatternsUtil
 import java.util.regex.Pattern
 
-class LogInViewModel : BaseViewModel<LoginUiState, Any>(LoginUiState()) {
+class LogInViewModel : BaseViewModel<LogInUiState, Any>(LogInUiState()) {
 
     fun onEmailChanged(email: String) {
         val isEmailValid = Patterns.EMAIL_ADDRESS.toRegex().matches(email) || email.isEmpty()

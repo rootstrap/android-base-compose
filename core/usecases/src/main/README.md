@@ -7,16 +7,6 @@ This module contains the use cases of the app.
 - Repositories 
 - Use Cases 
 
-## Repositories
-
-This package contains the repository interfaces that are implemented in the Data layer. 
-Keeping these interfaces in the Domain layer allows the Data layer to remain isolated.
-
-Examples:
-
-- IUserRepository
-- IPostRepository
-- ICommentRepository
 
 ## Use Cases
 

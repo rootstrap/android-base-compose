@@ -1,11 +1,13 @@
+import Dependencies.Common.JAVA_VERSION
+
 plugins {
-    id("java-library")
-    id("org.jetbrains.kotlin.jvm")
+    id(Dependencies.Plugins.JAVA_LIBRARY)
+    id(Dependencies.Plugins.KOTLIN_JVM)
 }
 
 java {
-    sourceCompatibility = JavaVersion.VERSION_17
-    targetCompatibility = JavaVersion.VERSION_17
+    sourceCompatibility = JAVA_VERSION
+    targetCompatibility = JAVA_VERSION
 }
 
 dependencies {

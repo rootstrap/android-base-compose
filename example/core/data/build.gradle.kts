@@ -1,3 +1,5 @@
+import Dependencies.Common.JAVA_TARGET
+import Dependencies.Common.JAVA_VERSION
 import Dependencies.ConfigData.COMPILE_SDK_VERSION
 import Dependencies.ConfigData.MIN_SDK_VERSION
 import Dependencies.ConfigData.TARGET_SDK_VERSION
@@ -30,11 +32,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JAVA_VERSION
+        targetCompatibility = JAVA_VERSION
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JAVA_TARGET
     }
 }
 
