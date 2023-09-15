@@ -10,7 +10,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.ui.platform.LocalContext
 import com.rootstrap.yourAppName.ui.model.Dimensions
+import com.rootstrap.yourAppName.ui.model.WindowType
 
 private val LightColors = lightColorScheme(
     primary = md_theme_light_primary,
@@ -80,7 +82,6 @@ private val DarkColors = darkColorScheme(
 @Composable
 fun AppTheme(
     useDarkTheme: Boolean = isSystemInDarkTheme(),
-    dimensions: Dimensions,
     content: @Composable () -> Unit
 ) {
     val colors = if (!useDarkTheme) {
@@ -88,6 +89,7 @@ fun AppTheme(
     } else {
         DarkColors
     }
+    val dimensions = WindowType.getDimensions(context = LocalContext.current)
 
     val shapes = Shapes(
         extraSmall = RoundedCornerShape(ShapeRadius.extraSmall),

@@ -20,7 +20,7 @@ open class BaseViewModel<UiStateType : UiState, NavigationEventT : Any>(
     private val _eventFlow = Channel<NavigationEventT?>()
     val eventFlow = _eventFlow.receiveAsFlow()
 
-    val uiState: UiStateType
+    protected val uiState: UiStateType
         get() = _uiStateFlow.value
 
     protected fun updateUiState(function: (state: UiStateType) -> UiStateType) {

@@ -15,7 +15,6 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.rootstrap.yourAppName.ui.extension.getDimensions
 import com.rootstrap.yourAppName.ui.theme.AppTheme
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -30,7 +29,7 @@ class AppActivity : ComponentActivity() {
         setContent {
             val errorNotification by viewModel.errorNotification.collectAsStateWithLifecycle()
 
-            AppTheme(dimensions = getDimensions()) {
+            AppTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),

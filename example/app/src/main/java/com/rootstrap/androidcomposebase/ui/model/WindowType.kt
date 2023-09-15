@@ -1,9 +1,15 @@
 package com.rootstrap.yourAppName.ui.model
 
+import android.content.Context
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.remember
+import androidx.compose.ui.graphics.toComposeRect
+import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.unit.Dp
-import androidx.compose.ui.unit.DpSize
 import androidx.compose.ui.unit.dp
-import com.rootstrap.androidcomposebase.ui.theme.Dimensions
+import androidx.window.layout.WindowMetricsCalculator
+import com.rootstrap.androidcomposebase.ui.model.Dimensions
 import com.rootstrap.androidcomposebase.ui.theme.compactDimensions
 import com.rootstrap.androidcomposebase.ui.theme.defaultDimensions
 import com.rootstrap.androidcomposebase.ui.theme.expandedDimensions
@@ -18,7 +24,17 @@ enum class WindowType(
     EXPANDED(Dp.Infinity, Dp.Infinity, expandedDimensions);
 
     companion object {
-        fun getDimensions(windowDpSize: DpSize): Dimensions {
+        @Composable
+        fun getDimensions(context: Context): Dimensions {
+            val configuration = LocalConfiguration.current
+            val windowMetrics = remember(configuration) {
+                WindowMetricsCalculator.getOrCreate()
+                    .computeCurrentWindowMetrics(context)
+            }
+            val windowDpSize = with(LocalDensity.current) {
+                windowMetrics.bounds.toComposeRect().size.toDpSize()
+            }
+
             val windowType = when {
                 windowDpSize.width < COMPACT.maxWidth -> COMPACT
                 windowDpSize.height < COMPACT.maxHeight -> COMPACT

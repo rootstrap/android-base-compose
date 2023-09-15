@@ -18,7 +18,6 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rootstrap.androidcomposebase.ui.pages.login.LogInScreen
 import com.rootstrap.androidcomposebase.ui.pages.login.LogInViewModel
 import com.rootstrap.androidcomposebase.ui.theme.AppTheme
-import com.rootstrap.androidcomposebase.ui.extension.getDimensions
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class MainActivity : ComponentActivity() {
@@ -32,7 +31,7 @@ class MainActivity : ComponentActivity() {
         setContent {
             val errorNotification by viewModel.errorNotification.collectAsStateWithLifecycle()
 
-            AppTheme(dimensions = getDimensions()) {
+            AppTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
