@@ -44,7 +44,9 @@ fun ImmersiveListPoster(featuredMovies: List<Movie>, index: Int, height: Dp) {
                     .crossfade(true)
                     .data(featuredMovies[index].posterUri)
                     .build()
-            } else null,
+            } else {
+                null
+            },
             contentDescription = null,
             contentScale = ContentScale.Crop
         )

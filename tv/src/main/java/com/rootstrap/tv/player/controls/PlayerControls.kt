@@ -35,7 +35,6 @@ fun VideoPlayerControls(
     contentProgressInMillis: Long,
     contentDurationInMillis: Long
 ) {
-
     val focusRequester = remember { FocusRequester() }
     val contentProgress by remember(contentProgressInMillis, contentDurationInMillis) {
         derivedStateOf {
@@ -114,7 +113,7 @@ private fun PrimaryButtons(
     state: VideoPlayerControlsState,
     contentProgressString: String,
     onPlayPauseToggle: (Boolean) -> Unit,
-    onSeek: (seekProgress: Float) -> Unit,
+    onSeek: (seekProgress: Float) -> Unit
 ) {
     Row(
         verticalAlignment = Alignment.CenterVertically
@@ -165,5 +164,3 @@ private fun SecondaryButtons(state: VideoPlayerControlsState, isPlaying: Boolean
         )
     }
 }
-
-

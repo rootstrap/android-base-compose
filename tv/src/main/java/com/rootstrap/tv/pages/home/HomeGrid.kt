@@ -26,7 +26,7 @@ fun HomeGrid(
         item {
             CarouselExample(
                 featuredContentList = uiState.featuredMovies,
-                onPlayNowClicked = onItemClick,
+                onPlayNowClicked = onItemClick
             )
         }
         items(uiState.homeRows.size) {

@@ -49,10 +49,11 @@ fun CarouselExample(featuredContentList: List<Movie>, onPlayNowClicked: (Movie) 
     var isCarouselFocused by remember { mutableStateOf(false) }
     val carouselBorderAlpha by animateFloatAsState(
         targetValue = if (isCarouselFocused) 1f else 0f,
-        label = "",
+        label = ""
     )
 
-    AnimatedContent(targetState = featuredContentList,
+    AnimatedContent(
+        targetState = featuredContentList,
         label = "Carousel animation",
         modifier = Modifier
             .fillMaxWidth()
@@ -65,12 +66,13 @@ fun CarouselExample(featuredContentList: List<Movie>, onPlayNowClicked: (Movie) 
             .border(
                 width = Dimens.carouselBorderWidth,
                 color = MaterialTheme.colorScheme.onSurface.copy(alpha = carouselBorderAlpha),
-                shape = ShapeDefaults.Medium,
+                shape = ShapeDefaults.Medium
             )
             .clip(ShapeDefaults.Medium)
             .onFocusChanged {
                 isCarouselFocused = it.hasFocus
-            }) { movies ->
+            }
+    ) { movies ->
         Carousel(
             itemCount = movies.size,
             modifier = Modifier.fillMaxSize(),
@@ -140,7 +142,8 @@ fun CarouselItemText(
                 color = MaterialTheme.colorScheme.onSurface,
                 style = MaterialTheme.typography.displayMedium.copy(
                     shadow = Shadow(
-                        color = Color.Black.copy(alpha = 0.5f), blurRadius = 2f
+                        color = Color.Black.copy(alpha = 0.5f),
+                        blurRadius = 2f
                     )
                 ),
                 maxLines = 1

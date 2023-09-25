@@ -20,7 +20,7 @@ fun KeyboardItem(
     key: Any,
     modifier: Modifier = Modifier,
     keyboardLetterType: KeyboardLetterType,
-    onKeyPressed: (String, KeyboardLetterType) -> Unit,
+    onKeyPressed: (String, KeyboardLetterType) -> Unit
 ) {
     KeyboardItem(
         modifier = modifier.aspectRatio(1f),
@@ -39,7 +39,7 @@ fun KeyboardItem(
     key: String,
     keyboardLetterType: KeyboardLetterType,
     onKeyPressed: (String, KeyboardLetterType) -> Unit,
-    content: @Composable () -> Unit,
+    content: @Composable () -> Unit
 ) {
     Surface(
         modifier = modifier.padding(Dimens.paddingQuarter),

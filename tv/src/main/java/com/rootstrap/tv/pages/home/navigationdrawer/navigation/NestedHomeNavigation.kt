@@ -18,7 +18,7 @@ import org.koin.androidx.compose.koinViewModel
 fun NestedHomeNavigation(
     appNavHostController: NavHostController,
     nestedNavController: NavHostController,
-    viewModel: HomeScreenViewModel = koinViewModel(),
+    viewModel: HomeScreenViewModel = koinViewModel()
 ) {
     NavHost(
         navController = nestedNavController,
@@ -33,7 +33,7 @@ fun NestedHomeNavigation(
         composable(NestedScreens.Favorites.title) {
             FavouritesScreen(
                 navHostController = appNavHostController,
-                viewModel = viewModel,
+                viewModel = viewModel
             )
         }
         composable(NestedScreens.Search.title) {
@@ -42,7 +42,7 @@ fun NestedHomeNavigation(
         composable(NestedScreens.Movies.title) {
             MoviesScreen(
                 navHostController = appNavHostController,
-                viewModel = viewModel,
+                viewModel = viewModel
             )
         }
     }

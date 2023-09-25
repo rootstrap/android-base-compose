@@ -39,7 +39,7 @@ const val HIDE_CONTROLS_TIME = 4
 @androidx.annotation.OptIn(androidx.media3.common.util.UnstableApi::class)
 fun VideoPlayerScreen(
     movieId: String,
-    viewModel:VideoPlayerViewModel = koinViewModel(),
+    viewModel: VideoPlayerViewModel = koinViewModel(),
     onBackPressed: () -> Unit
 ) {
     val context = LocalContext.current

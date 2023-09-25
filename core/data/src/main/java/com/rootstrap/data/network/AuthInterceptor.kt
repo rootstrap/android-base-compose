@@ -28,5 +28,4 @@ class AuthInterceptor(
     companion object {
         private const val AuthHttpHeader = "Authorization"
     }
-
 }

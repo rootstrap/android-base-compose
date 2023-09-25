@@ -25,5 +25,6 @@ fun FavouritesScreen(
                     movie?.id.orEmpty()
                 )
             )
-        })
+        }
+    )
 }

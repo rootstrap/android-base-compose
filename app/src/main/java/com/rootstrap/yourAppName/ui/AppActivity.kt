@@ -16,6 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rootstrap.yourAppName.ui.theme.AppTheme
+import com.rootstrap.yourAppName.utils.ErrorMapper
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class AppActivity : ComponentActivity() {
@@ -39,10 +40,11 @@ class AppActivity : ComponentActivity() {
                 }
 
                 errorNotification?.let {
+                    val error = ErrorMapper.map(it.errorType, resources)
                     GenericErrorDialog(
                         onDismissRequest = viewModel::clearErrorNotification,
-                        title = it.title,
-                        description = it.description,
+                        title = error.title,
+                        description = error.description
                     )
                 }
             }
@@ -54,7 +56,7 @@ class AppActivity : ComponentActivity() {
     private fun GenericErrorDialog(
         onDismissRequest: () -> Unit,
         title: String,
-        description: String,
+        description: String
     ) {
         AlertDialog(
             onDismissRequest = onDismissRequest
@@ -62,11 +64,11 @@ class AppActivity : ComponentActivity() {
             Column {
                 Text(
                     text = title,
-                    style = MaterialTheme.typography.titleMedium,
+                    style = MaterialTheme.typography.titleMedium
                 )
                 Text(
                     text = description,
-                    style = MaterialTheme.typography.bodyMedium,
+                    style = MaterialTheme.typography.bodyMedium
                 )
             }
         }

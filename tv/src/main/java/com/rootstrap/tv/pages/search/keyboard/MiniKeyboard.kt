@@ -49,7 +49,7 @@ private const val EXTRA_KEY_SPAN = 2
 fun MiniKeyboard(
     modifier: Modifier,
     isNumeric: Boolean,
-    onKeyPressed: (String, KeyboardLetterType) -> Unit,
+    onKeyPressed: (String, KeyboardLetterType) -> Unit
 ) {
     var sizeInDp by remember { mutableStateOf(DpSize.Zero) }
     val density = LocalDensity.current
@@ -139,7 +139,7 @@ fun MiniKeyboardPrev() {
         MiniKeyboard(
             modifier = Modifier.size(400.dp),
             isNumeric = false,
-            onKeyPressed = { _, _ -> },
+            onKeyPressed = { _, _ -> }
         )
     }
 }

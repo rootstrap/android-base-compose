@@ -3,9 +3,9 @@ package com.rootstrap.androidcomposebase
 import android.app.Application
 import android.content.Context
 import android.content.res.Resources
-import com.rootstrap.yourAppName.di.appModule
 import com.rootstrap.di.dataModule
 import com.rootstrap.di.useCasesModule
+import com.rootstrap.yourAppName.di.appModule
 import io.mockk.every
 import io.mockk.mockk
 import io.mockk.mockkClass
