@@ -8,4 +8,3 @@ To listen to those errors we use the `ErrorNotifier` singleton that exposes a fl
 
 # Lint
 How to check lint issues: ktlintCheck and ktlintFormat
-
