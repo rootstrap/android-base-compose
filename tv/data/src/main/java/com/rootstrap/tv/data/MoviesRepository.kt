@@ -69,7 +69,7 @@ class MoviesRepository {
                     posterUri = "https://storage.googleapis.com/androiddevelopers/samples/media/posters/2_3-300/on-the-bridge.jpg",
                     name = "Teminator",
                     description = "Terminator is an American media franchise created by James Cameron and Gale Anne Hurd. The franchise encompasses a series of science fiction action films"
-                ),
+                )
             )
             list.add(
                 Movie(

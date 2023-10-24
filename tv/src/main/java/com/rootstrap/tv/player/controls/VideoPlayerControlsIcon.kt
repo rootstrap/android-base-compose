@@ -17,7 +17,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.tv.material3.ClickableSurfaceDefaults
 import androidx.tv.material3.ExperimentalTvMaterial3Api
 import androidx.tv.material3.Icon
-
 import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Surface
 import com.rootstrap.tv.theme.Dimens

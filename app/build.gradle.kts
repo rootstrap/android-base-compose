@@ -1,3 +1,6 @@
+import Dependencies.Common.JAVA_TARGET
+import Dependencies.Common.JAVA_VERSION
+
 plugins {
     id("com.android.application")
     kotlin(Dependencies.Plugins.ANDROID)
@@ -28,12 +31,12 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JAVA_VERSION
+        targetCompatibility = JAVA_VERSION
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JAVA_TARGET
     }
 
     buildFeatures {
@@ -47,7 +50,6 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:data"))
     implementation(project(":core:domain"))
     implementation(project(":core:usecases"))
     implementation(project(":core:di"))

@@ -21,7 +21,8 @@ fun MoviesScreen(
     Column(
         modifier = Modifier.fillMaxSize()
     ) {
-        ImmersiveListExample(modifier = Modifier,
+        ImmersiveListExample(
+            modifier = Modifier,
             featuredMovies = uiState.featuredMovies,
             onItemClick = { movie ->
                 navHostController.navigate(
@@ -29,6 +30,7 @@ fun MoviesScreen(
                         movie.id
                     )
                 )
-            })
+            }
+        )
     }
 }

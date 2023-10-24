@@ -15,7 +15,7 @@ interface HttpClientProvider {
 class HttpClientProviderImpl(
     private val cache: Cache,
     private val authInterceptor: AuthInterceptor,
-    private val isDebugMode: Boolean = BuildConfig.DEBUG,
+    private val isDebugMode: Boolean = BuildConfig.DEBUG
 ) : HttpClientProvider {
 
     override val cachedOkHttpClient: OkHttpClient get() {

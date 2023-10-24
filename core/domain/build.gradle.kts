@@ -1,40 +1,16 @@
+import Dependencies.Common.JAVA_VERSION
+import Dependencies.Kotlin.COROUTINES_CORE
+
 plugins {
-    with(Dependencies.Plugins) {
-        id(ANDROID_LIB)
-        kotlin(ANDROID)
-    }
+    id(Dependencies.Plugins.JAVA_LIBRARY)
+    id(Dependencies.Plugins.KOTLIN_JVM)
 }
 
-android {
-    namespace = "com.rootstrap.domain"
-
-    with(Dependencies.ConfigData) {
-        compileSdk = COMPILE_SDK_VERSION
-
-        defaultConfig {
-            minSdk = MIN_SDK_VERSION
-            targetSdk = TARGET_SDK_VERSION
-            testInstrumentationRunner = "com.rootstrap.android.CustomTestRunner"
-        }
-    }
-
-    buildTypes {
-        getByName("release") {
-            isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro")
-        }
-    }
-
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
+java {
+    sourceCompatibility = JAVA_VERSION
+    targetCompatibility = JAVA_VERSION
 }
 
 dependencies {
-
+    implementation(COROUTINES_CORE)
 }

@@ -36,7 +36,7 @@ fun HorizontalRowWithTitle(
             itemsIndexed(rowItems) { _, item ->
                 HorizontalRowItem(
                     movie = item,
-                    onItemClick = onItemClick,
+                    onItemClick = onItemClick
                 )
             }
         }

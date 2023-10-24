@@ -22,7 +22,7 @@ import com.rootstrap.example.app.R
 fun LogInScreen(
     viewModel: LogInViewModel = LogInViewModel()
 ) {
-    val uiState by viewModel.uiState.collectAsStateWithLifecycle()
+    val uiState by viewModel.uiStateFlow.collectAsStateWithLifecycle()
     Column(
         verticalArrangement = Arrangement.SpaceEvenly,
         horizontalAlignment = Alignment.CenterHorizontally,

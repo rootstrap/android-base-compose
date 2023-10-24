@@ -42,14 +42,21 @@ fun RowScope.VideoPlayerControllerIndicator(
     var isSelected by remember { mutableStateOf(false) }
     val isFocused by interactionSource.collectIsFocusedAsState()
     val color by rememberUpdatedState(
-        newValue = if (isSelected) MaterialTheme.colorScheme.primary
-        else MaterialTheme.colorScheme.onSurface
+        newValue = if (isSelected) {
+            MaterialTheme.colorScheme.primary
+        } else {
+            MaterialTheme.colorScheme.onSurface
+        }
     )
     val animatedIndicatorHeight by animateDpAsState(
         targetValue = progressIndicatorSize.times(
-            (if (isFocused)
-                INDICATOR_FOCUSED_MULTIPLIER
-            else INDICATOR_NOT_FOCUSED_MULTIPLIER)
+            (
+                if (isFocused) {
+                    INDICATOR_FOCUSED_MULTIPLIER
+                } else {
+                    INDICATOR_NOT_FOCUSED_MULTIPLIER
+                }
+                )
         )
     )
     var seekProgress by remember { mutableFloatStateOf(0f) }

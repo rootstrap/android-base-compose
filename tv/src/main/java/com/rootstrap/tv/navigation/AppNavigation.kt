@@ -13,9 +13,8 @@ import com.rootstrap.tv.player.VideoPlayerScreen
 @Composable
 fun AppNavigation(navController: NavHostController) {
     NavHost(navController = navController, startDestination = MainScreens.Home.title) {
-
         composable(
-            MainScreens.Home.title,
+            MainScreens.Home.title
         ) {
             HomeScreen(navController)
         }

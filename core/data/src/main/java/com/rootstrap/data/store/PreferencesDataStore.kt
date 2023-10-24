@@ -12,11 +12,12 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.SupervisorJob
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import java.io.IOException
 
 class PreferencesDataStore(
     coroutineDispatcher: CoroutineDispatcher,
     context: Context,
-    preferencesFileName: String,
+    preferencesFileName: String
 ) {
 
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(
@@ -26,16 +27,40 @@ class PreferencesDataStore(
 
     private val dataStore = context.dataStore
 
-    val apiToken: Flow<String> = dataStore.data.map {
-        it[API_TOKEN].orEmpty()
+    val apiToken = getValue(API_TOKEN)
+
+    suspend fun saveApiToken(token: String?) {
+        if (token.isNullOrBlank()) {
+            throw InvalidTokenException()
+        }
+        setValue(API_TOKEN, token)
     }
 
-    suspend fun setApiToken(token: String) {
-        dataStore.edit { it[API_TOKEN] = token }
+    suspend fun removeApiToken() {
+        removeValue(API_TOKEN)
+    }
+
+    private fun getValue(key: Preferences.Key<String>): Flow<String> {
+        return dataStore.data.map { preferences -> preferences[key].orEmpty() }
+    }
+
+    private suspend fun removeValue(key: Preferences.Key<String>) {
+        dataStore.edit { preferences -> preferences.remove(key) }
+    }
+
+    private suspend fun setValue(key: Preferences.Key<String>, value: String) {
+        try {
+            dataStore.edit {
+                it[key] = value
+            }
+        } catch (_: IOException) {
+            throw WritingDataException()
+        } catch (_: Exception) {
+            throw InvalidValueException()
+        }
     }
 
     private object Keys {
         val API_TOKEN = stringPreferencesKey("api_token")
     }
-
 }

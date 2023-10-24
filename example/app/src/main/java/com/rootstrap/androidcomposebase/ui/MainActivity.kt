@@ -15,6 +15,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.rootstrap.androidcomposebase.ui.base.ErrorMapper
 import com.rootstrap.androidcomposebase.ui.pages.login.LogInScreen
 import com.rootstrap.androidcomposebase.ui.pages.login.LogInViewModel
 import com.rootstrap.androidcomposebase.ui.theme.AppTheme
@@ -41,10 +42,11 @@ class MainActivity : ComponentActivity() {
                 }
 
                 errorNotification?.let {
+                    val error = ErrorMapper.map(it.errorType, resources)
                     GenericErrorDialog(
                         onDismissRequest = viewModel::clearErrorNotification,
-                        title = it.title,
-                        description = it.description,
+                        title = error.title,
+                        description = error.description
                     )
                 }
             }
@@ -56,7 +58,7 @@ class MainActivity : ComponentActivity() {
     private fun GenericErrorDialog(
         onDismissRequest: () -> Unit,
         title: String,
-        description: String,
+        description: String
     ) {
         AlertDialog(
             onDismissRequest = onDismissRequest
@@ -64,11 +66,11 @@ class MainActivity : ComponentActivity() {
             Column {
                 Text(
                     text = title,
-                    style = MaterialTheme.typography.titleMedium,
+                    style = MaterialTheme.typography.titleMedium
                 )
                 Text(
                     text = description,
-                    style = MaterialTheme.typography.bodyMedium,
+                    style = MaterialTheme.typography.bodyMedium
                 )
             }
         }

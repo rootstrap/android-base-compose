@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="unknown_error_title">Something happened</string>
-    <string name="unknown_error_description">An unknown error happened, please try again</string>
-    <string name="unknown_network_error_title">Network error</string>
-    <string name="unknown_network_error_description">You may lost connection or there is a network issue</string>
-</resources>
