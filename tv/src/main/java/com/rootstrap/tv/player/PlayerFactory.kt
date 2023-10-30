@@ -14,7 +14,6 @@ object PlayerFactory {
         context: Context,
         player: Player
     ): PlayerView {
-
         return PlayerView(context).apply {
             hideController()
             useController = false

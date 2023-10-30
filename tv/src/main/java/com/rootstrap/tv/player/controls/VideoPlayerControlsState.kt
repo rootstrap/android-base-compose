@@ -17,7 +17,7 @@ class VideoPlayerControlsState(
     var isDisplayed by mutableStateOf(false)
     private val countDownTimer = MutableStateFlow(value = hideSeconds)
 
-   init {
+    init {
         MainScope().launch {
             countDownTimer.collectLatest { time ->
                 if (time > 0) {

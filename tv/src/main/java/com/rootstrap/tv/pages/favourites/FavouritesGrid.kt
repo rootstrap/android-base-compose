@@ -41,7 +41,7 @@ fun FavouritesGrid(
                     start = Dimens.paddingTenQuarters,
                     top = Dimens.paddingTenQuarters
                 ),
-            color = MaterialTheme.colorScheme.onSurface,
+            color = MaterialTheme.colorScheme.onSurface
         )
 
         TvLazyVerticalGrid(
@@ -88,4 +88,3 @@ fun MyFavouritesPreview() {
         )
     }
 }
-

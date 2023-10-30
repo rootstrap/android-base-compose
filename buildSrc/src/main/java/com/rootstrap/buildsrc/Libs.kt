@@ -1,3 +1,5 @@
+import org.gradle.api.JavaVersion
+
 object Dependencies {
     object Android {
         const val APP_COMPAT = "androidx.appcompat:appcompat:${Versions.APP_COMPAT}"
@@ -68,6 +70,9 @@ object Dependencies {
 
         // Security crypto
         const val SECURITY_CRYPTO = "androidx.security:security-crypto:${Versions.SECURITY_CRYPTO}"
+
+        val JAVA_VERSION = JavaVersion.VERSION_17
+        val JAVA_TARGET = "17"
     }
 
     object Tv {
@@ -220,7 +225,7 @@ object Dependencies {
         const val TEST_RUNNER = "1.4.0"
         const val UI_AUTOMATOR = "2.2.0"
         const val WORK_RUNTIME = "2.7.0"
-        const val KLINT_GRADLE = "11.4.2"
+        const val KLINT_GRADLE = "11.5.1"
         const val SPLASH_SCREEN = "1.0.0"
         const val COMPOSE_TV = "1.0.0-alpha07"
         const val LEANBACK = "1.0.0"
@@ -245,5 +250,7 @@ object Dependencies {
         const val CRASHLYTICS = "com.google.firebase.crashlytics"
         const val GOOGLE_SERVICES = "com.google.gms.google-services"
         const val KAPT = "kapt"
+        const val JAVA_LIBRARY = "java-library"
+        const val KOTLIN_JVM = "org.jetbrains.kotlin.jvm"
     }
 }

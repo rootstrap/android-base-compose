@@ -31,7 +31,6 @@ import com.rootstrap.tv.common.TvComposablePreview
 import com.rootstrap.tv.pages.home.navigationdrawer.navigation.NestedScreens
 import com.rootstrap.tv.theme.Dimens
 
-
 @OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
 fun HomeNavigationDrawer(
@@ -56,9 +55,11 @@ fun HomeNavigationDrawer(
         focusRequester.requestFocus()
     }
     NavigationDrawer(
-        drawerState = if (drawerHasFocus)
+        drawerState = if (drawerHasFocus) {
             rememberDrawerState(DrawerValue.Open)
-        else rememberDrawerState(DrawerValue.Closed),
+        } else {
+            rememberDrawerState(DrawerValue.Closed)
+        },
         drawerContent = { drawer ->
             Column(
                 modifier = Modifier

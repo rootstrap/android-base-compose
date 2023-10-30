@@ -2,11 +2,11 @@ package com.rootstrap.androidcomposebase.ui.pages.login
 
 import com.rootstrap.androidcomposebase.ui.base.UiState
 
-data class LoginUiState(
+data class LogInUiState(
     val email: String = "",
     val showEmailError: Boolean = false,
     val password: String = "",
-    val showPasswordError: Boolean = false,
+    val showPasswordError: Boolean = false
 ) : UiState {
 
     val isButtonEnabled: Boolean

@@ -1,4 +1,6 @@
 import Dependencies.Android.DATA_STORE_PREFERENCES
+import Dependencies.Common.JAVA_TARGET
+import Dependencies.Common.JAVA_VERSION
 import Dependencies.Kotlin.COROUTINES_ANDROID
 import Dependencies.Network.OKHTTP
 import Dependencies.Network.OKHTTP_BOM
@@ -43,17 +45,18 @@ android {
     }
 
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JAVA_VERSION
+        targetCompatibility = JAVA_VERSION
     }
 
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = JAVA_TARGET
     }
 }
 
 dependencies {
     implementation(project(":core:domain"))
+    implementation(project(":core:usecases"))
 
     implementation(COROUTINES_ANDROID)
     implementation(DATA_STORE_PREFERENCES)

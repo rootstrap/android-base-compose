@@ -1,6 +1,14 @@
 <resources>
     <string name="app_name">SampleApp</string>
 
+    <!-- Errors -->
+    <string name="unknown_error_title">Something happened</string>
+    <string name="unknown_error_description">An unknown error happened, please try again</string>
+    <string name="unknown_network_error_title">Network error</string>
+    <string name="unknown_network_error_description">You may have lost connection or there is a network issue</string>
+    <string name="unauthorized">Unauthorized</string>
+    <string name="unauthorized_error_description">You need to sign in to continue</string>
+
     <!-- Log In -->
     <string name="log_in_email_label">Email</string>
     <string name="log_in_email_error">Email format not valid</string>

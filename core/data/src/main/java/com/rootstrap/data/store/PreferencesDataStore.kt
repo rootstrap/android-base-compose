@@ -17,7 +17,7 @@ import java.io.IOException
 class PreferencesDataStore(
     coroutineDispatcher: CoroutineDispatcher,
     context: Context,
-    preferencesFileName: String,
+    preferencesFileName: String
 ) {
 
     private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(

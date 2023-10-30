@@ -40,7 +40,7 @@ fun BannerImage(modifier: Modifier, movie: Movie) {
                             Color.Transparent,
                             MaterialTheme.colorScheme.background
                         ),
-                        startY = GRADIENT_VERTICAL_START,
+                        startY = GRADIENT_VERTICAL_START
                     )
                 )
         )
