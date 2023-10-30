@@ -61,6 +61,7 @@ dependencies {
         implementation(LIFECYCLE_COMPOSE)
         implementation(NAVIGATION_UI_RUNTIME)
         implementation(SPLASH_SCREEN)
+        implementation(WINDOW)
     }
     with(Dependencies.Compose) {
         implementation(ACTIVITY)
