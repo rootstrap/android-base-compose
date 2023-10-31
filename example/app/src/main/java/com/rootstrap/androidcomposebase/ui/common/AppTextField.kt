@@ -22,7 +22,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
-import com.rootstrap.androidcomposebase.ui.theme.Padding.small
+import com.rootstrap.androidcomposebase.ui.theme.AppTheme
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -41,7 +41,7 @@ fun AppTextField(
         onValueChange = { onValueChange(it) },
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = small),
+            .padding(vertical = AppTheme.dimens.paddingHalf),
         label = { Text(label) },
         singleLine = true,
         supportingText = {

@@ -1,29 +1,7 @@
 package com.rootstrap.yourAppName.ui.theme
 
 import androidx.compose.ui.unit.dp
-
-object Dimens {
-    val small = 5.dp
-    val medium = 10.dp
-    val big = 15.dp
-    val huge = 20.dp
-
-    // standard Paddings
-    val paddingEightQuarters = 2.dp
-    val paddingQuarter = 4.dp
-    val paddingHalf = 8.dp
-    val paddingThreeQuarters = 12.dp
-    val paddingNormal = 16.dp
-    val paddingFiveQuarters = 20.dp
-    val paddingSixQuarters = 24.dp
-    val paddingDouble = 32.dp
-    val paddingTenQuarters = 40.dp
-    val paddingElevenQuarters = 44.dp
-    val paddingFourteenQuarters = 56.dp
-    val paddingTwentyQuarters = 80.dp
-    val paddingQuadruple = 64.dp
-    val paddingThirtyQuarters = 120.dp
-}
+import com.rootstrap.yourAppName.ui.model.Dimensions
 
 object ShapeRadius {
     val extraSmall = 4.dp
@@ -32,3 +10,24 @@ object ShapeRadius {
     val large = 16.dp
     val extraLarge = 24.dp
 }
+
+val defaultDimensions = Dimensions(
+    small = 1.dp,
+    medium = 2.dp,
+    big = 3.dp,
+    huge = 4.dp,
+    paddingEightQuarters = 1.dp,
+    paddingQuarter = 2.dp,
+    paddingHalf = 4.dp,
+    paddingThreeQuarters = 6.dp,
+    paddingNormal = 8.dp,
+    paddingFiveQuarters = 10.dp,
+    paddingSixQuarters = 12.dp,
+    paddingDouble = 16.dp,
+    paddingTenQuarters = 20.dp,
+    paddingElevenQuarters = 22.dp,
+    paddingFourteenQuarters = 28.dp,
+    paddingTwentyQuarters = 40.dp,
+    paddingQuadruple = 32.dp,
+    paddingThirtyQuarters = 60.dp
+)
