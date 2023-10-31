@@ -31,7 +31,7 @@
             Once you upload the app to google play store you will find the .well-known/assetlinks.json file config in the signature menu
 
             To verify the assetlinks.json was registered with the app use:
-            - adb shell pm verify-app-links --re-verify PACKAGE_NAME
+            - adb shell pm verify-app-links -re-verify PACKAGE_NAME'
             - adb shell pm get-app-links PACKAGE_NAME
 
             When verified, you should see the following output:
