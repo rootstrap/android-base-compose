@@ -18,7 +18,42 @@
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
+            <!--
+            Remember adding the .well-known/assetlinks.json file to your server to register the app
+            check the documentation: https://developer.android.com/training/app-links/verify-android-applinks
+            To test deep link locally call with adb:
+            adb shell am start -a android.intent.action.VIEW \
+                -c android.intent.category.BROWSABLE \
+                -d "http://awesomewebpage.com"
+            Note:
+            Once you upload the app to google play store you will find the .well-known/assetlinks.json file config in the signature menu
+
+            To verify the assetlinks.json was registered with the app use:
+            - adb shell pm verify-app-links -re-verify PACKAGE_NAME'
+            - adb shell pm get-app-links PACKAGE_NAME
+
+            When verified, you should see the following output:
+            com.rs.androidcomposebase
+                ID: 01234567-89ab-cdef-0123-456789abcdef
+                Signatures: [***]
+                Domain verification state:
+                    awesomewebpage.com: verified
+
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="http" />
+                <data android:scheme="https" />
+                <data android:host="awesomewebpage.com" />
+
+            </intent-filter>-->
+
         </activity>
+
     </application>
 
 </manifest>

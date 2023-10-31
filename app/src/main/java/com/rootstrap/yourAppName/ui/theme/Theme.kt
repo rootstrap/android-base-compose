@@ -7,6 +7,9 @@ import androidx.compose.material3.Shapes
 import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.ReadOnlyComposable
+import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.navigation.NavHostController
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
@@ -120,3 +123,12 @@ fun ProvideDimens(
 private val LocalAppDimens = staticCompositionLocalOf {
     defaultDimensions
 }
+
+object AppData {
+    val mainNavController: NavHostController
+        @Composable
+        @ReadOnlyComposable
+        get() = LocalNavigation.current!!
+}
+
+internal val LocalNavigation = staticCompositionLocalOf<NavHostController?> { null }
