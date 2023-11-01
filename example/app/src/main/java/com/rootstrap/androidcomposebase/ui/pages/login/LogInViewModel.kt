@@ -1,11 +1,9 @@
 package com.rootstrap.androidcomposebase.ui.pages.login
 
-import android.content.res.Resources
 import android.util.Log
 import androidx.lifecycle.viewModelScope
 import com.rootstrap.androidcomposebase.ui.base.BaseViewModel
 import com.rootstrap.domain.errors.ErrorHandler
-import com.rootstrap.example.app.R
 import com.rootstrap.flowforms.core.common.StatusCodes
 import com.rootstrap.flowforms.core.dsl.flowForm
 import com.rootstrap.flowforms.core.field.FieldStatus
@@ -20,7 +18,6 @@ import kotlinx.coroutines.launch
 
 class LogInViewModel(
     private val errorHandler: ErrorHandler,
-    private val resources: Resources,
 ) : BaseViewModel<LogInUiState, Any>(LogInUiState()) {
 
     private val form = flowForm {
@@ -50,21 +47,8 @@ class LogInViewModel(
     private fun onFieldStatusChange(fieldStatus: FieldStatus) {
         updateUiState {
             when (fieldStatus.fieldId) {
-                EMAIL -> it.copy(
-                    emailError = when (fieldStatus.code) {
-                        StatusCodes.REQUIRED_UNSATISFIED -> resources.getString(R.string.log_in_email_error_required)
-                        StatusCodes.BASIC_EMAIL_FORMAT_UNSATISFIED -> resources.getString(R.string.log_in_email_error_format)
-                        else -> null
-                    }
-                )
-                else -> it.copy(
-                    passwordError = when (fieldStatus.code) {
-                        StatusCodes.REQUIRED_UNSATISFIED -> resources.getString(R.string.log_in_password_error_required)
-                        StatusCodes.MIN_LENGTH_UNSATISFIED -> resources.getString(R.string.log_in_password_error_min_length, PASSWORD_MIN_LENGTH.toString())
-                        StatusCodes.MATCH_REGEX_UNSATISFIED -> resources.getString(R.string.log_in_password_error_format)
-                        else -> null
-                    }
-                )
+                EMAIL -> it.copy(emailErrorCode = fieldStatus.code)
+                else -> it.copy(passwordErrorCode = fieldStatus.code)
             }
         }
     }
@@ -92,7 +76,7 @@ class LogInViewModel(
     companion object {
         private const val EMAIL = "email"
         private const val PASSWORD = "password"
-        private const val PASSWORD_MIN_LENGTH = 6
         private val PASSWORD_REGEX = Regex("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#\$%^&+=!]).*$")
+        const val PASSWORD_MIN_LENGTH = 6
     }
 }
