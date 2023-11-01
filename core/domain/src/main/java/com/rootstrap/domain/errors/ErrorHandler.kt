@@ -1,6 +1,12 @@
 package com.rootstrap.domain.errors
 
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlin.coroutines.AbstractCoroutineContextElement
+
 /**
+ * Extends AbstractCoroutineContextElement and CoroutineExceptionHandler to handle uncaught
+ * exceptions in coroutines.
+ *
  * Use as part of the coroutine's context when launching a new coroutine using ViewModelScope or similar.
  * It will add a default error handling for any uncaught exception in the coroutine.
  * 1. Inject error handler into VM constructor
@@ -15,4 +21,4 @@ package com.rootstrap.domain.errors
  *              val errorNotification by viewModel.errorNotification.collectAsStateWithLifecycle()
  *              errorNotification?.let { show error.. }
  */
-interface ErrorHandler
+abstract class ErrorHandler : AbstractCoroutineContextElement(CoroutineExceptionHandler), CoroutineExceptionHandler

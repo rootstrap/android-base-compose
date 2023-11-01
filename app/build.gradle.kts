@@ -73,8 +73,15 @@ dependencies {
         implementation(LIFECYCLE_RUNTIME)
         debugImplementation(UI_TOOLING)
     }
-    implementation(Dependencies.Koin.CORE)
-    implementation(Dependencies.Koin.ANDROID)
+    with(Dependencies.Koin) {
+        implementation(CORE)
+        implementation(ANDROID)
+        implementation(ANDROID_NAVIGATION)
+        implementation(ANDROID_COMPAT)
+        implementation(WORK_MANAGER)
+        implementation(COMPOSE)
+    }
+    implementation(Dependencies.Rootstrap.FLOW_FORMS)
 
     with(Dependencies.Test) {
         testImplementation(MOCKK)
