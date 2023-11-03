@@ -1,3 +1,4 @@
+
 import Dependencies.Common.JAVA_TARGET
 import Dependencies.Common.JAVA_VERSION
 
@@ -67,8 +68,6 @@ dependencies {
     implementation(project(":core:di"))
     implementation(project(":core:domain"))
     implementation(project(":example:core:domain"))
-    // TODO: remove data dependency from app module
-    implementation(project(":example:core:data"))
     implementation(project(":example:core:usecases"))
 
     with(Dependencies.Android) {
@@ -90,8 +89,15 @@ dependencies {
         implementation(LIFECYCLE_RUNTIME)
         debugImplementation(UI_TOOLING)
     }
-    implementation(Dependencies.Koin.CORE)
-    implementation(Dependencies.Koin.ANDROID)
+    with(Dependencies.Koin) {
+        implementation(CORE)
+        implementation(ANDROID)
+        implementation(ANDROID_NAVIGATION)
+        implementation(ANDROID_COMPAT)
+        implementation(WORK_MANAGER)
+        implementation(COMPOSE)
+    }
+    implementation(Dependencies.Rootstrap.FLOW_FORMS)
 
     with(Dependencies.Test) {
         testImplementation(MOCKK)

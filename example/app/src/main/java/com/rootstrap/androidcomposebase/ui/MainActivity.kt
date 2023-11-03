@@ -17,7 +17,6 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rootstrap.androidcomposebase.ui.base.ErrorMapper
 import com.rootstrap.androidcomposebase.ui.pages.login.LogInScreen
-import com.rootstrap.androidcomposebase.ui.pages.login.LogInViewModel
 import com.rootstrap.androidcomposebase.ui.theme.AppTheme
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -38,7 +37,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    LogInScreen(viewModel = LogInViewModel())
+                    LogInScreen()
                 }
 
                 errorNotification?.let {

@@ -75,6 +75,10 @@ object Dependencies {
         val JAVA_TARGET = "17"
     }
 
+    object Rootstrap {
+        const val FLOW_FORMS = "com.github.rootstrap.FlowForms:FlowForms-Core:${Versions.FLOW_FORMS}"
+    }
+
     object Tv {
         const val TV_FOUNDATION = "androidx.tv:tv-foundation:${Versions.COMPOSE_TV}"
         const val TV_MATERIAL = "androidx.tv:tv-material:${Versions.COMPOSE_TV}"
@@ -232,6 +236,7 @@ object Dependencies {
         const val COIL = "2.2.2"
         const val MEDIA_3 = "1.1.0"
         const val WINDOW = "1.1.0"
+        const val FLOW_FORMS = "1.4.1"
     }
 
     object ConfigData {

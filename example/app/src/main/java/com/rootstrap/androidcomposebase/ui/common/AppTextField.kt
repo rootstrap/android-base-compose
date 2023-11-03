@@ -30,8 +30,7 @@ fun AppTextField(
     value: String,
     onValueChange: (String) -> Unit,
     label: String,
-    showError: Boolean,
-    errorMessage: String,
+    errorMessage: String?,
     isPasswordField: Boolean = false
 ) {
     var isPasswordVisible by remember { mutableStateOf(false) }
@@ -45,7 +44,7 @@ fun AppTextField(
         label = { Text(label) },
         singleLine = true,
         supportingText = {
-            if (showError) {
+            if (errorMessage != null) {
                 Text(
                     text = errorMessage,
                     color = Color.White

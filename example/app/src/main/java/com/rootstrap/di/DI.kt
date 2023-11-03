@@ -1,7 +1,8 @@
 package com.rootstrap.di
 
 import com.rootstrap.androidcomposebase.ui.AppActivityViewModel
-import org.koin.androidx.viewmodel.dsl.viewModel
+import com.rootstrap.androidcomposebase.ui.pages.login.LogInViewModel
+import org.koin.androidx.viewmodel.dsl.viewModelOf
 import org.koin.dsl.module
 
 /**
@@ -9,5 +10,6 @@ import org.koin.dsl.module
  *  For example: viewModel{}, single{}, factory{}
  * */
 val appModule = module {
-    viewModel { AppActivityViewModel(get()) }
+    viewModelOf(::AppActivityViewModel)
+    viewModelOf(::LogInViewModel)
 }
