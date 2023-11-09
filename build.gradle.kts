@@ -10,7 +10,7 @@ buildscript {
         classpath(Dependencies.ClassPaths.GRADLE)
         classpath(Dependencies.ClassPaths.KOTLIN_GRADLE_PLUGIN)
         classpath(Dependencies.Linters.KT_LINT)
-        classpath("com.github.ben-manes:gradle-versions-plugin:0.38.0")
+       // classpath("com.github.ben-manes:gradle-versions-plugin:0.38.0") Uncomment this line to use the plugin to check for dependency updates
     }
 }
 
