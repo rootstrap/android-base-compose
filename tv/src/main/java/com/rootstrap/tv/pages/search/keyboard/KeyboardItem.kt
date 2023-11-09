@@ -15,6 +15,7 @@ import androidx.tv.material3.Text
 import com.rootstrap.tv.pages.search.KeyboardLetterType
 import com.rootstrap.tv.theme.Dimens
 
+@OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
 fun KeyboardItem(
     key: Any,

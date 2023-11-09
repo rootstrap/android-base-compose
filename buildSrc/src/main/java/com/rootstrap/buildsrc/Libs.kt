@@ -46,8 +46,8 @@ object Dependencies {
     object Compose {
         const val ACTIVITY = "androidx.activity:activity-compose:${Versions.COMPOSE_ACTIVITY}"
         const val UI = "androidx.compose.ui:ui:${Versions.COMPOSE}"
-        const val UI_TOOLING = "androidx.compose.ui:ui-tooling:${Versions.COMPOSE}"
-        const val UI_TOOLING_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE}"
+        const val UI_TOOLING = "androidx.compose.ui:ui-tooling:${Versions.COMPOSE_TOOLING}"
+        const val UI_TOOLING_PREVIEW = "androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE_TOOLING}"
         const val MATERIAL3 = "androidx.compose.material3:material3:${Versions.COMPOSE_MATERIAL3}"
         const val ICONS_EXTENDED =
             "androidx.compose.material:material-icons-extended:${Versions.COMPOSE}"
@@ -183,10 +183,11 @@ object Dependencies {
         const val APP_COMPAT = "1.6.1"
         const val CONSTRAINT_LAYOUT = "2.1.1"
         const val COMPOSE = "1.4.0"
-        const val COMPOSE_COMPILER = "1.4.8"
-        const val COMPOSE_ACTIVITY = "1.7.0"
+        const val COMPOSE_COMPILER = "1.5.4"
+        const val COMPOSE_ACTIVITY = "1.8.0"
         const val COMPOSE_MATERIAL3 = "1.1.1"
-        const val COMPOSE_NAVIGATION = "2.5.3"
+        const val COMPOSE_NAVIGATION = "2.7.5"
+        const val COMPOSE_TOOLING = "1.6.0-alpha08"
         const val CONVERTER_GSON = "2.9.0"
         const val CONVERTER_MOSHI = "2.5.0"
         const val CORE = "1.6.0"
@@ -202,8 +203,8 @@ object Dependencies {
         const val GOOGLE_SERVICES = "4.3.10"
         const val GSON = "2.8.7"
         const val JUNIT = "4.13.2"
-        const val KOIN = "3.4.3"
-        const val KOTLIN = "1.8.22"
+        const val KOIN = "3.5.0"
+        const val KOTLIN = "1.9.20"
         const val KT_LINT = "0.44.0"
         const val LEGACY_SUPPORT_V4 = "1.0.0"
         const val LIFECYCLE = "2.6.1"
@@ -231,19 +232,19 @@ object Dependencies {
         const val WORK_RUNTIME = "2.7.0"
         const val KLINT_GRADLE = "11.5.1"
         const val SPLASH_SCREEN = "1.0.0"
-        const val COMPOSE_TV = "1.0.0-alpha07"
-        const val LEANBACK = "1.0.0"
-        const val COIL = "2.2.2"
-        const val MEDIA_3 = "1.1.0"
+        const val COMPOSE_TV = "1.0.0-alpha10"
+        const val LEANBACK = "1.2.0-alpha03"
+        const val COIL = "2.5.0"
+        const val MEDIA_3 = "1.2.0-rc01"
         const val WINDOW = "1.1.0"
         const val FLOW_FORMS = "1.4.1"
     }
 
     object ConfigData {
-        const val COMPILE_SDK_VERSION = 33
+        const val COMPILE_SDK_VERSION = 34
         const val BUILD_TOOLS_VERSION = "31.0.0"
         const val MIN_SDK_VERSION = 24
-        const val TARGET_SDK_VERSION = 33
+        const val TARGET_SDK_VERSION = 34
         const val VERSION_CODE = 1
         const val VERSION_NAME = "1.0"
     }

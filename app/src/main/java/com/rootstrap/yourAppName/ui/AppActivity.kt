@@ -11,12 +11,15 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.compose.rememberNavController
 import com.rootstrap.yourAppName.ui.navigation.MainNavHost
 import com.rootstrap.yourAppName.ui.theme.AppTheme
+import com.rootstrap.yourAppName.ui.theme.LocalNavigation
 import com.rootstrap.yourAppName.utils.ErrorMapper
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -32,14 +35,16 @@ class AppActivity : ComponentActivity() {
             val errorNotification by viewModel.errorNotification.collectAsStateWithLifecycle()
 
             AppTheme {
+                val navController = rememberNavController()
                 // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    MainNavHost()
+                CompositionLocalProvider(LocalNavigation provides navController) {
+                    Surface(
+                        modifier = Modifier.fillMaxSize(),
+                        color = MaterialTheme.colorScheme.background
+                    ) {
+                        MainNavHost()
+                    }
                 }
-
                 errorNotification?.let {
                     val error = ErrorMapper.map(it.errorType, resources)
                     GenericErrorDialog(
