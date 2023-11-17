@@ -68,6 +68,7 @@ fun BorderedFocusableItem(
     }
 }
 
+@OptIn(ExperimentalTvMaterial3Api::class)
 @Preview
 @Composable
 private fun BorderedFocusableItemPrev() {

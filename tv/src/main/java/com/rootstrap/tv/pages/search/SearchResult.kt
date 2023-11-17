@@ -9,6 +9,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.tv.foundation.lazy.grid.TvGridCells
 import androidx.tv.foundation.lazy.grid.TvGridItemSpan
 import androidx.tv.foundation.lazy.grid.TvLazyVerticalGrid
+import androidx.tv.material3.ExperimentalTvMaterial3Api
 import androidx.tv.material3.MaterialTheme
 import androidx.tv.material3.Text
 import com.rootstrap.tv.R
@@ -40,6 +41,7 @@ fun SearchResultGrid(modifier: Modifier = Modifier) {
     }
 }
 
+@OptIn(ExperimentalTvMaterial3Api::class)
 @Composable
 fun SearchResultHeader() {
     Text(

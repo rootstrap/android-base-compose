@@ -3,7 +3,6 @@ package com.rootstrap.tv
 import android.app.Application
 import com.rootstrap.tv.di.appModule
 import com.rootstrap.tv.di.dataModule
-import org.koin.android.BuildConfig
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
 import org.koin.androidx.fragment.koin.fragmentFactory
