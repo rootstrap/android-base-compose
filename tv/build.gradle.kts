@@ -5,7 +5,6 @@ import Dependencies.ConfigData.TARGET_SDK_VERSION
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    // id("com.github.ben-manes.versions") Plugin to check for dependency updates - run this command: gradle dependencyUpdates
 }
 
 android {
