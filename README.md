@@ -1,20 +1,61 @@
 # android-base-compose
-Rootstrap Android Compose Base
-Use sample-app branch to check how to setup your project.
+
+Android Compose Base is a boilerplate project created by Rootstrap for new projects using Kotlin and Jetpack Compose. 
+The main objective is helping any new projects jump-start into feature development by providing a solid foundation.
+
+## How to use this template
+You can use this open-source project as a template of your new Android projects. Steps:
+
+1. **Clone**: Clone the repository to your local machine.
+
+2. **Build with Android Studio**: Open the project in Android Studio and build it.
+
+Use sample-app branch as an example of how to setup your project (see the login/sign up examples).
+
+## Tech Stack
+
+- Minimum SDK level 24
+- [Jetpack Compose](https://developer.android.com/jetpack/compose) for UI
+- [Navigation Compose](https://developer.android.com/jetpack/compose/navigation) for in-app navigation
+- [ViewModel](https://developer.android.com/topic/libraries/architecture/viewmodel) from Architecture Components
+- [Retrofit](https://square.github.io/retrofit/) for network requests
+- [Coil](https://coil-kt.github.io/coil/) for image loading
+- [Koin](https://insert-koin.io/) for dependency injection
+
+## Architecture
+
+The app uses MVVM architecture and Clean Architecture principles with a separation of concerns between:
+
+- **Presentation Layer**: ViewModels and Compose UI. ViewModels retrieve data from use-cases and expose it to Compose UI.
+- **Domain Layer**: Models
+- **Use-cases**: Business logic
+- **Data Layer**: Repositories, network, local data sources
 
 ## Error handling 
 We use the `ErrorHandler` class that extends `AbstractCoroutineContextElement` and implements `CoroutineExceptionHandler` to handle errors in coroutines.
 To listen to those errors we use the `ErrorNotifier` singleton that exposes a flow of errors. Usually you will only need to listen to it in your app's main activity. In this template it is being listened in the `AppActivity` class
 
-# Lint
-How to check lint issues: ktlintCheck and ktlintFormat
+## Lint
 
-### Navigation and Deep Links
+To check lint issues, use `ktlintCheck` and `ktlintFormat`.
+
+## State management
+
+UI package contains a base ViewModel, `BaseViewModel`, designed for use in Android applications developed in Kotlin.
+It extends `ViewModel` and is designed to be used with Jetpack Compose UI components.
+This base ViewModel facilitates state and navigation event management within Android UI components.
+
+- **State Management**: Utilizes `MutableStateFlow` for managing UI state, providing a thread-safe way to observe and update the UI state reactively.
+- **Navigation Events**: Uses a `Channel` to handle one-time navigation events, ensuring that events are handled once and state management is decoupled from event handling.
+- Ensure your UI state classes implement the UiState interface provided in this package for type safety.
+
+## Navigation and Deep Links
+
 - Add nav config and deep link example with a guide for it.
   [Issue](https://github.com/rootstrap/android-base-compose/issues/9)
 
-Note: To add deep links:
-Add the .well-known/assetlinks.json file to your server to register the app
+**Note**: To add deep links:
+Add the `.well-known/assetlinks.json` file to your server to register the app
 Check the documentation: [Docs](https://developer.android.com/training/app-links/verify-android-applinks)
 
 To test deep link locally call with adb:
