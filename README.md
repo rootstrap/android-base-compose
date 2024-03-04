@@ -10,7 +10,7 @@ You can use this open-source project as a template of your new Android projects.
 
 2. **Build with Android Studio**: Open the project in Android Studio and build it.
 
-Use sample-app branch as an example of how to setup your project (see the login/sign up examples).
+Use Example module as an example of how to setup your project (see the login/sign up examples).
 
 ## Tech Stack
 
