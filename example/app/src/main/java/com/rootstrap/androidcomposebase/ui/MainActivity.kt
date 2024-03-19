@@ -37,9 +37,9 @@ class MainActivity : ComponentActivity() {
 
             // TODO Use SharePreference or DataStore
             val boolean = isSystemInDarkTheme()
-            var darkTheme by remember { mutableStateOf(boolean) }
+            var isOSDarkTheme by remember { mutableStateOf(boolean) }
 
-            AppTheme(useDarkTheme = darkTheme) {
+            AppTheme(isOSDarkTheme = isOSDarkTheme) {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
@@ -47,8 +47,8 @@ class MainActivity : ComponentActivity() {
                 ) {
                     //LogInScreen()
                     SettingsScreen(
-                        darkTheme = darkTheme,
-                        onThemeUpdated = { darkTheme = !darkTheme }
+                        isOSDarkTheme = isOSDarkTheme,
+                        onThemeUpdated = { isOSDarkTheme = !isOSDarkTheme }
                     )
                 }
 

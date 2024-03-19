@@ -8,13 +8,10 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
@@ -22,7 +19,6 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.LightMode
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Nightlight
@@ -41,13 +37,20 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Shape
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.rootstrap.androidcomposebase.ui.theme.AppTheme
+import com.rootstrap.androidcomposebase.ui.theme.compactDimensions
+import com.rootstrap.androidcomposebase.ui.theme.defaultDimensions
+import com.rootstrap.androidcomposebase.ui.theme.expandedDimensions
+import com.rootstrap.example.app.R
+
+private const val ANIMATION_TIME_IN_MILLIS = 300
 
 @Composable
-fun SettingsScreen(darkTheme: Boolean, onThemeUpdated: () -> Unit) {
+fun SettingsScreen(isOSDarkTheme: Boolean, onThemeUpdated: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -56,14 +59,13 @@ fun SettingsScreen(darkTheme: Boolean, onThemeUpdated: () -> Unit) {
         CenterAlignedAppBar()
         Row(
             verticalAlignment = Alignment.CenterVertically,
-            modifier = Modifier.padding(16.dp)
+            modifier = Modifier.padding(defaultDimensions.big)
             ) {
-                Text(text = "Dark/Light Appearance",
-                    modifier = Modifier.weight(1f))
+                Text(text = stringResource(id = R.string.settings_dark_light_theme), modifier = Modifier.weight(1f))
                 ThemeSwitcher(
-                    darkTheme = darkTheme,
-                    size = 50.dp,
-                    padding = 5.dp,
+                    isOSDarkTheme = isOSDarkTheme,
+                    size = expandedDimensions.paddingSixQuarters,
+                    padding = compactDimensions.paddingFiveQuarters,
                     onClick = onThemeUpdated
             )
         }
@@ -80,34 +82,33 @@ fun CenterAlignedAppBar() {
         title = {
             Box(modifier = Modifier.fillMaxSize(),
                 contentAlignment = Alignment.CenterStart) {
-                Text("Settings")
+                Text(stringResource(id = R.string.settings_title))
             }
         },
 
         // The navigation icon is set to a menu icon.
         navigationIcon = {
             IconButton(onClick = { /* Handle navigation icon click */ }) {
-                Icon(Icons.Filled.Menu, contentDescription = "Navigation Icon")
+                Icon(Icons.Filled.Menu, contentDescription = stringResource(id = R.string.content_description_navigation_icon))
             }
         }
     )
 }
 
-
 @Composable
 fun ThemeSwitcher(
-    darkTheme: Boolean = false,
-    size: Dp = 150.dp,
+    isOSDarkTheme: Boolean = false,
+    size: Dp = expandedDimensions.paddingTwentyQuarters,
     iconSize: Dp = size / 3,
-    padding: Dp = 10.dp,
-    borderWidth: Dp = 1.dp,
+    padding: Dp = defaultDimensions.paddingEightQuarters,
+    borderWidth: Dp = defaultDimensions.small,
     parentShape: Shape = CircleShape,
     toggleShape: Shape = CircleShape,
-    animationSpec: AnimationSpec<Dp> = tween(durationMillis = 300),
+    animationSpec: AnimationSpec<Dp> = tween(durationMillis = ANIMATION_TIME_IN_MILLIS),
     onClick: () -> Unit
 ) {
     val offset by animateDpAsState(
-        targetValue = if (darkTheme) 0.dp else size,
+        targetValue = if (isOSDarkTheme) 0.dp else size,
         animationSpec = animationSpec, label = ""
     )
 
@@ -143,9 +144,8 @@ fun ThemeSwitcher(
                 Icon(
                     modifier = Modifier.size(iconSize),
                     imageVector = Icons.Default.Nightlight,
-                    contentDescription = "Theme Icon",
-                    tint = if (darkTheme) MaterialTheme.colorScheme.secondaryContainer
-                    else MaterialTheme.colorScheme.primary
+                    contentDescription = stringResource(id = R.string.content_description_theme_icon),
+                    tint = MaterialTheme.colorScheme.inverseSurface
                 )
             }
             Box(
@@ -155,9 +155,8 @@ fun ThemeSwitcher(
                 Icon(
                     modifier = Modifier.size(iconSize),
                     imageVector = Icons.Default.LightMode,
-                    contentDescription = "Theme Icon",
-                    tint = if (darkTheme) MaterialTheme.colorScheme.primary
-                    else MaterialTheme.colorScheme.secondaryContainer
+                    contentDescription = stringResource(id = R.string.content_description_theme_icon),
+                    tint = MaterialTheme.colorScheme.inversePrimary
                 )
             }
         }
@@ -171,7 +170,7 @@ private fun SettingsScreenPreview() {
     val boolean = isSystemInDarkTheme()
     var darkTheme by remember { mutableStateOf(boolean) }
     AppTheme {
-        SettingsScreen(darkTheme = darkTheme,
+        SettingsScreen(isOSDarkTheme = darkTheme,
             onThemeUpdated = { darkTheme = !darkTheme })
     }
 }

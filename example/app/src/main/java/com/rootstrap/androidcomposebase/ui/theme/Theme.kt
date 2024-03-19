@@ -85,10 +85,10 @@ private val DarkColors = darkColorScheme(
 
 @Composable
 fun AppTheme(
-    useDarkTheme: Boolean = isSystemInDarkTheme(),
+    isOSDarkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
-    val colorScheme = if (useDarkTheme) {
+    val colorScheme = if (isOSDarkTheme) {
         DarkColors
     } else {
         LightColors
@@ -98,7 +98,7 @@ fun AppTheme(
     if (!view.isInEditMode) {
         SideEffect {
             (view.context as Activity).window.statusBarColor = colorScheme.primary.toArgb()
-            ViewCompat.getWindowInsetsController(view)?.isAppearanceLightStatusBars = useDarkTheme
+            ViewCompat.getWindowInsetsController(view)?.isAppearanceLightStatusBars = isOSDarkTheme
         }
     }
 
