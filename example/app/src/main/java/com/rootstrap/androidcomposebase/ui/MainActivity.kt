@@ -3,6 +3,7 @@ package com.rootstrap.androidcomposebase.ui
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.AlertDialog
@@ -12,11 +13,14 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.rootstrap.androidcomposebase.ui.base.ErrorMapper
-import com.rootstrap.androidcomposebase.ui.pages.login.LogInScreen
+import com.rootstrap.androidcomposebase.ui.pages.settings.SettingsScreen
 import com.rootstrap.androidcomposebase.ui.theme.AppTheme
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -31,13 +35,21 @@ class MainActivity : ComponentActivity() {
         setContent {
             val errorNotification by viewModel.errorNotification.collectAsStateWithLifecycle()
 
-            AppTheme {
+            // TODO Use SharePreference or DataStore
+            val boolean = isSystemInDarkTheme()
+            var isOSDarkTheme by remember { mutableStateOf(boolean) }
+
+            AppTheme(isOSDarkTheme = isOSDarkTheme) {
                 // A surface container using the 'background' color from the theme
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    LogInScreen()
+                    //LogInScreen()
+                    SettingsScreen(
+                        isOSDarkTheme = isOSDarkTheme,
+                        onThemeUpdated = { isOSDarkTheme = !isOSDarkTheme }
+                    )
                 }
 
                 errorNotification?.let {

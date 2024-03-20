@@ -18,4 +18,10 @@
     <string name="log_in_password_error_min_length">Password must contain at least %s characters</string>
     <string name="log_in_button">LOG IN</string>
 
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_dark_light_theme">Dark/Light Appearance</string>
+    <string name="content_description_navigation_icon">Navigation Icon</string>
+    <string name="content_description_theme_icon">Theme Icon</string>
+
 </resources>

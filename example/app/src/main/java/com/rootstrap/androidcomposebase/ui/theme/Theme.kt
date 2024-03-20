@@ -1,5 +1,6 @@
 package com.rootstrap.androidcomposebase.ui.theme
 
+import android.app.Activity
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
@@ -8,9 +9,13 @@ import androidx.compose.material3.darkColorScheme
 import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.runtime.SideEffect
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.staticCompositionLocalOf
+import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalView
+import androidx.core.view.ViewCompat
 import com.rootstrap.androidcomposebase.ui.model.Dimensions
 import com.rootstrap.yourAppName.ui.model.WindowType
 
@@ -80,14 +85,23 @@ private val DarkColors = darkColorScheme(
 
 @Composable
 fun AppTheme(
-    useDarkTheme: Boolean = isSystemInDarkTheme(),
+    isOSDarkTheme: Boolean = isSystemInDarkTheme(),
     content: @Composable () -> Unit
 ) {
-    val colors = if (!useDarkTheme) {
-        LightColors
-    } else {
+    val colorScheme = if (isOSDarkTheme) {
         DarkColors
+    } else {
+        LightColors
     }
+
+    val view = LocalView.current
+    if (!view.isInEditMode) {
+        SideEffect {
+            (view.context as Activity).window.statusBarColor = colorScheme.primary.toArgb()
+            ViewCompat.getWindowInsetsController(view)?.isAppearanceLightStatusBars = isOSDarkTheme
+        }
+    }
+
     val dimensions = WindowType.getDimensions(context = LocalContext.current)
 
     val shapes = Shapes(
@@ -100,7 +114,7 @@ fun AppTheme(
 
     ProvideDimens(dimensions = dimensions) {
         MaterialTheme(
-            colorScheme = colors,
+            colorScheme = colorScheme,
             content = content,
             typography = Typography,
             shapes = shapes,
