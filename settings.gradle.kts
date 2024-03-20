@@ -10,7 +10,7 @@ pluginManagement { // https://kotlinlang.org/docs/whatsnew1820.html#configure-gr
 }
 
 // Example modules:
-include(":example:app", ":example:core:data", ":example:core:domain", ":example:core:usecases")
+include(":example:app", ":example:bottomnavapp", ":example:core:data", ":example:core:domain", ":example:core:usecases")
 include(":tv", ":tv:domain", ":tv:data")
 include(":ui")
 include(":core:ui")
