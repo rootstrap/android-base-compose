@@ -52,7 +52,6 @@ dependencies {
     implementation(project(":core:domain"))
     implementation(project(":core:usecases"))
     implementation(project(":core:di"))
-    implementation("androidx.compose.foundation:foundation-android:1.6.7")
 
     with(Dependencies.Android) {
         implementation(CORE)
