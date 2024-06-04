@@ -65,7 +65,6 @@ dependencies {
     implementation(project(":core:domain"))
     implementation(project(":example:core:domain"))
     implementation(project(":example:core:usecases"))
-    implementation("androidx.benchmark:benchmark-baseline-profile-gradle-plugin:1.2.4")
 
     with(Dependencies.Android) {
         implementation(CORE)
