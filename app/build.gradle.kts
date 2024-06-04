@@ -1,9 +1,10 @@
-import Dependencies.Common.JAVA_TARGET
 import Dependencies.Common.JAVA_VERSION
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     id("com.android.application")
     kotlin(Dependencies.Plugins.ANDROID)
+    id(Dependencies.Plugins.COMPOSE) version Dependencies.Versions.KOTLIN
 }
 
 android {
@@ -35,17 +36,15 @@ android {
         targetCompatibility = JAVA_VERSION
     }
 
-    kotlinOptions {
-        jvmTarget = JAVA_TARGET
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_17)
+        }
     }
 
     buildFeatures {
         compose = true
         buildConfig = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = Dependencies.Versions.COMPOSE_COMPILER
     }
 }
 
@@ -53,6 +52,7 @@ dependencies {
     implementation(project(":core:domain"))
     implementation(project(":core:usecases"))
     implementation(project(":core:di"))
+    implementation("androidx.compose.foundation:foundation-android:1.6.7")
 
     with(Dependencies.Android) {
         implementation(CORE)
@@ -63,6 +63,7 @@ dependencies {
         implementation(SPLASH_SCREEN)
         implementation(WINDOW)
     }
+
     with(Dependencies.Compose) {
         implementation(ACTIVITY)
         implementation(UI)
@@ -73,6 +74,7 @@ dependencies {
         implementation(LIFECYCLE_RUNTIME)
         debugImplementation(UI_TOOLING)
     }
+
     with(Dependencies.Koin) {
         implementation(CORE)
         implementation(ANDROID)

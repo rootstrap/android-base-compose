@@ -80,8 +80,8 @@ object Dependencies {
     }
 
     object Tv {
-        const val TV_FOUNDATION = "androidx.tv:tv-foundation:${Versions.COMPOSE_TV}"
-        const val TV_MATERIAL = "androidx.tv:tv-material:${Versions.COMPOSE_TV}"
+        const val TV_FOUNDATION = "androidx.tv:tv-foundation:1.0.0-alpha10"
+        const val TV_MATERIAL = "androidx.tv:tv-material:1.0.0-beta01"
         const val LEANBACK = "androidx.leanback:leanback:${Versions.LEANBACK}"
     }
 
@@ -183,7 +183,7 @@ object Dependencies {
         const val APP_COMPAT = "1.6.1"
         const val CONSTRAINT_LAYOUT = "2.1.1"
         const val COMPOSE = "1.4.0"
-        const val COMPOSE_COMPILER = "1.5.4"
+
         const val COMPOSE_ACTIVITY = "1.8.0"
         const val COMPOSE_MATERIAL3 = "1.1.1"
         const val COMPOSE_NAVIGATION = "2.7.5"
@@ -204,7 +204,7 @@ object Dependencies {
         const val GSON = "2.8.7"
         const val JUNIT = "4.13.2"
         const val KOIN = "3.5.0"
-        const val KOTLIN = "1.9.20"
+        const val KOTLIN = "2.0.0"
         const val KT_LINT = "0.44.0"
         const val LEGACY_SUPPORT_V4 = "1.0.0"
         const val LIFECYCLE = "2.6.1"
@@ -258,5 +258,6 @@ object Dependencies {
         const val KAPT = "kapt"
         const val JAVA_LIBRARY = "java-library"
         const val KOTLIN_JVM = "org.jetbrains.kotlin.jvm"
+        const val COMPOSE = "org.jetbrains.kotlin.plugin.compose"
     }
 }
