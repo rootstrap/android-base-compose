@@ -80,8 +80,8 @@ object Dependencies {
     }
 
     object Tv {
-        const val TV_FOUNDATION = "androidx.tv:tv-foundation:1.0.0-alpha10"
-        const val TV_MATERIAL = "androidx.tv:tv-material:1.0.0-beta01"
+        const val TV_FOUNDATION = "androidx.tv:tv-foundation:${Versions.COMPOSE_TV}"
+        const val TV_MATERIAL = "androidx.tv:tv-material:${Versions.COMPOSE_TV}"
         const val LEANBACK = "androidx.leanback:leanback:${Versions.LEANBACK}"
     }
 
