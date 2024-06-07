@@ -1,10 +1,10 @@
-
-import Dependencies.Common.JAVA_TARGET
 import Dependencies.Common.JAVA_VERSION
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     id("com.android.application")
     kotlin(Dependencies.Plugins.ANDROID)
+    id(Dependencies.Plugins.COMPOSE) version Dependencies.Versions.KOTLIN
 }
 
 android {
@@ -36,31 +36,27 @@ android {
         targetCompatibility = JAVA_VERSION
     }
 
-    kotlinOptions {
-        jvmTarget = JAVA_TARGET
-        /**
-         * Compose-metrics
-         * How to execute:
-         * ./gradlew assembleRelease -PcomposeCompilerReports=true
-         * Review reports in: app/build/compose_metrics
-         * */
-        freeCompilerArgs += listOf(
-            "-P",
-            "plugin:androidx.compose.compiler.plugins.kotlin:metricsDestination=" + project.buildDir.absolutePath + "/compose_metrics"
-        )
-        freeCompilerArgs += listOf(
-            "-P",
-            "plugin:androidx.compose.compiler.plugins.kotlin:reportsDestination=" + project.buildDir.absolutePath + "/compose_metrics"
-        )
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_17)
+            freeCompilerArgs.addAll(
+                listOf(
+                    "-P",
+                    "plugin:androidx.compose.compiler.plugins.kotlin:metricsDestination=" + project.buildDir.absolutePath + "/compose_metrics"
+                )
+            )
+            freeCompilerArgs.addAll(
+                listOf(
+                    "-P",
+                    "plugin:androidx.compose.compiler.plugins.kotlin:reportsDestination=" + project.buildDir.absolutePath + "/compose_metrics"
+                )
+            )
+        }
     }
 
     buildFeatures {
         compose = true
         buildConfig = true
-    }
-
-    composeOptions {
-        kotlinCompilerExtensionVersion = Dependencies.Versions.COMPOSE_COMPILER
     }
 }
 

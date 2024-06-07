@@ -1,10 +1,13 @@
+import Dependencies.Common.JAVA_VERSION
 import Dependencies.ConfigData.COMPILE_SDK_VERSION
 import Dependencies.ConfigData.MIN_SDK_VERSION
 import Dependencies.ConfigData.TARGET_SDK_VERSION
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id(Dependencies.Plugins.COMPOSE) version Dependencies.Versions.KOTLIN
 }
 
 android {
@@ -31,15 +34,14 @@ android {
     buildFeatures {
         compose = true
     }
-    composeOptions {
-        kotlinCompilerExtensionVersion = Dependencies.Versions.COMPOSE_COMPILER
-    }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JAVA_VERSION
+        targetCompatibility = JAVA_VERSION
     }
-    kotlinOptions {
-        jvmTarget = "1.8"
+    kotlin {
+        compilerOptions {
+            jvmTarget.set(JvmTarget.JVM_17)
+        }
     }
 }
 
