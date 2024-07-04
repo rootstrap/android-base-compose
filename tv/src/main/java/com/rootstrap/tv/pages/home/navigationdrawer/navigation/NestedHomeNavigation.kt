@@ -36,9 +36,11 @@ fun NestedHomeNavigation(
                 viewModel = viewModel
             )
         }
+        /*
         composable(NestedScreens.Search.title) {
             SearchScreen()
         }
+        */
         composable(NestedScreens.Movies.title) {
             MoviesScreen(
                 navHostController = appNavHostController,

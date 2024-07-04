@@ -31,7 +31,7 @@ class HomeScreenViewModel(private val videoRepository: MoviesRepository) : ViewM
             _uiStateFlow.update {
                 uiState.copy(
                     homeRows = rows,
-                    featuredMovies = videoRepository.getFeaturedMovies().toMutableStateList(),
+                    featuredMovies = videoRepository.getFeaturedChapters().toMutableStateList(),
                     favouriteRows = videoRepository.myFavourites().toMutableStateList()
                 )
             }

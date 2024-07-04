@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.tv.material3.Border
@@ -36,7 +37,8 @@ fun BorderedFocusableItem(
     Surface(
         modifier = modifier
             .fillMaxWidth()
-            .indication(interactionSource, LocalIndication.current),
+            .indication(interactionSource, LocalIndication.current)
+        ,
         onClick = onClick,
         interactionSource = interactionSource,
         scale = ClickableSurfaceDefaults.scale(focusedScale = 1.2f),

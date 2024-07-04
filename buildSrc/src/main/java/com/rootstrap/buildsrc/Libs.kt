@@ -234,7 +234,7 @@ object Dependencies {
         const val SPLASH_SCREEN = "1.0.0"
         const val COMPOSE_TV = "1.0.0-alpha10"
         const val LEANBACK = "1.2.0-alpha03"
-        const val COIL = "2.5.0"
+        const val COIL = "2.6.0"
         const val MEDIA_3 = "1.2.0-rc01"
         const val WINDOW = "1.1.0"
         const val FLOW_FORMS = "1.4.1"
