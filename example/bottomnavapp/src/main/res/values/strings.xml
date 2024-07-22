@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">BottomNavApp</string>
+    <string name="home">Home</string>
+    <string name="notification">Notification</string>
+    <string name="profile">Profile</string>
+    <string name="move_to_detail_screen">Move to Detail Screen</string>
+    <string name="notification_screen_label">Notification Screen</string>
+    <string name="detail_screen_label">Detail Screen</string>
+    <string name="profile_screen_label">Profile Screen</string>
+    <string name="splash_content_description">Rootstrap logo</string>
+</resources>
