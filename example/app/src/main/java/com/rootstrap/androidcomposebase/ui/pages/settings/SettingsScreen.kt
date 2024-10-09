@@ -50,23 +50,27 @@ import com.rootstrap.example.app.R
 private const val ANIMATION_TIME_IN_MILLIS = 300
 
 @Composable
-fun SettingsScreen(isOSDarkTheme: Boolean, onThemeUpdated: () -> Unit) {
+fun SettingsScreen(email: String, isOSDarkTheme: Boolean, onThemeUpdated: () -> Unit) {
     Column(
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colorScheme.surface),
     ) {
         CenterAlignedAppBar()
+        Text("Email: $email", Modifier.padding(16.dp))
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.padding(defaultDimensions.big)
-            ) {
-                Text(text = stringResource(id = R.string.settings_dark_light_theme), modifier = Modifier.weight(1f))
-                ThemeSwitcher(
-                    isOSDarkTheme = isOSDarkTheme,
-                    size = expandedDimensions.paddingSixQuarters,
-                    padding = compactDimensions.paddingFiveQuarters,
-                    onClick = onThemeUpdated
+        ) {
+            Text(
+                text = stringResource(id = R.string.settings_dark_light_theme),
+                modifier = Modifier.weight(1f)
+            )
+            ThemeSwitcher(
+                isOSDarkTheme = isOSDarkTheme,
+                size = expandedDimensions.paddingSixQuarters,
+                padding = compactDimensions.paddingFiveQuarters,
+                onClick = onThemeUpdated
             )
         }
     }
@@ -80,8 +84,10 @@ fun CenterAlignedAppBar() {
     TopAppBar(
         // The title of the top app bar is set to "My App".
         title = {
-            Box(modifier = Modifier.fillMaxSize(),
-                contentAlignment = Alignment.CenterStart) {
+            Box(
+                modifier = Modifier.fillMaxSize(),
+                contentAlignment = Alignment.CenterStart
+            ) {
                 Text(stringResource(id = R.string.settings_title))
             }
         },
@@ -89,7 +95,10 @@ fun CenterAlignedAppBar() {
         // The navigation icon is set to a menu icon.
         navigationIcon = {
             IconButton(onClick = { /* Handle navigation icon click */ }) {
-                Icon(Icons.Filled.Menu, contentDescription = stringResource(id = R.string.content_description_navigation_icon))
+                Icon(
+                    Icons.Filled.Menu,
+                    contentDescription = stringResource(id = R.string.content_description_navigation_icon)
+                )
             }
         }
     )
@@ -170,7 +179,10 @@ private fun SettingsScreenPreview() {
     val boolean = isSystemInDarkTheme()
     var darkTheme by remember { mutableStateOf(boolean) }
     AppTheme {
-        SettingsScreen(isOSDarkTheme = darkTheme,
-            onThemeUpdated = { darkTheme = !darkTheme })
+        SettingsScreen(
+            email = "rs@rs.com",
+            isOSDarkTheme = darkTheme,
+            onThemeUpdated = { darkTheme = !darkTheme },
+        )
     }
 }

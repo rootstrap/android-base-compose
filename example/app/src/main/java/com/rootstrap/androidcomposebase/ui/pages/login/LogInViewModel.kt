@@ -18,7 +18,7 @@ import kotlinx.coroutines.launch
 
 class LogInViewModel(
     private val errorHandler: ErrorHandler,
-) : BaseViewModel<LogInUiState, Any>(LogInUiState()) {
+) : BaseViewModel<LogInUiState, LoginEvent>(LogInUiState()) {
 
     private val form = flowForm {
         field(
@@ -55,12 +55,28 @@ class LogInViewModel(
 
     fun onEmailChanged(email: String) {
         updateUiState { it.copy(email = email) }
-        viewModelScope.launch { form.validateOnValueChange(EMAIL) }
+        viewModelScope.launch {
+            val isEmailValid = form.validateOnValueChange(EMAIL)
+            updateUiState {
+                it.copy(
+                    isEmailValid = isEmailValid,
+                    isFormValid = isEmailValid && it.isPasswordValid
+                )
+            }
+        }
     }
 
     fun onPasswordChanged(password: String) {
         updateUiState { it.copy(password = password) }
-        viewModelScope.launch { form.validateOnValueChange(PASSWORD) }
+        viewModelScope.launch {
+            val isPasswordValid = form.validateOnValueChange(PASSWORD)
+            updateUiState {
+                it.copy(
+                    isFormValid = true, //isPasswordValid && it.isEmailValid,
+                    isPasswordValid = isPasswordValid
+                )
+            }
+        }
     }
 
     fun onLogin() {
@@ -70,13 +86,15 @@ class LogInViewModel(
             // TODO: Do log in request
         }.invokeOnCompletion {
             // TODO hide loading
+            pushEvent(LoginEvent.LoginSuccess(uiState.email))
         }
     }
 
     companion object {
         private const val EMAIL = "email"
         private const val PASSWORD = "password"
-        private val PASSWORD_REGEX = Regex("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#\$%^&+=!]).*$")
+        private val PASSWORD_REGEX =
+            Regex("^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#\$%^&+=!]).*$")
         const val PASSWORD_MIN_LENGTH = 6
     }
 }

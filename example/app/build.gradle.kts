@@ -5,6 +5,7 @@ plugins {
     id("com.android.application")
     kotlin(Dependencies.Plugins.ANDROID)
     id(Dependencies.Plugins.COMPOSE) version Dependencies.Versions.KOTLIN
+    id(Dependencies.Plugins.KOTLIN_SERIALIZATION) version Dependencies.Versions.KOTLIN
 }
 
 android {
@@ -65,6 +66,10 @@ dependencies {
     implementation(project(":core:domain"))
     implementation(project(":example:core:domain"))
     implementation(project(":example:core:usecases"))
+
+    with(Dependencies.Kotlin) {
+        implementation(SERIALIZATION)
+    }
 
     with(Dependencies.Android) {
         implementation(CORE)
