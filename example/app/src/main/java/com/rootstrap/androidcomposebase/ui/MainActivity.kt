@@ -12,6 +12,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -19,8 +20,10 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import androidx.navigation.compose.rememberNavController
 import com.rootstrap.androidcomposebase.ui.base.ErrorMapper
-import com.rootstrap.androidcomposebase.ui.pages.settings.SettingsScreen
+import com.rootstrap.androidcomposebase.ui.navigation.LocalNavigation
+import com.rootstrap.androidcomposebase.ui.navigation.MainNavHost
 import com.rootstrap.androidcomposebase.ui.theme.AppTheme
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
@@ -36,29 +39,31 @@ class MainActivity : ComponentActivity() {
             val errorNotification by viewModel.errorNotification.collectAsStateWithLifecycle()
 
             // TODO Use SharePreference or DataStore
-            val boolean = isSystemInDarkTheme()
-            var isOSDarkTheme by remember { mutableStateOf(boolean) }
+            val isSystemInDarkTheme = isSystemInDarkTheme()
+            var isOSDarkTheme by remember { mutableStateOf(isSystemInDarkTheme) }
 
             AppTheme(isOSDarkTheme = isOSDarkTheme) {
                 // A surface container using the 'background' color from the theme
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    //LogInScreen()
-                    SettingsScreen(
-                        isOSDarkTheme = isOSDarkTheme,
-                        onThemeUpdated = { isOSDarkTheme = !isOSDarkTheme }
-                    )
-                }
+                val navController = rememberNavController()
+                CompositionLocalProvider(LocalNavigation provides navController) {
+                    Surface(
+                        modifier = Modifier.fillMaxSize(),
+                        color = MaterialTheme.colorScheme.background
+                    ) {
+                        MainNavHost(
+                            isOSDarkTheme = isOSDarkTheme,
+                            onThemeUpdated = { isOSDarkTheme = !isOSDarkTheme }
+                        )
+                    }
 
-                errorNotification?.let {
-                    val error = ErrorMapper.map(it.errorType, resources)
-                    GenericErrorDialog(
-                        onDismissRequest = viewModel::clearErrorNotification,
-                        title = error.title,
-                        description = error.description
-                    )
+                    errorNotification?.let {
+                        val error = ErrorMapper.map(it.errorType, resources)
+                        GenericErrorDialog(
+                            onDismissRequest = viewModel::clearErrorNotification,
+                            title = error.title,
+                            description = error.description
+                        )
+                    }
                 }
             }
         }

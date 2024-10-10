@@ -6,6 +6,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -14,8 +15,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
+import com.rootstrap.androidcomposebase.ui.navigation.NavigationAppData
 import com.rootstrap.androidcomposebase.ui.common.AppButton
 import com.rootstrap.androidcomposebase.ui.common.AppTextField
+import com.rootstrap.androidcomposebase.ui.navigation.Pages
 import com.rootstrap.androidcomposebase.ui.pages.login.LogInViewModel.Companion.PASSWORD_MIN_LENGTH
 import com.rootstrap.androidcomposebase.ui.theme.AppTheme
 import com.rootstrap.example.app.R
@@ -27,6 +30,21 @@ fun LogInScreen(
     viewModel: LogInViewModel = koinViewModel(),
 ) {
     val uiState by viewModel.uiStateFlow.collectAsStateWithLifecycle()
+    val event: LoginEvent? by viewModel.eventFlow.collectAsStateWithLifecycle(null)
+    val navController = NavigationAppData.navController
+
+    LaunchedEffect(event) {
+        when (event) {
+            is LoginEvent.LoginSuccess -> {
+                (event as? LoginEvent.LoginSuccess)?.let {
+                    navController.navigate(Pages.SettingsScreen(it.email))
+                }
+            }
+
+            else -> Unit
+        }
+    }
+
     LogInScreen(
         uiState = uiState,
         onEmailChanged = viewModel::onEmailChanged,
@@ -61,7 +79,7 @@ fun LogInScreen(
                 value = uiState.email,
                 onValueChange = onEmailChanged,
                 label = stringResource(id = R.string.log_in_email_label),
-                errorMessage = when(uiState.emailErrorCode) {
+                errorMessage = when (uiState.emailErrorCode) {
                     StatusCodes.REQUIRED_UNSATISFIED -> stringResource(id = R.string.log_in_email_error_required)
                     StatusCodes.BASIC_EMAIL_FORMAT_UNSATISFIED -> stringResource(id = R.string.log_in_email_error_format)
                     else -> null
@@ -71,9 +89,13 @@ fun LogInScreen(
                 value = uiState.password,
                 onValueChange = onPasswordChanged,
                 label = stringResource(id = R.string.log_in_password_label),
-                errorMessage = when(uiState.passwordErrorCode) {
+                errorMessage = when (uiState.passwordErrorCode) {
                     StatusCodes.REQUIRED_UNSATISFIED -> stringResource(id = R.string.log_in_password_error_required)
-                    StatusCodes.MIN_LENGTH_UNSATISFIED -> stringResource(id = R.string.log_in_password_error_min_length, PASSWORD_MIN_LENGTH)
+                    StatusCodes.MIN_LENGTH_UNSATISFIED -> stringResource(
+                        id = R.string.log_in_password_error_min_length,
+                        PASSWORD_MIN_LENGTH
+                    )
+
                     StatusCodes.MATCH_REGEX_UNSATISFIED -> stringResource(id = R.string.log_in_password_error_format)
                     else -> null
                 },

@@ -186,7 +186,7 @@ object Dependencies {
 
         const val COMPOSE_ACTIVITY = "1.8.0"
         const val COMPOSE_MATERIAL3 = "1.1.1"
-        const val COMPOSE_NAVIGATION = "2.7.5"
+        const val COMPOSE_NAVIGATION = "2.8.2"
         const val COMPOSE_TOOLING = "1.6.0-alpha08"
         const val CONVERTER_GSON = "2.9.0"
         const val CONVERTER_MOSHI = "2.5.0"
@@ -259,5 +259,6 @@ object Dependencies {
         const val JAVA_LIBRARY = "java-library"
         const val KOTLIN_JVM = "org.jetbrains.kotlin.jvm"
         const val COMPOSE = "org.jetbrains.kotlin.plugin.compose"
+        const val KOTLIN_SERIALIZATION = "org.jetbrains.kotlin.plugin.serialization"
     }
 }
