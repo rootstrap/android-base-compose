@@ -57,7 +57,7 @@ fun SettingsScreen(email: String, isOSDarkTheme: Boolean, onThemeUpdated: () -> 
             .background(MaterialTheme.colorScheme.surface),
     ) {
         CenterAlignedAppBar()
-        Text("Email: $email", Modifier.padding(16.dp))
+        Text(stringResource(R.string.email, email), Modifier.padding(16.dp))
         Row(
             verticalAlignment = Alignment.CenterVertically,
             modifier = Modifier.padding(defaultDimensions.big)

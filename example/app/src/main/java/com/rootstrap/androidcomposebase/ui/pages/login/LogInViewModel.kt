@@ -72,7 +72,7 @@ class LogInViewModel(
             val isPasswordValid = form.validateOnValueChange(PASSWORD)
             updateUiState {
                 it.copy(
-                    isFormValid = true, //isPasswordValid && it.isEmailValid,
+                    isFormValid = isPasswordValid && it.isEmailValid,
                     isPasswordValid = isPasswordValid
                 )
             }
