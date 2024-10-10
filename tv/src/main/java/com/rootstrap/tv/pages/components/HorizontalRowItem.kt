@@ -22,8 +22,6 @@ fun HorizontalRowItem(
     movie: Movie,
     onItemClick: (movie: Movie?) -> Unit
 ) {
-    val painter = rememberAsyncImagePainter(model = movie.posterUri)
-
     BorderedFocusableItem(
         onClick = { onItemClick(movie) },
         modifier = Modifier
