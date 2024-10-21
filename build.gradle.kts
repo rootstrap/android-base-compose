@@ -55,7 +55,6 @@ tasks.register("clean", Delete::class) {
     delete(rootProject.buildDir)
 }
 
-
 subprojects {
     apply(plugin = Dependencies.Linters.KT_LINT_PLUGIN)
 }

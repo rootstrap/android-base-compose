@@ -180,7 +180,7 @@ private fun SettingsScreenPreview() {
     var darkTheme by remember { mutableStateOf(boolean) }
     AppTheme {
         SettingsScreen(
-            email = "rs@rs.com",
+            email = "",
             isOSDarkTheme = darkTheme,
             onThemeUpdated = { darkTheme = !darkTheme },
         )
