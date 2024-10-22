@@ -15,9 +15,9 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import com.rootstrap.androidcomposebase.ui.navigation.NavigationAppData
 import com.rootstrap.androidcomposebase.ui.common.AppButton
 import com.rootstrap.androidcomposebase.ui.common.AppTextField
+import com.rootstrap.androidcomposebase.ui.navigation.NavigationAppData
 import com.rootstrap.androidcomposebase.ui.navigation.Pages
 import com.rootstrap.androidcomposebase.ui.pages.login.LogInViewModel.Companion.PASSWORD_MIN_LENGTH
 import com.rootstrap.androidcomposebase.ui.theme.AppTheme
@@ -27,7 +27,7 @@ import org.koin.androidx.compose.koinViewModel
 
 @Composable
 fun LogInScreen(
-    viewModel: LogInViewModel = koinViewModel(),
+    viewModel: LogInViewModel = koinViewModel()
 ) {
     val uiState by viewModel.uiStateFlow.collectAsStateWithLifecycle()
     val event: LoginEvent? by viewModel.eventFlow.collectAsStateWithLifecycle(null)
@@ -49,7 +49,7 @@ fun LogInScreen(
         uiState = uiState,
         onEmailChanged = viewModel::onEmailChanged,
         onPasswordChanged = viewModel::onPasswordChanged,
-        onLoginClicked = viewModel::onLogin,
+        onLoginClicked = viewModel::onLogin
     )
 }
 
@@ -58,7 +58,7 @@ fun LogInScreen(
     uiState: LogInUiState,
     onEmailChanged: (String) -> Unit,
     onPasswordChanged: (String) -> Unit,
-    onLoginClicked: () -> Unit,
+    onLoginClicked: () -> Unit
 ) {
     Column(
         verticalArrangement = Arrangement.SpaceEvenly,
@@ -106,7 +106,7 @@ fun LogInScreen(
         AppButton(
             label = R.string.log_in_button,
             enabled = uiState.isFormValid,
-            onClick = onLoginClicked,
+            onClick = onLoginClicked
         )
     }
 }
@@ -123,7 +123,7 @@ private fun LogInScreenPreview() {
             ),
             onEmailChanged = {},
             onPasswordChanged = {},
-            onLoginClicked = {},
+            onLoginClicked = {}
         )
     }
 }

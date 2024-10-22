@@ -117,7 +117,7 @@ fun AppTheme(
             colorScheme = colorScheme,
             content = content,
             typography = Typography,
-            shapes = shapes,
+            shapes = shapes
         )
     }
 }
@@ -134,7 +134,6 @@ fun ProvideDimens(
 private val LocalAppDimens = staticCompositionLocalOf {
     defaultDimensions
 }
-
 
 object AppTheme {
     val dimens: Dimensions
