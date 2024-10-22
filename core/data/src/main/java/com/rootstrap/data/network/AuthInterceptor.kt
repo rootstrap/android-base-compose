@@ -7,18 +7,18 @@ import okhttp3.Interceptor
 import okhttp3.Response
 
 class AuthInterceptor(
-    private val PreferencesDataStore: PreferencesDataStore
+    private val preferencesDataStore: PreferencesDataStore
 ) : Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {
         var request = chain.request()
         val token = runBlocking {
-            PreferencesDataStore.apiToken.firstOrNull()
+            preferencesDataStore.apiToken.firstOrNull()
         }
         if (!token.isNullOrEmpty()) {
             val requestBuilder = request
                 .newBuilder()
-                .addHeader(AuthHttpHeader, "Bearer $token")
+                .addHeader(AUTH_HTTP_HEADER, "Bearer $token")
 
             request = requestBuilder.build()
         }
@@ -26,6 +26,6 @@ class AuthInterceptor(
         return chain.proceed(request)
     }
     companion object {
-        private const val AuthHttpHeader = "Authorization"
+        private const val AUTH_HTTP_HEADER = "Authorization"
     }
 }

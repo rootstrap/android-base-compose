@@ -27,13 +27,13 @@ package com.rootstrap.yourAppName.ui.navigation
  *             arguments = listOf(navArgument("id") { type = NavType.StringType }),
  * 				// URI is your page deeplink in this case "awesomewebpage.com",
  * 				// get your uri from your desired configuration: const var, env, gradle, etc..
-                deepLinks = listOf(navDeepLink { uriPattern = "https://awesomewebpage.com/business/{id}"}),
+ *               deepLinks = listOf(navDeepLink { uriPattern = "https://awesomewebpage.com/business/{id}"}),
  *         ) { backStackEntry ->
  *              backStackEntry.arguments?.getString("id")?.run {
  *                  BusinessDetailPage(this)
  * 			    } ?: run {
-                    ErrorPage(message = "404")
-                }
+ *                    ErrorPage(message = "404")
+ *               }
  *         }
  * **/
 

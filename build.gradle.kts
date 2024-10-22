@@ -47,6 +47,8 @@ tasks.register("preCommit") {
         exec {
             commandLine("ktlintCheck", "app/src/**/*.kt")
             commandLine("ktlintCheck", "core/**/*.kt")
+            // Uncomment this line to run linter on example folder
+            // commandLine("ktlintCheck", "example/**/*.kt")
         }
     }
 }

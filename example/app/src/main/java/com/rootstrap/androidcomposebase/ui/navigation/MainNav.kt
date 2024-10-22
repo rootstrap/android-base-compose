@@ -8,16 +8,15 @@ import com.rootstrap.androidcomposebase.ui.pages.login.LogInScreen
 import com.rootstrap.androidcomposebase.ui.pages.settings.SettingsScreen
 
 @Composable
-fun MainNavHost(isOSDarkTheme :Boolean, onThemeUpdated: () -> Unit) {
-
+fun MainNavHost(isOSDarkTheme: Boolean, onThemeUpdated: () -> Unit) {
     NavHost(
-        navController  = NavigationAppData.navController,
+        navController = NavigationAppData.navController,
         startDestination = Pages.LoginScreen
-    ){
-        composable<Pages.LoginScreen>{
+    ) {
+        composable<Pages.LoginScreen> {
             LogInScreen()
         }
-        composable<Pages.SettingsScreen>{
+        composable<Pages.SettingsScreen> {
             val args = it.toRoute<Pages.SettingsScreen>()
             SettingsScreen(
                 email = args.email,
