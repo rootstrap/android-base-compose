@@ -12,7 +12,6 @@ import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.navigation.NavHostController
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
-import androidx.compose.runtime.staticCompositionLocalOf
 import androidx.compose.ui.platform.LocalContext
 import com.rootstrap.yourAppName.ui.model.Dimensions
 import com.rootstrap.yourAppName.ui.model.WindowType
@@ -106,7 +105,7 @@ fun AppTheme(
             colorScheme = colors,
             content = content,
             typography = Typography,
-            shapes = shapes,
+            shapes = shapes
         )
     }
 }
