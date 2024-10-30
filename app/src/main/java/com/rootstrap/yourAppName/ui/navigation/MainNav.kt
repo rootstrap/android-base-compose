@@ -13,7 +13,7 @@ import com.rootstrap.yourAppName.ui.theme.AppData
 fun MainNavHost() {
     NavHost(
         navController = AppData.mainNavController,
-        startDestination = MainRoutes.MainPage.route,
+        startDestination = MainRoutes.MainPage.route
     ) {
         composable(route = MainRoutes.MainPage.route) { MainPage() }
         composable(

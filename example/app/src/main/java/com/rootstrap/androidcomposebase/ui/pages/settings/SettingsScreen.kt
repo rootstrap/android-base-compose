@@ -54,7 +54,7 @@ fun SettingsScreen(email: String, isOSDarkTheme: Boolean, onThemeUpdated: () -> 
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .background(MaterialTheme.colorScheme.surface),
+            .background(MaterialTheme.colorScheme.surface)
     ) {
         CenterAlignedAppBar()
         Text(stringResource(R.string.email, email), Modifier.padding(16.dp))
@@ -118,15 +118,16 @@ fun ThemeSwitcher(
 ) {
     val offset by animateDpAsState(
         targetValue = if (isOSDarkTheme) 0.dp else size,
-        animationSpec = animationSpec, label = ""
+        animationSpec = animationSpec,
+        label = ""
     )
-
-    Box(modifier = Modifier
-        .width(size * 2)
-        .height(size)
-        .clip(shape = parentShape)
-        .clickable { onClick() }
-        .background(MaterialTheme.colorScheme.secondaryContainer)
+    Box(
+        modifier = Modifier
+            .width(size * 2)
+            .height(size)
+            .clip(shape = parentShape)
+            .clickable { onClick() }
+            .background(MaterialTheme.colorScheme.secondaryContainer)
     ) {
         Box(
             modifier = Modifier
@@ -172,7 +173,6 @@ fun ThemeSwitcher(
     }
 }
 
-
 @Preview(showSystemUi = true)
 @Composable
 private fun SettingsScreenPreview() {
@@ -182,7 +182,7 @@ private fun SettingsScreenPreview() {
         SettingsScreen(
             email = "",
             isOSDarkTheme = darkTheme,
-            onThemeUpdated = { darkTheme = !darkTheme },
+            onThemeUpdated = { darkTheme = !darkTheme }
         )
     }
 }

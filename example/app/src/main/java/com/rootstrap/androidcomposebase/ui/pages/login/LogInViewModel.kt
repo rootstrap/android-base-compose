@@ -17,7 +17,7 @@ import kotlinx.coroutines.flow.onEach
 import kotlinx.coroutines.launch
 
 class LogInViewModel(
-    private val errorHandler: ErrorHandler,
+    private val errorHandler: ErrorHandler
 ) : BaseViewModel<LogInUiState, LoginEvent>(LogInUiState()) {
 
     private val form = flowForm {
@@ -30,7 +30,7 @@ class LogInViewModel(
             id = PASSWORD,
             Required { uiState.password },
             MinLength(PASSWORD_MIN_LENGTH) { uiState.password },
-            MatchRegex(PASSWORD_REGEX) { uiState.password },
+            MatchRegex(PASSWORD_REGEX) { uiState.password }
         )
     }
 

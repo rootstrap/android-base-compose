@@ -9,7 +9,7 @@ data class LogInUiState(
     val passwordErrorCode: String? = null,
     val isPasswordValid: Boolean = false,
     val isEmailValid: Boolean = false,
-    val isFormValid: Boolean = false,
+    val isFormValid: Boolean = false
 ) : UiState
 
 sealed class LoginEvent {
